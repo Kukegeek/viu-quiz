@@ -216,7 +216,8 @@ const QuizManager = {
     // Cargar datos del archivo JSON
     async loadData() {
         try {
-            const response = await fetch('data.json');
+            // Nueva ruta de datos según petición: data/45giin.json
+            const response = await fetch('data/45giin.json');
             const data = await response.json();
             APP_STATE.questions = data.preguntas;
             APP_STATE.modules = data.bloques;
