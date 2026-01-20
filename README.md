@@ -1,7 +1,3 @@
-# VIU Quiz - Test de Ingeniería Web
-
-Aplicación web interactiva para practicar tests de la asignatura de Ingeniería Web de la Universidad Internacional de Valencia (VIU).
-
 # VIU Quiz — Aplicación de Tests (Multi-asignatura)
 
 Aplicación web ligera para practicar tests por asignatura. Esta versión soporta varias asignaturas, modos dinámicos y almacenamiento por asignatura en `localStorage`.
