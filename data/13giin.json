@@ -9,7 +9,8 @@
     "7": "Kahoot - SESIÓN 9",
     "8": "Kahoot - SESIÓN 10",
     "9": "Kahoot - SESIÓN 11",
-    "10": "Kahoot - SESIÓN 12"
+    "10": "Kahoot - SESIÓN 12",
+    "11": "Preguntas - Zulaima S13"
   },
   "preguntas": [
     {
@@ -2451,6 +2452,311 @@
         "D": "Debe tener una transición definida para cada estado, símbolo de entrada"
       },
       "respuesta_correcta": "D"
-    }
-  ]
+    },
+    {
+    "id": 206,
+    "id_bloque": 11,
+    "pregunta": "¿Qué ocurre si un AFD tiene transiciones incompletas? ¿Qué ocurre si un AFD no tiene definidas todas las transiciones para cada símbolo en cada estado?",
+    "opciones": {
+      "A": "El autómata se convierte en un AFND",
+      "B": "El autómata no puede procesar algunas cadenas",
+      "C": "El autómata acepta todas las cadenas",
+      "D": "El autómata entra en un bucle infinito"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 207,
+    "id_bloque": 11,
+    "pregunta": "Dado el siguiente AFND: Estados: {q0, q1}, Alfabeto: {0,1}, Transiciones: (q0, 0) = {q0, q1}, δ(q0,1)={q0}, δ(q1, 0) = ∅, δ(q1, 1) = {q1}, Estado inicial: q0, Estado final: q1. ¿La cadena 0011 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 208,
+    "id_bloque": 11,
+    "pregunta": "Convierte a AFD el siguiente AFND: δ(q0,1)={q0,q1}, δ(q1,0)={q2}, δ(q2, 1) = {q2}, Estado inicial: q0, Estado final: q2. ¿Cuál es el estado inicial del AFD?",
+    "opciones": {
+      "A": "{q0}",
+      "B": "{q0, q1}",
+      "C": "{q1}",
+      "D": "{q0, q2}"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 209,
+    "id_bloque": 11,
+    "pregunta": "Lenguaje: L={w∈{0,1}* w contiene al menos un 1}. ¿Cuántos estados tiene el AFD mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 210,
+    "id_bloque": 11,
+    "pregunta": "Construye un AFND que acepte todas las cadenas sobre {0,1} que empiezan con 1. ¿Cuántos estados necesita el AFND mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 211,
+    "id_bloque": 11,
+    "pregunta": "Lenguaje: L={w∈{0,1}* | w termina en 0 }. ¿Cuántos estados tiene el AFD mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 212,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(q0,ε)={q1}, δ(q1,1)={q2}, δ(q2,0)={q2}, Estado inicial: q0, Estado final: q2. ¿La cadena 10 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 213,
+    "id_bloque": 11,
+    "pregunta": "Construye el AFD mínimo para cadenas sobre {0,1} que contienen al menos dos ceros. ¿Cuántos estados tiene?",
+    "opciones": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 214,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(q0,0)={q1}, δ(q0,1)={q0,q1}, δ(q1,1)={q2}, Estado inicial: q0, Estado final: q2. ¿Cuál de los siguientes NO puede ser un estado del AFD?",
+    "opciones": {
+      "A": "{q0}",
+      "B": "{q0, q1}",
+      "C": "{q1, q2}",
+      "D": "{q2, q3}"
+    },
+    "respuesta_correcta": "D"
+  },
+  {
+    "id": 215,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(p,0)={p,q}, δ(q,1)={r}, δ(r,0)={r}, Estado inicial: p, Estado final: r. ¿La cadena 010 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 216,
+    "id_bloque": 11,
+    "pregunta": "Construye un PDA que acepte el lenguaje: L={w∈{0,1}* | w es palindromo de longitud impar }. ¿Cuál es la idea principal del PDA?",
+    "opciones": {
+      "A": "Comparar símbolo por símbolo usando la pila",
+      "B": "Guardar la primera mitad en la pila, ignorar el símbolo central y luego desapilar",
+      "C": "Aceptar solo si la pila queda vacía sin leer nada",
+      "D": "No usar pila"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 217,
+    "id_bloque": 11,
+    "pregunta": "El lenguaje: L={aⁿbⁿ | n≥1}. ¿Cuántos estados necesita un PDA mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 218,
+    "id_bloque": 11,
+    "pregunta": "En un PDA para aⁿbⁿ, ¿cuál de estas transiciones es incorrecta?",
+    "opciones": {
+      "A": "δ(q0,a,Z)=(q0,aZ)",
+      "B": "δ(q0,a,a)=(q0,aa)",
+      "C": "δ(q1,b,a)=(q1,ε)",
+      "D": "δ(q1,a,a)=(q1,ε)"
+    },
+    "respuesta_correcta": "D"
+  },
+  {
+    "id": 219,
+    "id_bloque": 11,
+    "pregunta": "Construye una expresión regular para el lenguaje de todas las cadenas sobre {0,1} que terminan en 01.",
+    "opciones": {
+      "A": "(0+1)*01",
+      "B": "01(0+1)*",
+      "C": "0101",
+      "D": "(01)*"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 220,
+    "id_bloque": 11,
+    "pregunta": "¿Cuál expresión regular describe todas las cadenas sobre {0,1} que contienen el patrón 11 (dos unos seguidos)?",
+    "opciones": {
+      "A": "10101*",
+      "B": "(0+1)11(0+1)",
+      "C": "11*",
+      "D": "1+1"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 221,
+    "id_bloque": 11,
+    "pregunta": "Un AFD acepta todas las cadenas sobre {0,1} que contienen exactamente un bloque 00 y además terminan obligatoriamente en 1. Antes del bloque 00 solo pueden aparecer 1's. ¿Cuál ER describe este lenguaje?",
+    "opciones": {
+      "A": "(00)*",
+      "B": "(1+00)*",
+      "C": "(1*00)1",
+      "D": "01"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 222,
+    "id_bloque": 11,
+    "pregunta": "Construye una expresión regular para cadenas sobre {0,1} que contienen exactamente un 1.",
+    "opciones": {
+      "A": "010",
+      "B": "101",
+      "C": "(0+1)1(0+1)",
+      "D": "01*0"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 223,
+    "id_bloque": 11,
+    "pregunta": "Dado el PDA: δ(q0,a,Z)=(q0,aZ), δ(q0,a,a)=(q0,aa), δ(q0,b,a)=(q1,ε), δ(q1,b,a)=(q1,ε), Estado inicial: q0, Símbolo inicial de pila: Z, Estado final: q1. ¿La cadena aaabbb es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 224,
+    "id_bloque": 11,
+    "pregunta": "Sea el lenguaje L={w∈{a,b}* | w termina en 'ab' }. ¿Cuántos estados tiene el AFD mínimo que reconoce L?",
+    "opciones": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 225,
+    "id_bloque": 11,
+    "pregunta": "Un AFD sobre Σ={0,1} tiene 4 estados. ¿Cuál afirmación es verdadera?",
+    "opciones": {
+      "A": "Puede tener estados sin transición definida.",
+      "B": "Debe tener exactamente 8 transiciones.",
+      "C": "Debe tener al menos 4 transiciones.",
+      "D": "Puede tener más de 8 transiciones."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 226,
+    "id_bloque": 11,
+    "pregunta": "Dado el siguiente AFD: Estados: A, B, C; Inicial: A; Final: C; Tabla: (A,0)->B, (A,1)->C, (B,0)->B, (B,1)->C, (C,0)->C, (C,1)->C. ¿Cuáles estados son equivalentes?",
+    "opciones": {
+      "A": "A y B",
+      "B": "B y C",
+      "C": "A y C",
+      "D": "Ninguno"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 227,
+    "id_bloque": 11,
+    "pregunta": "Un AFD tiene 6 estados: A, B, C, D, E y F. Tras aplicar el algoritmo de marcas para minimizarlo, los únicos pares de estados que quedan sin marcar son: (A,B), (C,D), (E,F). ¿Cuántos estados tendrá el AFD mínimo?",
+    "opciones": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 228,
+    "id_bloque": 11,
+    "pregunta": "Se da el siguiente AFD sobre {0,1}: Estados: A, B, C; Inicial: A; Final: C; Tabla: (A,0)->B, (A,1)->A, (B,0)->B, (B,1)->C, (C,0)->C, (C,1)->C. Reconoce:",
+    "opciones": {
+      "A": "Cadenas que contienen al menos un 1",
+      "B": "Cadenas que terminan en 1",
+      "C": "Cadenas que contienen el patrón '01'",
+      "D": "Cadenas con número par de 1s"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 229,
+    "id_bloque": 11,
+    "pregunta": "En un AFND, desde un estado q con símbolo a se tienen 3 transiciones posibles. ¿Qué ocurre al convertirlo a AFD?",
+    "opciones": {
+      "A": "El AFD tendrá 3 transiciones desde ese estado.",
+      "B": "El AFD tendrá 1 transición pero a un conjunto de estados.",
+      "C": "El AFD tendrá 3 estados nuevos.",
+      "D": "El AFND no puede convertirse a AFD."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 230,
+    "id_bloque": 11,
+    "pregunta": "¿Cuál afirmación es correcta sobre el estado trampa?",
+    "opciones": {
+      "A": "Todo AFD debe tener un estado trampa.",
+      "B": "Un AFD puede no tener estado trampa si todas las transiciones están definidas.",
+      "C": "El estado trampa debe ser final.",
+      "D": "El estado trampa solo aparece en AFND."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 231,
+    "id_bloque": 11,
+    "pregunta": "Sea el lenguaje: L={w∈{0,1}* | |w| es par }. ¿Cuántos estados tiene el AFD mínimo que reconoce L?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  }
+]
+
 }
