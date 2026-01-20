@@ -1,20 +1,50 @@
 /**
- * VIU Quiz - Aplicación de Test de Ingeniería Web
+ * VIU Quiz - Aplicación de Test Multi-Asignatura
  * @author VIU Quiz App
- * @version 2.0.0
+ * @version 3.0.0
  */
+
+// ================================
+// Configuración de Asignaturas
+// ================================
+const SUBJECTS = {
+    '13giin': {
+        id: '13giin',
+        name: '13GIIN - Autómatas',
+        file: 'data/13giin.json',
+        icon: '🤖',
+        ultraLimit: 60  // Límite especial para ultra en esta asignatura
+    },
+    '21giin': {
+        id: '21giin',
+        name: '21GIIN - Proyectos de Programación',
+        file: 'data/21giin.json',
+        icon: '💻',
+        ultraLimit: null  // Sin límite, todas las preguntas
+    },
+    '45giin': {
+        id: '45giin',
+        name: '45GIIN - Información WEB',
+        file: 'data/45giin.json',
+        icon: '🌐',
+        ultraLimit: null  // Sin límite, todas las preguntas
+    }
+};
 
 // ================================
 // Estado Global de la Aplicación
 // ================================
 const APP_STATE = {
+    // Asignatura actual
+    currentSubject: null,
+    
     // Datos del quiz
     questions: [],
     modules: {},
     
     // Estado actual del test
     currentTest: {
-        mode: null,           // 'mini', 'normal', 'examen', 'ultra', 'module', 'review'
+        mode: null,           // 'mini', 'normal', 'pro', 'ultra', 'module', 'review'
         moduleId: null,       // ID del módulo si es modo módulo
         questions: [],        // Preguntas del test actual
         answers: {},          // Respuestas del usuario {questionId: 'A'/'B'/'C'}
@@ -23,17 +53,18 @@ const APP_STATE = {
         endTime: null,        // Timestamp de fin
         timeLimit: 0,         // Tiempo límite en segundos
         feedbackEnabled: false,
+        penaltyEnabled: true, // Si las malas restan
         score: 0,             // Puntuación actual (para feedback instantáneo)
         finished: false,
         isReviewMode: false,  // Si es modo repaso de falladas
         reviewAllFailed: false // Si repite todas las falladas (retry) o solo las del repaso
     },
     
-    // Configuración de modos
+    // Configuración de modos (se actualiza dinámicamente según asignatura)
     modeConfig: {
         mini: { questions: 10, time: 15 * 60, label: 'Mini Test' },
         normal: { questions: 20, time: 30 * 60, label: 'Normal' },
-        examen: { questions: 40, time: 60 * 60, label: 'Examen' },
+        pro: { questions: 40, time: 60 * 60, label: 'Pro' },
         ultra: { questions: 64, time: 100 * 60, label: 'Ultra' },
         module: { time: 30 * 60, label: 'Módulo' },
         review: { time: 30 * 60, label: 'Repaso' }
@@ -50,13 +81,59 @@ const StorageManager = {
     KEYS: {
         RESULTS: 'viu_quiz_results',
         STATS: 'viu_quiz_stats',
-        FAILED_QUESTIONS: 'viu_quiz_failed'
+        FAILED_QUESTIONS: 'viu_quiz_failed',
+        PENALTY_PREFERENCE: 'viu_quiz_penalty',
+        LAST_SUBJECT: 'viu_quiz_last_subject'
+    },
+    
+    // Obtener clave específica por asignatura
+    getSubjectKey(baseKey) {
+        const subject = APP_STATE.currentSubject?.id || '45giin';
+        return `${baseKey}_${subject}`;
+    },
+    
+    // Obtener preferencia de penalización
+    getPenaltyPreference() {
+        try {
+            const data = localStorage.getItem(this.KEYS.PENALTY_PREFERENCE);
+            return data !== null ? JSON.parse(data) : true; // Por defecto, las malas restan
+        } catch (e) {
+            return true;
+        }
+    },
+    
+    // Guardar preferencia de penalización
+    savePenaltyPreference(enabled) {
+        try {
+            localStorage.setItem(this.KEYS.PENALTY_PREFERENCE, JSON.stringify(enabled));
+        } catch (e) {
+            console.error('Error saving penalty preference:', e);
+        }
+    },
+    
+    // Obtener última asignatura seleccionada
+    getLastSubject() {
+        try {
+            return localStorage.getItem(this.KEYS.LAST_SUBJECT) || null;
+        } catch (e) {
+            return null;
+        }
+    },
+    
+    // Guardar última asignatura seleccionada
+    saveLastSubject(subjectId) {
+        try {
+            localStorage.setItem(this.KEYS.LAST_SUBJECT, subjectId);
+        } catch (e) {
+            console.error('Error saving last subject:', e);
+        }
     },
     
     // Obtener resultados guardados
     getResults() {
         try {
-            const data = localStorage.getItem(this.KEYS.RESULTS);
+            const key = this.getSubjectKey(this.KEYS.RESULTS);
+            const data = localStorage.getItem(key);
             return data ? JSON.parse(data) : [];
         } catch (e) {
             console.error('Error reading results:', e);
@@ -71,10 +148,12 @@ const StorageManager = {
             results.push({
                 ...result,
                 id: Date.now(),
-                date: new Date().toISOString()
+                date: new Date().toISOString(),
+                subjectId: APP_STATE.currentSubject?.id
             });
             
-            localStorage.setItem(this.KEYS.RESULTS, JSON.stringify(results));
+            const key = this.getSubjectKey(this.KEYS.RESULTS);
+            localStorage.setItem(key, JSON.stringify(results));
             this.updateStats(results);
             return true;
         } catch (e) {
@@ -106,8 +185,10 @@ const StorageManager = {
     
     // Actualizar estadísticas globales
     updateStats(results) {
+        const key = this.getSubjectKey(this.KEYS.STATS);
+        
         if (!results || results.length === 0) {
-            localStorage.setItem(this.KEYS.STATS, JSON.stringify({
+            localStorage.setItem(key, JSON.stringify({
                 totalTests: 0,
                 totalCorrect: 0,
                 totalQuestions: 0,
@@ -128,13 +209,14 @@ const StorageManager = {
             }, null)
         };
         
-        localStorage.setItem(this.KEYS.STATS, JSON.stringify(stats));
+        localStorage.setItem(key, JSON.stringify(stats));
     },
     
     // Obtener estadísticas
     getStats() {
         try {
-            const data = localStorage.getItem(this.KEYS.STATS);
+            const key = this.getSubjectKey(this.KEYS.STATS);
+            const data = localStorage.getItem(key);
             return data ? JSON.parse(data) : {
                 totalTests: 0,
                 totalCorrect: 0,
@@ -160,7 +242,8 @@ const StorageManager = {
     // Obtener preguntas falladas
     getFailedQuestions() {
         try {
-            const data = localStorage.getItem(this.KEYS.FAILED_QUESTIONS);
+            const key = this.getSubjectKey(this.KEYS.FAILED_QUESTIONS);
+            const data = localStorage.getItem(key);
             return data ? JSON.parse(data) : [];
         } catch (e) {
             return [];
@@ -172,7 +255,8 @@ const StorageManager = {
         try {
             const current = this.getFailedQuestions();
             const merged = [...new Set([...current, ...questionIds])];
-            localStorage.setItem(this.KEYS.FAILED_QUESTIONS, JSON.stringify(merged));
+            const key = this.getSubjectKey(this.KEYS.FAILED_QUESTIONS);
+            localStorage.setItem(key, JSON.stringify(merged));
         } catch (e) {
             console.error('Error saving failed questions:', e);
         }
@@ -183,7 +267,8 @@ const StorageManager = {
         try {
             const current = this.getFailedQuestions();
             const filtered = current.filter(id => !questionIds.includes(id));
-            localStorage.setItem(this.KEYS.FAILED_QUESTIONS, JSON.stringify(filtered));
+            const key = this.getSubjectKey(this.KEYS.FAILED_QUESTIONS);
+            localStorage.setItem(key, JSON.stringify(filtered));
         } catch (e) {
             console.error('Error removing from failed:', e);
         }
@@ -198,14 +283,19 @@ const StorageManager = {
     
     // Limpiar todas las falladas
     clearFailedQuestions() {
-        localStorage.removeItem(this.KEYS.FAILED_QUESTIONS);
+        const key = this.getSubjectKey(this.KEYS.FAILED_QUESTIONS);
+        localStorage.removeItem(key);
     },
     
-    // Borrar todos los datos
+    // Borrar todos los datos de la asignatura actual
     clearAll() {
-        localStorage.removeItem(this.KEYS.RESULTS);
-        localStorage.removeItem(this.KEYS.STATS);
-        localStorage.removeItem(this.KEYS.FAILED_QUESTIONS);
+        const resultsKey = this.getSubjectKey(this.KEYS.RESULTS);
+        const statsKey = this.getSubjectKey(this.KEYS.STATS);
+        const failedKey = this.getSubjectKey(this.KEYS.FAILED_QUESTIONS);
+        
+        localStorage.removeItem(resultsKey);
+        localStorage.removeItem(statsKey);
+        localStorage.removeItem(failedKey);
     }
 };
 
@@ -213,19 +303,64 @@ const StorageManager = {
 // Quiz Logic
 // ================================
 const QuizManager = {
-    // Cargar datos del archivo JSON
-    async loadData() {
+    // Cargar datos del archivo JSON de la asignatura
+    async loadData(subjectId = null) {
         try {
-            // Nueva ruta de datos según petición: data/45giin.json
-            const response = await fetch('data/45giin.json');
+            // Si no se especifica, usar la asignatura actual o la última usada
+            if (!subjectId) {
+                subjectId = APP_STATE.currentSubject?.id || StorageManager.getLastSubject() || '45giin';
+            }
+            
+            const subject = SUBJECTS[subjectId];
+            if (!subject) {
+                console.error('Subject not found:', subjectId);
+                return false;
+            }
+            
+            APP_STATE.currentSubject = subject;
+            StorageManager.saveLastSubject(subjectId);
+            
+            const response = await fetch(subject.file);
             const data = await response.json();
             APP_STATE.questions = data.preguntas;
             APP_STATE.modules = data.bloques;
+            
+            // Actualizar configuración de modo ultra según la asignatura
+            this.updateModeConfig();
+            
             return true;
         } catch (error) {
             console.error('Error loading data:', error);
             alert('Error cargando las preguntas. Por favor, recarga la página.');
             return false;
+        }
+    },
+    
+    // Actualizar configuración de modos según la asignatura
+    updateModeConfig() {
+        const totalQuestions = APP_STATE.questions.length;
+        const subject = APP_STATE.currentSubject;
+        
+        // Configurar modo ultra
+        if (subject.ultraLimit && totalQuestions > subject.ultraLimit) {
+            APP_STATE.modeConfig.ultra.questions = subject.ultraLimit;
+        } else {
+            APP_STATE.modeConfig.ultra.questions = totalQuestions;
+        }
+        
+        // Ajustar tiempo del ultra según número de preguntas
+        const ultraQuestions = APP_STATE.modeConfig.ultra.questions;
+        APP_STATE.modeConfig.ultra.time = Math.ceil(ultraQuestions * 1.5) * 60; // 1.5 min por pregunta
+        
+        // Ajustar otros modos si hay menos preguntas que el modo requiere
+        if (totalQuestions < APP_STATE.modeConfig.pro.questions) {
+            APP_STATE.modeConfig.pro.questions = totalQuestions;
+        }
+        if (totalQuestions < APP_STATE.modeConfig.normal.questions) {
+            APP_STATE.modeConfig.normal.questions = totalQuestions;
+        }
+        if (totalQuestions < APP_STATE.modeConfig.mini.questions) {
+            APP_STATE.modeConfig.mini.questions = totalQuestions;
         }
     },
     
@@ -261,6 +396,9 @@ const QuizManager = {
         let questions;
         let timeLimit;
         
+        // Obtener preferencia de penalización
+        const penaltyEnabled = StorageManager.getPenaltyPreference();
+        
         if (isReviewMode) {
             // Modo repaso: preguntas falladas
             questions = this.getFailedQuestions();
@@ -280,6 +418,7 @@ const QuizManager = {
             questions = this.getRandomQuestions(config.questions);
             timeLimit = config.time;
         }
+        
         // Si el usuario quiere repetir el mismo test, reutilizamos las preguntas y el orden
         if (reuseQuestions && APP_STATE.currentTest && APP_STATE.currentTest.questions && APP_STATE.currentTest.questions.length > 0) {
             // Clonar para evitar referencias compartidas
@@ -302,8 +441,8 @@ const QuizManager = {
                         [entries[i], entries[j]] = [entries[j], entries[i]];
                     }
 
-                    // Reconstruir objeto opciones con letras A,B,C... en orden
-                    const letters = ['A', 'B', 'C', 'D', 'E']; // por si en futuro hay más
+                    // Reconstruir objeto opciones con letras A,B,C,D... en orden
+                    const letters = ['A', 'B', 'C', 'D', 'E', 'F']; // por si hay más opciones
                     const newOpc = {};
                     let newCorrect = null;
                     for (let i = 0; i < entries.length; i++) {
@@ -338,6 +477,7 @@ const QuizManager = {
             endTime: null,
             timeLimit,
             feedbackEnabled: document.getElementById('feedback-toggle').checked,
+            penaltyEnabled: penaltyEnabled,
             score: 0,
             finished: false,
             isReviewMode,
@@ -371,8 +511,10 @@ const QuizManager = {
             
             if (isCorrect) {
                 test.score += pointsPerQuestion;
-            } else {
-                test.score -= pointsPerQuestion / 3;
+            } else if (test.penaltyEnabled) {
+                // Solo restar si la penalización está habilitada
+                const numOptions = Object.keys(question.opciones).length;
+                test.score -= pointsPerQuestion / (numOptions - 1);
             }
             
             // Debug score
@@ -418,7 +560,20 @@ const QuizManager = {
         if (test.feedbackEnabled) {
             score = test.score;
         } else {
-            score = (correct * pointsPerQuestion) - (incorrect * (pointsPerQuestion / 3));
+            if (test.penaltyEnabled) {
+                // Calcular penalización dinámica según número de opciones
+                let penalty = 0;
+                test.questions.forEach(q => {
+                    const userAnswer = test.answers[q.id];
+                    if (userAnswer && userAnswer !== q.respuesta_correcta) {
+                        const numOptions = Object.keys(q.opciones).length;
+                        penalty += pointsPerQuestion / (numOptions - 1);
+                    }
+                });
+                score = (correct * pointsPerQuestion) - penalty;
+            } else {
+                score = correct * pointsPerQuestion;
+            }
         }
         
         const timeSpent = Math.floor((test.endTime - test.startTime) / 1000);
@@ -444,6 +599,7 @@ const QuizManager = {
             timeSpent,
             timeLimit: test.timeLimit,
             feedbackEnabled: test.feedbackEnabled,
+            penaltyEnabled: test.penaltyEnabled,
             isReviewMode: test.isReviewMode,
             correctIds,
             incorrectIds
@@ -466,6 +622,7 @@ const QuizManager = {
 const UIManager = {
     // Elementos DOM
     screens: {
+        subject: document.getElementById('subject-screen'),
         home: document.getElementById('home-screen'),
         quiz: document.getElementById('quiz-screen'),
         results: document.getElementById('results-screen'),
@@ -475,9 +632,83 @@ const UIManager = {
     // Cambiar pantalla
     showScreen(screenName) {
         Object.values(this.screens).forEach(screen => {
-            screen.classList.remove('active');
+            if (screen) screen.classList.remove('active');
         });
-        this.screens[screenName].classList.add('active');
+        if (this.screens[screenName]) {
+            this.screens[screenName].classList.add('active');
+        }
+    },
+    
+    // Actualizar información del header con la asignatura actual
+    updateSubjectHeader() {
+        const subject = APP_STATE.currentSubject;
+        if (subject) {
+            const headerText = document.querySelector('.logo-text');
+            if (headerText) {
+                headerText.textContent = 'VIU Quiz';
+            }
+            const subjectBadge = document.getElementById('current-subject-badge');
+            if (subjectBadge) {
+                subjectBadge.textContent = `${subject.icon} ${subject.name}`;
+                subjectBadge.classList.remove('hidden');
+            }
+        }
+    },
+    
+    // Actualizar selectores de módulos dinámicamente
+    updateModuleSelector() {
+        const select = document.getElementById('module-select');
+        if (!select) return;
+        
+        // Limpiar opciones existentes
+        select.innerHTML = '<option value="">Seleccionar módulo...</option>';
+        
+        // Añadir módulos de la asignatura actual
+        const modules = APP_STATE.modules;
+        const icons = ['📘', '📗', '📙', '📕', '📓', '📔', '📒', '📚', '📖', '📜'];
+        
+        Object.entries(modules).forEach(([id, name], index) => {
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = `${icons[index % icons.length]} ${name}`;
+            select.appendChild(option);
+        });
+    },
+    
+    // Actualizar información de modos en las tarjetas
+    updateModeCards() {
+        const config = APP_STATE.modeConfig;
+        
+        // Mini
+        const miniInfo = document.querySelector('[data-mode="mini"] .mode-info');
+        if (miniInfo) {
+            miniInfo.textContent = `${config.mini.questions} preguntas · ${Math.floor(config.mini.time / 60)} min`;
+        }
+        
+        // Normal
+        const normalInfo = document.querySelector('[data-mode="normal"] .mode-info');
+        if (normalInfo) {
+            normalInfo.textContent = `${config.normal.questions} preguntas · ${Math.floor(config.normal.time / 60)} min`;
+        }
+        
+        // Pro
+        const proInfo = document.querySelector('[data-mode="pro"] .mode-info');
+        if (proInfo) {
+            proInfo.textContent = `${config.pro.questions} preguntas · ${Math.floor(config.pro.time / 60)} min`;
+        }
+        
+        // Ultra
+        const ultraInfo = document.querySelector('[data-mode="ultra"] .mode-info');
+        if (ultraInfo) {
+            const ultraTime = Math.floor(config.ultra.time / 60);
+            ultraInfo.textContent = `${config.ultra.questions} preguntas · ${ultraTime} min`;
+        }
+        
+        // Actualizar badge de total de preguntas
+        const totalBadge = document.getElementById('total-questions-badge');
+        if (totalBadge) {
+            totalBadge.textContent = `${APP_STATE.questions.length} preguntas disponibles`;
+        }
     },
     
     // Actualizar estadísticas en home
@@ -512,11 +743,14 @@ const UIManager = {
         
         // Actualizar contador de preguntas falladas
         this.updateFailedCount();
+        
+        // Actualizar toggle de penalización
+        this.updatePenaltyToggle();
     },
     
     // Actualizar podiums por modo
     updateModePodiums() {
-        const modes = ['mini', 'normal', 'examen', 'ultra'];
+        const modes = ['mini', 'normal', 'pro', 'ultra'];
         
         modes.forEach(mode => {
             const top3 = StorageManager.getTopResultsByMode(mode, 3);
@@ -562,6 +796,14 @@ const UIManager = {
         }
     },
     
+    // Actualizar toggle de penalización
+    updatePenaltyToggle() {
+        const penaltyToggle = document.getElementById('penalty-toggle');
+        if (penaltyToggle) {
+            penaltyToggle.checked = StorageManager.getPenaltyPreference();
+        }
+    },
+    
     // Formatear tiempo
     formatTime(seconds) {
         const mins = Math.floor(seconds / 60);
@@ -585,7 +827,7 @@ const UIManager = {
         document.getElementById('progress-fill').style.width = `${progress}%`;
         
         // Módulo
-        const moduleName = APP_STATE.modules[question.id_bloque];
+        const moduleName = APP_STATE.modules[question.id_bloque] || `Bloque ${question.id_bloque}`;
         document.getElementById('question-module').textContent = moduleName;
         
         // Texto de la pregunta
@@ -614,6 +856,7 @@ const UIManager = {
         const isAnswered = userAnswer !== undefined;
         const isCorrectAnswer = userAnswer === question.respuesta_correcta;
         
+        // Manejar diferentes números de opciones
         Object.entries(question.opciones).forEach(([key, value]) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
@@ -781,6 +1024,13 @@ const UIManager = {
         document.getElementById('result-incorrect').textContent = results.incorrect;
         document.getElementById('result-unanswered').textContent = results.unanswered;
         
+        // Info de penalización
+        const penaltyInfo = document.getElementById('penalty-info');
+        if (penaltyInfo) {
+            penaltyInfo.textContent = results.penaltyEnabled ? 'Penalización: Activada' : 'Penalización: Desactivada';
+            penaltyInfo.classList.toggle('penalty-off', !results.penaltyEnabled);
+        }
+        
         // Comparativa con mejores
         const topResults = StorageManager.getTopResults(10);
         if (topResults.length > 0) {
@@ -938,6 +1188,28 @@ const UIManager = {
 // Event Listeners
 // ================================
 function initEventListeners() {
+    // Botones de selección de asignatura
+    document.querySelectorAll('.subject-card').forEach(card => {
+        card.addEventListener('click', async () => {
+            const subjectId = card.dataset.subject;
+            if (await QuizManager.loadData(subjectId)) {
+                UIManager.updateSubjectHeader();
+                UIManager.updateModuleSelector();
+                UIManager.updateModeCards();
+                UIManager.updateHomeStats();
+                UIManager.showScreen('home');
+            }
+        });
+    });
+    
+    // Botón de cambiar asignatura
+    const changeSubjectBtn = document.getElementById('change-subject-btn');
+    if (changeSubjectBtn) {
+        changeSubjectBtn.addEventListener('click', () => {
+            UIManager.showScreen('subject');
+        });
+    }
+    
     // Botones de modo
     document.querySelectorAll('.mode-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -962,6 +1234,14 @@ function initEventListeners() {
             e.target.value = ''; // Reset selector
         }
     });
+    
+    // Toggle de penalización
+    const penaltyToggle = document.getElementById('penalty-toggle');
+    if (penaltyToggle) {
+        penaltyToggle.addEventListener('change', (e) => {
+            StorageManager.savePenaltyPreference(e.target.checked);
+        });
+    }
     
     // Botón de repasar falladas
     const reviewFailedBtn = document.getElementById('review-failed-btn');
@@ -1072,7 +1352,7 @@ function initEventListeners() {
     document.getElementById('clear-stats-btn').addEventListener('click', () => {
         UIManager.showConfirm(
             '¿Borrar todos los datos?',
-            'Se eliminarán todos los resultados, estadísticas y preguntas falladas. Esta acción no se puede deshacer.',
+            `Se eliminarán todos los resultados, estadísticas y preguntas falladas de ${APP_STATE.currentSubject?.name || 'esta asignatura'}. Esta acción no se puede deshacer.`,
             () => {
                 StorageManager.clearAll();
                 UIManager.closeModal('stats-modal');
@@ -1095,20 +1375,36 @@ function initEventListeners() {
 // Inicialización
 // ================================
 async function init() {
-    // Cargar datos
-    const loaded = await QuizManager.loadData();
-    if (!loaded) return;
+    // Verificar si hay una asignatura guardada
+    const lastSubject = StorageManager.getLastSubject();
     
-    // Actualizar estadísticas
-    UIManager.updateHomeStats();
+    if (lastSubject && SUBJECTS[lastSubject]) {
+        // Cargar la última asignatura usada
+        const loaded = await QuizManager.loadData(lastSubject);
+        if (loaded) {
+            UIManager.updateSubjectHeader();
+            UIManager.updateModuleSelector();
+            UIManager.updateModeCards();
+            UIManager.updateHomeStats();
+            UIManager.showScreen('home');
+        } else {
+            UIManager.showScreen('subject');
+        }
+    } else {
+        // Mostrar pantalla de selección de asignatura
+        UIManager.showScreen('subject');
+    }
     
     // Inicializar event listeners
     initEventListeners();
     
     console.log('VIU Quiz App initialized');
-    console.log(`Loaded ${APP_STATE.questions.length} questions`);
-    console.log(`Modules: ${Object.keys(APP_STATE.modules).length}`);
-    console.log(`Failed questions: ${StorageManager.getFailedQuestions().length}`);
+    if (APP_STATE.currentSubject) {
+        console.log(`Subject: ${APP_STATE.currentSubject.name}`);
+        console.log(`Loaded ${APP_STATE.questions.length} questions`);
+        console.log(`Modules: ${Object.keys(APP_STATE.modules).length}`);
+        console.log(`Failed questions: ${StorageManager.getFailedQuestions().length}`);
+    }
 }
 
 // Iniciar cuando el DOM esté listo

@@ -1,0 +1,568 @@
+{
+  "bloques": {
+    "1": "Programación Orientada a Objetos (POO)",
+    "2": "Fundamentos de Java",
+    "3": "Documentación y Depuración",
+    "4": "Arquitectura y Patrones (CI/CD, 3 Capas, MVC)"
+  },
+  "preguntas": [
+    {
+      "id": 1,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es la Programación Orientada a Objetos (POO)?",
+      "opciones": {
+        "A": "Un lenguaje de programación específico",
+        "B": "Un tipo de hardware",
+        "C": "Un paradigma de programación basado en el concepto de objetos",
+        "D": "Un sistema operativo"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 2,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es una clase?",
+      "opciones": {
+        "A": "Una función con parámetros",
+        "B": "Un bucle no infinito",
+        "C": "Un tipo de dato primitivo",
+        "D": "Una familia de objetos con elementos en común"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 3,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es herencia?",
+      "opciones": {
+        "A": "Crear objetos de una clase",
+        "B": "Usar bucles en los métodos",
+        "C": "Definir métodos no heredables",
+        "D": "Reutilizar código de una clase"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 4,
+      "id_bloque": 1,
+      "pregunta": "La herencia múltiple se da cuando una clase hereda de más de una clase",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 5,
+      "id_bloque": 1,
+      "pregunta": "¿Cuál es una afirmación correcta para el siguiente código?\n\npublic class Suma extends Operacion {\n    public Suma(double num1, double num2) {\n        super(num1, num2);\n    }\n    protected double operar() {\n        return n1 + n2;\n    }\n    public char operador() {\n        return '+';\n    }\n}",
+      "opciones": {
+        "A": "Operacion hereda de Suma",
+        "B": "operador() es el constructor de la clase Operacion",
+        "C": "Suma hereda de Operacion",
+        "D": "operar() es el constructor de la clase Suma"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 6,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es un objeto?",
+      "opciones": {
+        "A": "Un contenedor que integra datos, interacción y funcionalidades",
+        "B": "Un tipo de dato primitivo",
+        "C": "Un error en el código",
+        "D": "Una función matemática"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 7,
+      "id_bloque": 1,
+      "pregunta": "¿Qué significa crear una instancia?",
+      "opciones": {
+        "A": "Crear un objeto específico a partir de una plantilla o modelo llamado clase",
+        "B": "Borrar una clase de la memoria del servidor para liberar espacio",
+        "C": "Definir el nombre y los atributos de una clase dentro del código fuente",
+        "D": "Copiar el código de una clase en otra clase distinta mediante herencia"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 8,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es un atributo?",
+      "opciones": {
+        "A": "Una función de una clase",
+        "B": "Una propiedad de una clase",
+        "C": "Una propiedad de una clase que no se puede heredar",
+        "D": "Un tipo de dato abstracto"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 9,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es un método?",
+      "opciones": {
+        "A": "Una función de una clase",
+        "B": "Un tipo de dato usado en una clase",
+        "C": "Una variable de una clase",
+        "D": "Una función que contiene un bucle"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 10,
+      "id_bloque": 1,
+      "pregunta": "¿Qué función tiene un constructor?",
+      "opciones": {
+        "A": "Inicializa un objeto",
+        "B": "Usa un método",
+        "C": "Crea una función",
+        "D": "Define una clase"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 11,
+      "id_bloque": 1,
+      "pregunta": "La visibilidad en POO define quien puede acceder a los atributos y métodos de una clase mediante modificadores de acceso",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 12,
+      "id_bloque": 1,
+      "pregunta": "¿Qué define la visibilidad en POO?",
+      "opciones": {
+        "A": "Cantidad de métodos y atributos",
+        "B": "Color del código",
+        "C": "Tamaño de la clase",
+        "D": "Acceso a atributos y métodos"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 13,
+      "id_bloque": 1,
+      "pregunta": "¿Qué modificador permite acceso desde cualquier clase?",
+      "opciones": {
+        "A": "default",
+        "B": "protected",
+        "C": "private",
+        "D": "public"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 14,
+      "id_bloque": 1,
+      "pregunta": "¿Qué modificador permite acceso solo en la misma clase?",
+      "opciones": {
+        "A": "final",
+        "B": "protected",
+        "C": "public",
+        "D": "private"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 15,
+      "id_bloque": 1,
+      "pregunta": "¿Qué modificador permite acceso en subclases?",
+      "opciones": {
+        "A": "protected",
+        "B": "private",
+        "C": "public",
+        "D": "abstract"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 16,
+      "id_bloque": 1,
+      "pregunta": "¿Qué modificador impide acceso externo?",
+      "opciones": {
+        "A": "protected",
+        "B": "private",
+        "C": "static",
+        "D": "public"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 17,
+      "id_bloque": 1,
+      "pregunta": "¿Quién podrá acceder al atributo n2?\n\npublic abstract class Operacion {\n    protected double n1;\n    protected double n2;\n    protected double res;\n    protected Operacion(double num1, double num2) {\n        n1 = num1;\n        n2 = num2;\n        res = operar();\n    }\n    protected abstract double operar();\n    public abstract char operador();\n    public double resultado() {\n        return res;\n    }\n    public String toString() {\n        char op = operador();\n        return n1 + \" \" + op + \" \" + n2 + \" = \" + res;\n    }\n}",
+      "opciones": {
+        "A": "Ninguna clase",
+        "B": "Solo la clase Operación",
+        "C": "La clase Operación y las clases que la hereden",
+        "D": "Cualquier clase"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 18,
+      "id_bloque": 1,
+      "pregunta": "Si una clase Suma hereda de Operacion (ver código de la pregunta anterior), ¿podrá ejecutar el método resultado() de esta?",
+      "opciones": {
+        "A": "Siempre que se defina en Suma como método abstracto",
+        "B": "Siempre",
+        "C": "En ningún caso ya que no tendrá visibilidad",
+        "D": "No, porque no está definido en Operacion como método abstracto"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 19,
+      "id_bloque": 1,
+      "pregunta": "Si una clase Suma hereda de Operacion (ver código de la pregunta 17), ¿podrá ejecutar el método operador() de esta?",
+      "opciones": {
+        "A": "Siempre que se defina en Suma como método abstracto también",
+        "B": "Siempre",
+        "C": "En ningún caso ya que no tendrá visibilidad",
+        "D": "No, la clase Suma tendrá que implementar su propio método operador()"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 20,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es encapsulamiento en POO?",
+      "opciones": {
+        "A": "Usar bucles",
+        "B": "Crear objetos",
+        "C": "Ocultar detalles internos",
+        "D": "Definir clases"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 21,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es polimorfismo en la POO?",
+      "opciones": {
+        "A": "Crear clases que heredan de la misma clase padre",
+        "B": "Definir atributos con nombres iguales",
+        "C": "Implementar múltiples formas de un método",
+        "D": "El polimorfismo no es un concepto aplicable a la POO"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 22,
+      "id_bloque": 1,
+      "pregunta": "Indica la afirmación incorrecta sobre Interfaces",
+      "opciones": {
+        "A": "Las interfaces son clases con métodos abstractos y atributos constantes.",
+        "B": "Sus métodos por defecto son abstractos y públicos.",
+        "C": "Definen su propio constructor como una clase",
+        "D": "Los métodos de una interface no tienen implementación en sí misma."
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 23,
+      "id_bloque": 1,
+      "pregunta": "En POO, los elementos estáticos (static) pertenecen a la clase en sí y no a una instancia (objeto) específica",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 24,
+      "id_bloque": 1,
+      "pregunta": "Indica la afirmación incorrecta sobre Excepciones",
+      "opciones": {
+        "A": "Las excepciones no heredan de ninguna clase",
+        "B": "Informan de errores producidos en ejecución",
+        "C": "El bloque finally se ejecuta en forma independiente",
+        "D": "Los bloques try...catch tratan la excepción"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 25,
+      "id_bloque": 2,
+      "pregunta": "Java es un lenguaje de Programación Orientado a Objetos (POO) multipropósito.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 26,
+      "id_bloque": 2,
+      "pregunta": "¿Qué significa que Java es fuertemente tipado?",
+      "opciones": {
+        "A": "Exige declarar el tipo de dato para cada variable",
+        "B": "Las variables pueden cambiar de tipo de datos durante la ejecución",
+        "C": "Solo permite el uso de un solo tipo de datos en una clase",
+        "D": "Java es más pesado y ocupa más espacio en el disco duro"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 27,
+      "id_bloque": 2,
+      "pregunta": "Acerca del lenguaje Java, ¿cuál es la respuesta correcta?",
+      "opciones": {
+        "A": "Utiliza import para acceder a librerías",
+        "B": "Se ejecuta en la Máquina Virtual Java",
+        "C": "Es interpretado y utiliza un código intermedio conocido como bytecode",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 28,
+      "id_bloque": 2,
+      "pregunta": "La Máquina Virtual Java (JVM) implementa el código para cada plataforma (Linux, iOS, etc.) a partir del bytecode.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 29,
+      "id_bloque": 2,
+      "pregunta": "El método main define el método principal para la ejecución. Respecto a sus características podemos afirmar que...",
+      "opciones": {
+        "A": "public y static son necesarios para el método main",
+        "B": "void establece el retorno del método como tipo entero",
+        "C": "No puede recibir parámetros",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 30,
+      "id_bloque": 2,
+      "pregunta": "Java tiene diferentes tipos de datos primitivos que son para números enteros.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 31,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se define el proceso automático de JVM que gestiona la memoria del programa y elimina los objetos en desuso?",
+      "opciones": {
+        "A": "BufferedReader",
+        "B": "Garbage Collector",
+        "C": "Setter",
+        "D": "Bytecode"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 32,
+      "id_bloque": 2,
+      "pregunta": "Java no permite la conversión de tipos.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 33,
+      "id_bloque": 2,
+      "pregunta": "Respecto a los bucles en Java, ¿cuál es la respuesta correcta?",
+      "opciones": {
+        "A": "for, while y do-while permiten crear bucles",
+        "B": "Permiten ejecutar bloques de código repetidamente",
+        "C": "Se ejecutan bajo condiciones controladas",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 34,
+      "id_bloque": 3,
+      "pregunta": "Javadoc es un estándar que extrae comentarios del código fuente Java para generar páginas HTML con la API del proyecto.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 35,
+      "id_bloque": 3,
+      "pregunta": "Indica la afirmación correcta acerca de Javadoc.",
+      "opciones": {
+        "A": "Si se actualiza el código, se debe actualizar la documentación manualmente",
+        "B": "@param y @return son palabras clave para la creación de la documentación",
+        "C": "La documentación se añade al código como comentarios, usando /** */",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 36,
+      "id_bloque": 3,
+      "pregunta": "¿Qué es la depuración de programas?",
+      "opciones": {
+        "A": "Proceso de borrar comentarios del código",
+        "B": "Es el proceso de identificar y corregir errores en el código fuente",
+        "C": "Es una función de seguridad que elimina a los usuarios sin permiso",
+        "D": "Es el proceso para crear código fuente automáticamente"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 37,
+      "id_bloque": 3,
+      "pregunta": "Los errores de código (bugs) pueden causar comportamientos inesperados, fallos en la ejecución o resultados incorrectos.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 38,
+      "id_bloque": 3,
+      "pregunta": "Entre los pasos de la depuración de programa encontramos los de...",
+      "opciones": {
+        "A": "Replicar el problema, usar breakpoints y ejecutar paso a paso",
+        "B": "Replicar el problema, revisar mensajes de error y controlar a los usuarios",
+        "C": "Replicar el problema, usar breakpoints y controlar a los usuarios",
+        "D": "Todas son incorrectas"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 39,
+      "id_bloque": 4,
+      "pregunta": "¿Qué es la Integración Continua (CI) y Entrega Continua (CD)?",
+      "opciones": {
+        "A": "Metodología que compila, prueba y despliega el código de manera continua",
+        "B": "Metodología que lanza cambios de código de forma frecuente y fiable",
+        "C": "Metodología en la que la CI depura y prueba el código y la CD lo despliega",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 40,
+      "id_bloque": 4,
+      "pregunta": "¿Cuáles son las tres capas en una Arquitectura a 3 Capas?",
+      "opciones": {
+        "A": "Interfaz, Código y Servidor",
+        "B": "Presentación, Negocio y Datos",
+        "C": "Frontend, Backend y API",
+        "D": "Usuario, Aplicación y Nube"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 41,
+      "id_bloque": 4,
+      "pregunta": "¿Cuál es la función principal de la Capa de Presentación?",
+      "opciones": {
+        "A": "Interactuar con el usuario y mostrar información",
+        "B": "Procesar cálculos complejos",
+        "C": "Almacenar datos permanentemente",
+        "D": "Gestionar la seguridad del servidor"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 42,
+      "id_bloque": 4,
+      "pregunta": "¿Dónde se deben programar las reglas y validaciones del sistema?",
+      "opciones": {
+        "A": "Capa de Datos",
+        "B": "Capa de Presentación",
+        "C": "Capa de Negocio (Lógica)",
+        "D": "En el navegador del cliente"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 43,
+      "id_bloque": 4,
+      "pregunta": "¿Qué capa es la única que debe comunicarse con la Base de Datos?",
+      "opciones": {
+        "A": "Capa de Presentación",
+        "B": "Capa de Interfaz",
+        "C": "Capa de Usuario",
+        "D": "Capa de Acceso a Datos"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 44,
+      "id_bloque": 4,
+      "pregunta": "¿Qué sucede si cambio el diseño visual de la aplicación?",
+      "opciones": {
+        "A": "Se modifica la Capa de Presentación",
+        "B": "Se debe reprogramar la base de datos",
+        "C": "El negocio deja de funcionar",
+        "D": "Hay que cambiar las tres capas"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 45,
+      "id_bloque": 4,
+      "pregunta": "¿Qué componente del MVC se encarga de gestionar la lógica y el acceso a los datos?",
+      "opciones": {
+        "A": "La Vista",
+        "B": "El Enrutador",
+        "C": "El Controlador",
+        "D": "El Modelo"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 46,
+      "id_bloque": 4,
+      "pregunta": "¿Qué componente actúa como intermediario y coordina el flujo entre el Modelo y la Vista?",
+      "opciones": {
+        "A": "El Controlador",
+        "B": "El Cliente",
+        "C": "La Base de Datos",
+        "D": "El Sistema Operativo"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 47,
+      "id_bloque": 4,
+      "pregunta": "En el flujo típico de MVC, ¿qué sucede cuando un usuario hace clic en un botón?",
+      "opciones": {
+        "A": "La Vista actualiza la base de datos directamente",
+        "B": "El Controlador recibe el evento y decide qué acción tomar",
+        "C": "El Modelo cambia el color del botón",
+        "D": "El servidor se reinicia"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 48,
+      "id_bloque": 4,
+      "pregunta": "¿Cuál es la principal ventaja de utilizar el patrón MVC?",
+      "opciones": {
+        "A": "Que no se requiere conexión a internet",
+        "B": "Que la aplicación ocupa menos espacio en disco",
+        "C": "Separación de responsabilidades y facilidad de mantenimiento",
+        "D": "Que el código se ejecuta más rápido"
+      },
+      "respuesta_correcta": "C"
+    }
+  ]
+}

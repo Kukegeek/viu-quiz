@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIU Quiz - Test de Ingeniería Web</title>
+    <title>VIU Quiz - Test Multi-Asignatura</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +17,53 @@
                 <span class="logo-icon">📚</span>
                 <span class="logo-text">VIU Quiz</span>
             </div>
-            <button id="stats-btn" class="btn-icon" title="Ver estadísticas">
-                <span>📊</span>
-            </button>
+            <div class="header-actions">
+                <span id="current-subject-badge" class="subject-badge hidden"></span>
+                <button id="stats-btn" class="btn-icon" title="Ver estadísticas">
+                    <span>📊</span>
+                </button>
+            </div>
         </header>
 
-        <!-- Pantalla Principal -->
-        <main id="home-screen" class="screen active">
+        <!-- Pantalla de Selección de Asignatura -->
+        <main id="subject-screen" class="screen active">
             <div class="hero">
-                <h1>Test de Ingeniería Web</h1>
+                <h1>VIU Quiz</h1>
+                <p>Selecciona una asignatura para comenzar</p>
+            </div>
+
+            <section class="subject-selector">
+                <div class="subject-cards">
+                    <button class="subject-card" data-subject="13giin">
+                        <span class="subject-icon">🤖</span>
+                        <span class="subject-name">13GIIN</span>
+                        <span class="subject-full">Autómatas</span>
+                    </button>
+                    
+                    <button class="subject-card" data-subject="21giin">
+                        <span class="subject-icon">💻</span>
+                        <span class="subject-name">21GIIN</span>
+                        <span class="subject-full">Proyectos de Programación</span>
+                    </button>
+                    
+                    <button class="subject-card" data-subject="45giin">
+                        <span class="subject-icon">🌐</span>
+                        <span class="subject-name">45GIIN</span>
+                        <span class="subject-full">Información WEB</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pantalla Principal -->
+        <main id="home-screen" class="screen">
+            <div class="hero">
+                <h1>Test de Preparación</h1>
                 <p>Prepárate para tu examen con tests personalizados</p>
+                <button id="change-subject-btn" class="btn btn-outline btn-sm">
+                    🔄 Cambiar asignatura
+                </button>
+                <p class="total-questions-info" id="total-questions-badge"></p>
             </div>
 
             <!-- Estadísticas Rápidas -->
@@ -70,9 +107,9 @@
                     <div class="podium-card">
                         <div class="podium-header">
                             <span class="podium-icon">🎓</span>
-                            <span class="podium-title">Examen</span>
+                            <span class="podium-title">Pro</span>
                         </div>
-                        <div class="podium-content" id="podium-examen">
+                        <div class="podium-content" id="podium-pro">
                             <span class="podium-empty">Sin datos</span>
                         </div>
                     </div>
@@ -105,16 +142,16 @@
                         <span class="mode-info">20 preguntas · 30 min</span>
                     </button>
                     
-                    <button class="mode-card" data-mode="examen">
+                    <button class="mode-card" data-mode="pro">
                         <span class="mode-icon">🎓</span>
-                        <span class="mode-name">Examen</span>
+                        <span class="mode-name">Pro</span>
                         <span class="mode-info">40 preguntas · 60 min</span>
                     </button>
                     
                     <button class="mode-card" data-mode="ultra">
                         <span class="mode-icon">🔥</span>
                         <span class="mode-name">Ultra</span>
-                        <span class="mode-info">64 preguntas · 100 min</span>
+                        <span class="mode-info">Todas · 100 min</span>
                     </button>
                 </div>
 
@@ -133,22 +170,31 @@
                     <h3>O practica por módulo</h3>
                     <select id="module-select" class="select-module">
                         <option value="">Seleccionar módulo...</option>
-                        <option value="1">📘 Integración de Sistemas y WIS</option>
-                        <option value="2">📗 Metodologías de Desarrollo</option>
-                        <option value="3">📙 Modelado de Negocio</option>
-                        <option value="4">📕 Arquitectura y Modelado</option>
-                        <option value="5">📓 Técnicas y Programación</option>
+                        <!-- Los módulos se cargan dinámicamente según la asignatura -->
                     </select>
                 </div>
 
-                <!-- Toggle Feedback -->
-                <div class="feedback-toggle">
-                    <label class="toggle-container">
-                        <input type="checkbox" id="feedback-toggle">
-                        <span class="toggle-slider"></span>
-                        <span class="toggle-label">Feedback instantáneo</span>
-                    </label>
-                    <p class="toggle-hint">Ver si aciertas o fallas cada pregunta al momento</p>
+                <!-- Opciones de Test -->
+                <div class="test-options">
+                    <!-- Toggle Penalización -->
+                    <div class="option-toggle">
+                        <label class="toggle-container">
+                            <input type="checkbox" id="penalty-toggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Las malas restan</span>
+                        </label>
+                        <p class="toggle-hint">Si está activado, las respuestas incorrectas restan puntos</p>
+                    </div>
+
+                    <!-- Toggle Feedback -->
+                    <div class="option-toggle">
+                        <label class="toggle-container">
+                            <input type="checkbox" id="feedback-toggle">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Feedback instantáneo</span>
+                        </label>
+                        <p class="toggle-hint">Ver si aciertas o fallas cada pregunta al momento</p>
+                    </div>
                 </div>
             </section>
         </main>
@@ -217,6 +263,8 @@
                     </div>
                 </div>
             </div>
+
+            <p class="penalty-info" id="penalty-info">Penalización: Activada</p>
 
             <div class="results-details">
                 <div class="result-item">
@@ -340,6 +388,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=2.0.2"></script>
+    <script src="app.js?v=3.0.0"></script>
 </body>
 </html>
