@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIU Quiz - Test de Ingeniería Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">VIU Quiz</span>
+            </div>
+            <button id="stats-btn" class="btn-icon" title="Ver estadísticas">
+                <span>📊</span>
+            </button>
+        </header>
+
+        <!-- Pantalla Principal -->
+        <main id="home-screen" class="screen active">
+            <div class="hero">
+                <h1>Test de Ingeniería Web</h1>
+                <p>Prepárate para tu examen con tests personalizados</p>
+            </div>
+
+            <!-- Estadísticas Rápidas -->
+            <section class="quick-stats">
+                <div class="stat-card">
+                    <span class="stat-value" id="best-score">--</span>
+                    <span class="stat-label">Mejor Nota</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="best-time">--</span>
+                    <span class="stat-label">Mejor Tiempo</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">--</span>
+                    <span class="stat-label">% Acierto</span>
+                </div>
+            </section>
+
+            <!-- Selector de Modo -->
+            <section class="mode-selector">
+                <h2>Selecciona el modo</h2>
+                
+                <div class="mode-cards">
+                    <button class="mode-card" data-mode="mini">
+                        <span class="mode-icon">⚡</span>
+                        <span class="mode-name">Mini Test</span>
+                        <span class="mode-info">10 preguntas · 15 min</span>
+                    </button>
+                    
+                    <button class="mode-card" data-mode="normal">
+                        <span class="mode-icon">📝</span>
+                        <span class="mode-name">Normal</span>
+                        <span class="mode-info">20 preguntas · 30 min</span>
+                    </button>
+                    
+                    <button class="mode-card" data-mode="examen">
+                        <span class="mode-icon">🎓</span>
+                        <span class="mode-name">Examen</span>
+                        <span class="mode-info">40 preguntas · 60 min</span>
+                    </button>
+                    
+                    <button class="mode-card" data-mode="ultra">
+                        <span class="mode-icon">🔥</span>
+                        <span class="mode-name">Ultra</span>
+                        <span class="mode-info">64 preguntas · 100 min</span>
+                    </button>
+                </div>
+
+                <!-- Selector de Módulo -->
+                <div class="module-section">
+                    <h3>O practica por módulo</h3>
+                    <select id="module-select" class="select-module">
+                        <option value="">Seleccionar módulo...</option>
+                        <option value="1">📘 Integración de Sistemas y WIS</option>
+                        <option value="2">📗 Metodologías de Desarrollo</option>
+                        <option value="3">📙 Modelado de Negocio</option>
+                        <option value="4">📕 Arquitectura y Modelado</option>
+                        <option value="5">📓 Técnicas y Programación</option>
+                    </select>
+                </div>
+
+                <!-- Toggle Feedback -->
+                <div class="feedback-toggle">
+                    <label class="toggle-container">
+                        <input type="checkbox" id="feedback-toggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Feedback instantáneo</span>
+                    </label>
+                    <p class="toggle-hint">Ver si aciertas o fallas cada pregunta al momento</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pantalla del Quiz -->
+        <main id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <span id="question-counter">1/10</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="quiz-timer" id="timer">
+                    <span class="timer-icon">⏱️</span>
+                    <span id="timer-display">15:00</span>
+                </div>
+            </div>
+
+            <div class="quiz-score" id="live-score">
+                <span>Puntuación: <strong id="current-score">0.00</strong>/10</span>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-card">
+                    <span class="question-module" id="question-module">Módulo 1</span>
+                    <h2 class="question-text" id="question-text">¿Pregunta de ejemplo?</h2>
+                </div>
+
+                <div class="options-container" id="options-container">
+                    <!-- Opciones se generan dinámicamente -->
+                </div>
+            </div>
+
+            <div class="quiz-actions">
+                <button id="prev-btn" class="btn btn-secondary" disabled>
+                    <span>←</span> Anterior
+                </button>
+                <button id="next-btn" class="btn btn-primary">
+                    Siguiente <span>→</span>
+                </button>
+                <button id="finish-btn" class="btn btn-success hidden">
+                    Finalizar ✓
+                </button>
+            </div>
+
+            <button id="quit-btn" class="btn-quit">Abandonar test</button>
+        </main>
+
+        <!-- Pantalla de Resultados -->
+        <main id="results-screen" class="screen">
+            <div class="results-header">
+                <div class="results-icon" id="results-icon">🏆</div>
+                <h1 id="results-title">¡Test completado!</h1>
+            </div>
+
+            <div class="results-main">
+                <div class="score-circle">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="score-bg" cx="50" cy="50" r="45"/>
+                        <circle class="score-fill" cx="50" cy="50" r="45" id="score-circle"/>
+                    </svg>
+                    <div class="score-value">
+                        <span id="final-score">0.00</span>
+                        <span class="score-max">/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-details">
+                <div class="result-item">
+                    <span class="result-icon">⏱️</span>
+                    <div class="result-info">
+                        <span class="result-label">Tiempo</span>
+                        <span class="result-value" id="result-time">00:00</span>
+                    </div>
+                </div>
+                <div class="result-item correct">
+                    <span class="result-icon">✅</span>
+                    <div class="result-info">
+                        <span class="result-label">Correctas</span>
+                        <span class="result-value" id="result-correct">0</span>
+                    </div>
+                </div>
+                <div class="result-item incorrect">
+                    <span class="result-icon">❌</span>
+                    <div class="result-info">
+                        <span class="result-label">Incorrectas</span>
+                        <span class="result-value" id="result-incorrect">0</span>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <span class="result-icon">⏭️</span>
+                    <div class="result-info">
+                        <span class="result-label">Sin responder</span>
+                        <span class="result-value" id="result-unanswered">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-comparison" id="results-comparison">
+                <h3>📈 Comparativa con tus mejores</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <span class="comparison-label">Tu mejor nota</span>
+                        <span class="comparison-value" id="compare-best-score">--</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Tu mejor tiempo</span>
+                        <span class="comparison-value" id="compare-best-time">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button id="review-btn" class="btn btn-secondary">
+                    📋 Revisar respuestas
+                </button>
+                <button id="retry-btn" class="btn btn-primary">
+                    🔄 Repetir test
+                </button>
+                <button id="home-btn" class="btn btn-outline">
+                    🏠 Volver al inicio
+                </button>
+            </div>
+        </main>
+
+        <!-- Pantalla de Revisión -->
+        <main id="review-screen" class="screen">
+            <div class="review-header">
+                <button id="back-results-btn" class="btn-back">
+                    ← Volver a resultados
+                </button>
+                <h1>Revisión de respuestas</h1>
+            </div>
+
+            <div class="review-list" id="review-list">
+                <!-- Se genera dinámicamente -->
+            </div>
+        </main>
+
+        <!-- Modal de Estadísticas -->
+        <div id="stats-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📊 Tus estadísticas</h2>
+                    <button id="close-stats" class="btn-close">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="stats-summary">
+                        <div class="stat-box">
+                            <span class="stat-big" id="stats-tests-count">0</span>
+                            <span class="stat-text">Tests realizados</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-big" id="stats-avg-score">--</span>
+                            <span class="stat-text">Nota media</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-big" id="stats-accuracy">--</span>
+                            <span class="stat-text">% Acierto global</span>
+                        </div>
+                    </div>
+
+                    <h3>🏆 Top 10 mejores tests</h3>
+                    <div class="top-tests-list" id="top-tests-list">
+                        <p class="empty-state">Aún no has completado ningún test</p>
+                    </div>
+
+                    <button id="clear-stats-btn" class="btn btn-danger">
+                        🗑️ Borrar todos los datos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Confirmación -->
+        <div id="confirm-modal" class="modal">
+            <div class="modal-content modal-small">
+                <h3 id="confirm-title">¿Estás seguro?</h3>
+                <p id="confirm-message">Esta acción no se puede deshacer.</p>
+                <div class="modal-actions">
+                    <button id="confirm-cancel" class="btn btn-secondary">Cancelar</button>
+                    <button id="confirm-ok" class="btn btn-danger">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+{
+  "bloques": {
+    "1": "Integración de Sistemas y WIS",
+    "2": "Metodologías de Desarrollo e Ingeniería Web",
+    "3": "Modelado de Negocio y Análisis de Requerimientos",
+    "4": "Arquitectura y Modelado de Sistemas",
+    "5": "Técnicas, Modelos y Programación"
+  },
+  "preguntas": [
+    {
+      "id": 1,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es la integración de sistemas?",
+      "opciones": {
+        "A": "Un tipo de base de datos",
+        "B": "Unión entre diferentes SI para operar juntos",
+        "C": "Una técnica de diseño gráfico"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 2,
+      "id_bloque": 1,
+      "pregunta": "¿Cuál es un objetivo clave de la integración de SI?",
+      "opciones": {
+        "A": "Aumentar incompatibilidades",
+        "B": "Soportar procesos clave en tiempo real",
+        "C": "Reducir plataformas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 3,
+      "id_bloque": 1,
+      "pregunta": "¿Qué problema puede surgir al integrar sistemas?",
+      "opciones": {
+        "A": "Datos definidos de forma diferente",
+        "B": "Interfaces demasiado simples",
+        "C": "Demasiada memoria RAM"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 4,
+      "id_bloque": 1,
+      "pregunta": "¿Qué es un WIS?",
+      "opciones": {
+        "A": "Sistema inalámbrico seguro",
+        "B": "Sistema de Información Web",
+        "C": "Widget interactivo"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 5,
+      "id_bloque": 1,
+      "pregunta": "¿Qué caracteriza a las arquitecturas web?",
+      "opciones": {
+        "A": "Estructuras para apps web",
+        "B": "Solo hardware",
+        "C": "Modelos de redes sociales"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 6,
+      "id_bloque": 1,
+      "pregunta": "¿Qué son tecnologías backend?",
+      "opciones": {
+        "A": "Tecnologías del lado servidor",
+        "B": "Animaciones CSS",
+        "C": "Imágenes web"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 7,
+      "id_bloque": 1,
+      "pregunta": "¿Qué función cumple un CMS?",
+      "opciones": {
+        "A": "Gestionar contenido web",
+        "B": "Crear routers",
+        "C": "Reparar hardware"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 8,
+      "id_bloque": 1,
+      "pregunta": "¿Qué representan los usuarios WIS?",
+      "opciones": {
+        "A": "Usuarios conectados vía web",
+        "B": "Usuarios sin internet",
+        "C": "Usuarios locales únicamente"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 9,
+      "id_bloque": 1,
+      "pregunta": "¿Qué requieren los SI integrados?",
+      "opciones": {
+        "A": "Eliminar comunicaciones",
+        "B": "Estándares tecnológicos",
+        "C": "Trabajar sin bases de datos"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 10,
+      "id_bloque": 1,
+      "pregunta": "¿Qué utilizan las apps web modernas?",
+      "opciones": {
+        "A": "Frameworks de desarrollo",
+        "B": "Disquetes para guardar datos",
+        "C": "Solo HTML básico"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 11,
+      "id_bloque": 2,
+      "pregunta": "¿Qué problema cubren las metodologías de desarrollo web?",
+      "opciones": {
+        "A": "Comprar servidores",
+        "B": "Organizar el ciclo de vida y buenas prácticas",
+        "C": "Elegir colores del sitio"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 12,
+      "id_bloque": 2,
+      "pregunta": "Una idea común en aplicaciones web según la literatura es:",
+      "opciones": {
+        "A": "No usar navegadores",
+        "B": "Evitar centralización a toda costa",
+        "C": "Centralizar el software para facilitar mantenimiento"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 13,
+      "id_bloque": 2,
+      "pregunta": "Una etapa típica en metodologías web es:",
+      "opciones": {
+        "A": "Diseño conceptual",
+        "B": "Pintado de cables",
+        "C": "Formateo de discos"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 14,
+      "id_bloque": 2,
+      "pregunta": "El diseño navegacional se enfoca en:",
+      "opciones": {
+        "A": "Acceso y cómo se visualizan los datos",
+        "B": "Asignar IPs",
+        "C": "Overclocking del servidor"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 15,
+      "id_bloque": 2,
+      "pregunta": "La presentación/interfaz trata de:",
+      "opciones": {
+        "A": "Repartir RAM",
+        "B": "Compilar el kernel",
+        "C": "Diseño de UI y experiencia"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 16,
+      "id_bloque": 2,
+      "pregunta": "El test en metodologías web busca:",
+      "opciones": {
+        "A": "Solo errores tipográficos",
+        "B": "Errores de contenido, funcionales y rendimiento",
+        "C": "Nada, no es necesario"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 17,
+      "id_bloque": 2,
+      "pregunta": "HDM se orienta a:",
+      "opciones": {
+        "A": "Gestión de costos",
+        "B": "Concepción topológica de aplicaciones hipertexto",
+        "C": "Programación de dispositivos"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 18,
+      "id_bloque": 2,
+      "pregunta": "SOHDM se caracteriza por:",
+      "opciones": {
+        "A": "Prohibir navegación",
+        "B": "Evitar escenarios",
+        "C": "Basarse en escenarios y fases de análisis, modelado y diseño"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 19,
+      "id_bloque": 2,
+      "pregunta": "WSDM distingue entre:",
+      "opciones": {
+        "A": "Router y switch",
+        "B": "Frontend y backend",
+        "C": "Kiosco web y Aplicación Web"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 20,
+      "id_bloque": 2,
+      "pregunta": "OOHDM propone un proceso con:",
+      "opciones": {
+        "A": "Únicamente análisis financiero",
+        "B": "Solo despliegue",
+        "C": "Diseño conceptual, navegacional, interfaz abstracta e implementación"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 21,
+      "id_bloque": 2,
+      "pregunta": "En OOHDM, un contexto navegacional es:",
+      "opciones": {
+        "A": "Una tabla temporal",
+        "B": "Un log del servidor",
+        "C": "Agrupación de nodos y enlaces para navegación"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 22,
+      "id_bloque": 2,
+      "pregunta": "WebML propone, entre otros, modelos de:",
+      "opciones": {
+        "A": "Compilación y enlace dinámico",
+        "B": "Composición y navegación del sitio",
+        "C": "Cableado eléctrico"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 23,
+      "id_bloque": 2,
+      "pregunta": "Cada hipertexto en WebML describe:",
+      "opciones": {
+        "A": "Una tabla de base de datos",
+        "B": "Una vista del sitio",
+        "C": "Un script de despliegue"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 24,
+      "id_bloque": 2,
+      "pregunta": "Una razón para usar metodologías es:",
+      "opciones": {
+        "A": "Ignorar usuarios",
+        "B": "Aumentar deuda técnica",
+        "C": "Mejorar mantenimiento y calidad"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 25,
+      "id_bloque": 2,
+      "pregunta": "En ingeniería web, UML se usa para:",
+      "opciones": {
+        "A": "Modelar casos de uso, clases, estados, actividades, etc.",
+        "B": "Animar prototipos",
+        "C": "Solo dibujar logos"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 26,
+      "id_bloque": 3,
+      "pregunta": "¿Qué analiza el modelo de negocio?",
+      "opciones": {
+        "A": "Solo el código fuente del sistema",
+        "B": "Estructura, roles, flujos y entidades externas de la organización",
+        "C": "Únicamente los costos contables"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 27,
+      "id_bloque": 3,
+      "pregunta": "¿Para qué se usa el modelo de negocios al construir software?",
+      "opciones": {
+        "A": "Diseñar hojas de estilo",
+        "B": "Conocer y documentar lo que hace la organización",
+        "C": "Configurar servidores"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 28,
+      "id_bloque": 3,
+      "pregunta": "¿Qué artefacto del modelo de negocios apoya la reingeniería?",
+      "opciones": {
+        "A": "La guía de estilos de UI",
+        "B": "El flujo de trabajo de la organización",
+        "C": "El diagrama físico de despliegue"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 29,
+      "id_bloque": 3,
+      "pregunta": "¿Cuándo conviene modelar el negocio?",
+      "opciones": {
+        "A": "Solo cuando el proyecto es pequeño",
+        "B": "Cuando el equipo es nuevo o hay flujos complejos sin documentar",
+        "C": "Nunca, retrasa el desarrollo"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 30,
+      "id_bloque": 3,
+      "pregunta": "El modelo de negocios en procesos iterativos se emplea para:",
+      "opciones": {
+        "A": "Evitar hablar con usuarios",
+        "B": "Alinear iteraciones con la realidad del negocio",
+        "C": "Sustituir pruebas de software"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 31,
+      "id_bloque": 3,
+      "pregunta": "En el CANVAS, uno de sus objetivos es:",
+      "opciones": {
+        "A": "Definir puertos y protocolos de red",
+        "B": "Solo catalogar tablas de BD",
+        "C": "Estructurar el modelo en bloques (p.ej., propuesta de valor, segmentos)"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 32,
+      "id_bloque": 3,
+      "pregunta": "Un ejemplo de modelo de negocio en entornos web es:",
+      "opciones": {
+        "A": "Balanceo de carga L4",
+        "B": "Suscripción o Freemium",
+        "C": "Compilación cruzada"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 33,
+      "id_bloque": 3,
+      "pregunta": "En el modelado de negocios, un actor de negocios es:",
+      "opciones": {
+        "A": "Una clase de código",
+        "B": "Entidad externa que interactúa con la organización",
+        "C": "Un hilo del servidor"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 34,
+      "id_bloque": 3,
+      "pregunta": "Un trabajador del negocio (Business Worker) representa:",
+      "opciones": {
+        "A": "Rol interno que realiza actividades en los procesos",
+        "B": "Un servicio REST externo",
+        "C": "Un switch de red"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 35,
+      "id_bloque": 3,
+      "pregunta": "Un caso de uso de negocios describe:",
+      "opciones": {
+        "A": "El esquema de direccionamiento IP",
+        "B": "Un proceso de la organización con actores y valor entregado",
+        "C": "La instalación del IDE"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 36,
+      "id_bloque": 3,
+      "pregunta": "En diseño conceptual se modelan:",
+      "opciones": {
+        "A": "Direcciones IP",
+        "B": "Contraseñas",
+        "C": "Clases/objetos y relaciones del dominio"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 37,
+      "id_bloque": 3,
+      "pregunta": "El diseño de implementación se ocupa de:",
+      "opciones": {
+        "A": "Comprar sillas",
+        "B": "Cambiar el logo",
+        "C": "Concretar cómo se construye/despliega el sistema"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 38,
+      "id_bloque": 3,
+      "pregunta": "Un motivo para modelar negocio en SI Web es:",
+      "opciones": {
+        "A": "Eliminar documentación del proyecto",
+        "B": "Identificar oportunidades y analizar el mercado digital",
+        "C": "Evitar entrevistas con usuarios"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 39,
+      "id_bloque": 3,
+      "pregunta": "El modelo de usuario en WSDM implica:",
+      "opciones": {
+        "A": "Clasificación y descripción de usuarios",
+        "B": "Definir puertos",
+        "C": "Elección del hosting"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 40,
+      "id_bloque": 3,
+      "pregunta": "Otro foco del modelado es:",
+      "opciones": {
+        "A": "Diseño de UX y usabilidad para retención",
+        "B": "Desactivar logs del servidor",
+        "C": "Elección de colores por azar"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 41,
+      "id_bloque": 4,
+      "pregunta": "¿Qué separa el patrón MVC?",
+      "opciones": {
+        "A": "Módulos, Variables y Constantes",
+        "B": "Memoria, Vídeo y CPU",
+        "C": "Modelo, Vista y Controlador"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 42,
+      "id_bloque": 4,
+      "pregunta": "La arquitectura de 3 capas típicamente incluye:",
+      "opciones": {
+        "A": "Presentación, Lógica de negocio y Datos",
+        "B": "Red, CPU y Disco",
+        "C": "Cliente, Cable y Router"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 43,
+      "id_bloque": 4,
+      "pregunta": "Una arquitectura multicapa extiende la de 3 capas para:",
+      "opciones": {
+        "A": "Distribuir responsabilidades en más capas",
+        "B": "Usar solo una base de datos",
+        "C": "Eliminar la capa de datos"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 44,
+      "id_bloque": 4,
+      "pregunta": "SOA (Service-Oriented Architecture) se basa en:",
+      "opciones": {
+        "A": "Solo protocolos propietarios",
+        "B": "Una única aplicación monolítica",
+        "C": "Servicios independientes que se comunican por interfaces bien definidas"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 45,
+      "id_bloque": 4,
+      "pregunta": "¿Qué sugiere SOA sobre acoplamiento?",
+      "opciones": {
+        "A": "Sin cohesión",
+        "B": "Bajo acoplamiento y alta cohesión",
+        "C": "Alto acoplamiento y baja cohesión"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 46,
+      "id_bloque": 4,
+      "pregunta": "¿Qué ventaja tiene MVC en equipos grandes?",
+      "opciones": {
+        "A": "Obliga a trabajar secuencialmente",
+        "B": "Elimina pruebas",
+        "C": "Permite trabajo paralelo entre roles"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 47,
+      "id_bloque": 4,
+      "pregunta": "Un beneficio clave de separar capas es:",
+      "opciones": {
+        "A": "Hacer el despliegue imposible",
+        "B": "Aumentar el acoplamiento",
+        "C": "Facilitar mantenimiento y escalabilidad"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 48,
+      "id_bloque": 4,
+      "pregunta": "Una representación gráfica común para modelado de flujo es:",
+      "opciones": {
+        "A": "Diagrama de cables",
+        "B": "Mapa de bits",
+        "C": "Diagrama de flujo de datos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 49,
+      "id_bloque": 4,
+      "pregunta": "El diagrama de estado modela:",
+      "opciones": {
+        "A": "Cables de alimentación",
+        "B": "Ubicación física de servidores",
+        "C": "Estados y transiciones de un sistema"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 50,
+      "id_bloque": 4,
+      "pregunta": "En análisis de requerimientos, un factor que influye en cuánto analizar es:",
+      "opciones": {
+        "A": "Color del logotipo",
+        "B": "Número de impresoras",
+        "C": "Tamaño y complejidad de la web app"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 51,
+      "id_bloque": 4,
+      "pregunta": "En WIS, las ‘representaciones gráficas’ ayudan a:",
+      "opciones": {
+        "A": "Aumentar el tamaño del repositorio",
+        "B": "Comunicar y entender el sistema",
+        "C": "Eliminar documentación"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 52,
+      "id_bloque": 4,
+      "pregunta": "Un objetivo de la arquitectura es:",
+      "opciones": {
+        "A": "Elegir colores del frontend",
+        "B": "Definir estructura y responsabilidades del sistema",
+        "C": "Decidir la marca del servidor"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 53,
+      "id_bloque": 5,
+      "pregunta": "¿Qué son las técnicas y modelos en el desarrollo de SI Web?",
+      "opciones": {
+        "A": "Motores físicos del servidor",
+        "B": "Métodos y herramientas usados en análisis y desarrollo",
+        "C": "Imágenes decorativas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 54,
+      "id_bloque": 5,
+      "pregunta": "La programación modular consiste en:",
+      "opciones": {
+        "A": "Dividir un programa en módulos",
+        "B": "Eliminar funciones",
+        "C": "Evitar reutilización"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 55,
+      "id_bloque": 5,
+      "pregunta": "Un beneficio clave de la programación modular es:",
+      "opciones": {
+        "A": "Facilitar mantenimiento y desarrollo",
+        "B": "Reducir funcionalidad",
+        "C": "Aumentar complejidad"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 56,
+      "id_bloque": 5,
+      "pregunta": "Un módulo en un sistema puede entenderse como:",
+      "opciones": {
+        "A": "Un archivo temporal",
+        "B": "Una parte independiente del sistema",
+        "C": "Una carpeta aleatoria"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 57,
+      "id_bloque": 5,
+      "pregunta": "Los modelos estructurados se caracterizan por:",
+      "opciones": {
+        "A": "Ignorar flujos",
+        "B": "Organizar procesos y datos jerárquicamente",
+        "C": "Quitar documentación"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 58,
+      "id_bloque": 5,
+      "pregunta": "Los modelos orientados a objetos analizan:",
+      "opciones": {
+        "A": "Protocolos de red",
+        "B": "Clases y objetos del dominio",
+        "C": "Fechas del hardware"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 59,
+      "id_bloque": 5,
+      "pregunta": "Una ventaja de OO es:",
+      "opciones": {
+        "A": "Reusabilidad",
+        "B": "Mayor acoplamiento",
+        "C": "Inestabilidad"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 60,
+      "id_bloque": 5,
+      "pregunta": "Los diagramas de casos de uso sirven para:",
+      "opciones": {
+        "A": "Diseñar CSS",
+        "B": "Describir interacción entre actores y sistema",
+        "C": "Asignar direcciones IP"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 61,
+      "id_bloque": 5,
+      "pregunta": "Los diagramas de clases representan:",
+      "opciones": {
+        "A": "Distribución de red",
+        "B": "Estructura y relaciones entre clases",
+        "C": "Backups de servidores"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 62,
+      "id_bloque": 5,
+      "pregunta": "El modelo entidad–relación es útil porque:",
+      "opciones": {
+        "A": "Genera imágenes",
+        "B": "Gestiona permisos automáticamente",
+        "C": "Elimina redundancias y representa la información claramente"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 63,
+      "id_bloque": 5,
+      "pregunta": "Una consulta web típica usa:",
+      "opciones": {
+        "A": "Sistemas operativos móviles",
+        "B": "Motores de búsqueda e indexadores",
+        "C": "Cables coaxiales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 64,
+      "id_bloque": 5,
+      "pregunta": "Los sistemas recomendadores utilizan:",
+      "opciones": {
+        "A": "Solo texto plano",
+        "B": "Imágenes estáticas",
+        "C": "Perfiles e items para recomendar"
+      },
+      "respuesta_correcta": "C"
+    }
+  ]
+}
