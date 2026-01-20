@@ -331,6 +331,9 @@ const QuizManager = {
                 test.score -= pointsPerQuestion / 3;
             }
             
+            // Debug score
+            console.log(`Score update: ${test.score.toFixed(3)}`);
+            
             return isCorrect;
         }
         
@@ -548,7 +551,13 @@ const UIManager = {
         const liveScore = document.getElementById('live-score');
         if (test.feedbackEnabled) {
             liveScore.classList.remove('hidden');
-            document.getElementById('current-score').textContent = test.score.toFixed(2);
+            const scoreEl = document.getElementById('current-score');
+            scoreEl.textContent = test.score.toFixed(2);
+            if (test.score < 0) {
+                scoreEl.style.color = 'var(--danger)';
+            } else {
+                scoreEl.style.color = 'var(--primary-light)';
+            }
         } else {
             liveScore.classList.add('hidden');
         }
