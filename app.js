@@ -331,9 +331,6 @@ const QuizManager = {
                 test.score -= pointsPerQuestion / 3;
             }
             
-            // No permitir puntuación negativa
-            test.score = Math.max(0, test.score);
-            
             return isCorrect;
         }
         
@@ -375,7 +372,6 @@ const QuizManager = {
             score = test.score;
         } else {
             score = (correct * pointsPerQuestion) - (incorrect * (pointsPerQuestion / 3));
-            score = Math.max(0, score);
         }
         
         const timeSpent = Math.floor((test.endTime - test.startTime) / 1000);
@@ -711,7 +707,9 @@ const UIManager = {
         document.getElementById('final-score').textContent = results.score.toFixed(2);
         const scoreCircle = document.getElementById('score-circle');
         const circumference = 2 * Math.PI * 45;
-        const offset = circumference - (results.score / 10) * circumference;
+        // Para la visualización, acotamos entre 0 y 10
+        const visualScore = Math.max(0, Math.min(10, results.score));
+        const offset = circumference - (visualScore / 10) * circumference;
         
         // Color según puntuación
         if (results.score >= 5) {
