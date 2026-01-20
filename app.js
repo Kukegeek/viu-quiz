@@ -278,6 +278,42 @@ const QuizManager = {
             questions = this.getRandomQuestions(config.questions);
             timeLimit = config.time;
         }
+
+        // Para evitar mutar el banco original, clonamos preguntas y barajamos las opciones
+        // cada vez que se inicia un test. Así la letra (A/B/C) puede cambiar aleatoriamente.
+        if (questions && questions.length > 0) {
+            questions = questions.map(orig => {
+                const q = JSON.parse(JSON.stringify(orig));
+                const entries = Object.entries(q.opciones || {}); // [['A','texto'],...]
+
+                // Si hay menos de 2 opciones no hacemos nada
+                if (entries.length <= 1) return q;
+
+                // Mezclar opciones (Fisher-Yates)
+                for (let i = entries.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [entries[i], entries[j]] = [entries[j], entries[i]];
+                }
+
+                // Reconstruir objeto opciones con letras A,B,C... en orden
+                const letters = ['A', 'B', 'C', 'D', 'E']; // por si en futuro hay más
+                const newOpc = {};
+                let newCorrect = null;
+                for (let i = 0; i < entries.length; i++) {
+                    const newKey = letters[i];
+                    newOpc[newKey] = entries[i][1];
+                    // Si el texto coincide con la respuesta original, asignamos la nueva clave
+                    if (entries[i][0] === orig.respuesta_correcta || entries[i][1] === (orig.opciones && orig.opciones[orig.respuesta_correcta])) {
+                        newCorrect = newKey;
+                    }
+                }
+
+                q.opciones = newOpc;
+                // Si no encontramos la correspondencia (por seguridad), dejamos la original
+                q.respuesta_correcta = newCorrect || orig.respuesta_correcta;
+                return q;
+            });
+        }
         
         if (questions.length === 0) {
             return false;
