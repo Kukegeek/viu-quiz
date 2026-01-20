@@ -45,6 +45,49 @@
                 </div>
             </section>
 
+            <!-- Podium por Modo -->
+            <section class="podiums-section">
+                <h2>🏆 Mejores resultados por modo</h2>
+                <div class="podiums-grid">
+                    <div class="podium-card">
+                        <div class="podium-header">
+                            <span class="podium-icon">⚡</span>
+                            <span class="podium-title">Mini Test</span>
+                        </div>
+                        <div class="podium-content" id="podium-mini">
+                            <span class="podium-empty">Sin datos</span>
+                        </div>
+                    </div>
+                    <div class="podium-card">
+                        <div class="podium-header">
+                            <span class="podium-icon">📝</span>
+                            <span class="podium-title">Normal</span>
+                        </div>
+                        <div class="podium-content" id="podium-normal">
+                            <span class="podium-empty">Sin datos</span>
+                        </div>
+                    </div>
+                    <div class="podium-card">
+                        <div class="podium-header">
+                            <span class="podium-icon">🎓</span>
+                            <span class="podium-title">Examen</span>
+                        </div>
+                        <div class="podium-content" id="podium-examen">
+                            <span class="podium-empty">Sin datos</span>
+                        </div>
+                    </div>
+                    <div class="podium-card">
+                        <div class="podium-header">
+                            <span class="podium-icon">🔥</span>
+                            <span class="podium-title">Ultra</span>
+                        </div>
+                        <div class="podium-content" id="podium-ultra">
+                            <span class="podium-empty">Sin datos</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Selector de Modo -->
             <section class="mode-selector">
                 <h2>Selecciona el modo</h2>
@@ -73,6 +116,16 @@
                         <span class="mode-name">Ultra</span>
                         <span class="mode-info">64 preguntas · 100 min</span>
                     </button>
+                </div>
+
+                <!-- Botón Repasar Falladas -->
+                <div class="review-failed-section">
+                    <button id="review-failed-btn" class="btn btn-warning" disabled>
+                        <span>🔄</span>
+                        Repasar falladas
+                        <span class="failed-badge" id="failed-count">0</span>
+                    </button>
+                    <p class="review-hint">Repasa las preguntas que has fallado en tests anteriores</p>
                 </div>
 
                 <!-- Selector de Módulo -->
@@ -115,7 +168,7 @@
                 </div>
             </div>
 
-            <div class="quiz-score" id="live-score">
+            <div class="quiz-score hidden" id="live-score">
                 <span>Puntuación: <strong id="current-score">0.00</strong>/10</span>
             </div>
 
@@ -195,6 +248,8 @@
                     </div>
                 </div>
             </div>
+
+            <p class="failed-info hidden" id="failed-info">Preguntas falladas pendientes: 0</p>
 
             <div class="results-comparison" id="results-comparison">
                 <h3>📈 Comparativa con tus mejores</h3>

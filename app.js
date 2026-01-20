@@ -1,7 +1,7 @@
 /**
  * VIU Quiz - Aplicación de Test de Ingeniería Web
  * @author VIU Quiz App
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 // ================================
@@ -14,7 +14,7 @@ const APP_STATE = {
     
     // Estado actual del test
     currentTest: {
-        mode: null,           // 'mini', 'normal', 'examen', 'ultra', 'module'
+        mode: null,           // 'mini', 'normal', 'examen', 'ultra', 'module', 'review'
         moduleId: null,       // ID del módulo si es modo módulo
         questions: [],        // Preguntas del test actual
         answers: {},          // Respuestas del usuario {questionId: 'A'/'B'/'C'}
@@ -24,16 +24,19 @@ const APP_STATE = {
         timeLimit: 0,         // Tiempo límite en segundos
         feedbackEnabled: false,
         score: 0,             // Puntuación actual (para feedback instantáneo)
-        finished: false
+        finished: false,
+        isReviewMode: false,  // Si es modo repaso de falladas
+        reviewAllFailed: false // Si repite todas las falladas (retry) o solo las del repaso
     },
     
     // Configuración de modos
     modeConfig: {
-        mini: { questions: 10, time: 15 * 60 },      // 15 minutos
-        normal: { questions: 20, time: 30 * 60 },    // 30 minutos
-        examen: { questions: 40, time: 60 * 60 },    // 60 minutos
-        ultra: { questions: 64, time: 100 * 60 },    // 100 minutos
-        module: { time: 30 * 60 }                     // 30 minutos para módulos
+        mini: { questions: 10, time: 15 * 60, label: 'Mini Test' },
+        normal: { questions: 20, time: 30 * 60, label: 'Normal' },
+        examen: { questions: 40, time: 60 * 60, label: 'Examen' },
+        ultra: { questions: 64, time: 100 * 60, label: 'Ultra' },
+        module: { time: 30 * 60, label: 'Módulo' },
+        review: { time: 30 * 60, label: 'Repaso' }
     },
     
     // Timer
@@ -46,7 +49,8 @@ const APP_STATE = {
 const StorageManager = {
     KEYS: {
         RESULTS: 'viu_quiz_results',
-        STATS: 'viu_quiz_stats'
+        STATS: 'viu_quiz_stats',
+        FAILED_QUESTIONS: 'viu_quiz_failed'
     },
     
     // Obtener resultados guardados
@@ -70,12 +74,6 @@ const StorageManager = {
                 date: new Date().toISOString()
             });
             
-            // Ordenar por puntuación (mayor a menor), luego por tiempo (menor a mayor)
-            results.sort((a, b) => {
-                if (b.score !== a.score) return b.score - a.score;
-                return a.timeSpent - b.timeSpent;
-            });
-            
             localStorage.setItem(this.KEYS.RESULTS, JSON.stringify(results));
             this.updateStats(results);
             return true;
@@ -85,9 +83,24 @@ const StorageManager = {
         }
     },
     
-    // Obtener los mejores 10 resultados
+    // Obtener los mejores resultados por modo
+    getTopResultsByMode(mode, limit = 3) {
+        const results = this.getResults().filter(r => r.mode === mode && !r.isReviewMode);
+        // Ordenar por puntuación (mayor) y tiempo (menor)
+        results.sort((a, b) => {
+            if (b.score !== a.score) return b.score - a.score;
+            return a.timeSpent - b.timeSpent;
+        });
+        return results.slice(0, limit);
+    },
+    
+    // Obtener los mejores 10 resultados globales
     getTopResults(limit = 10) {
         const results = this.getResults();
+        results.sort((a, b) => {
+            if (b.score !== a.score) return b.score - a.score;
+            return a.timeSpent - b.timeSpent;
+        });
         return results.slice(0, limit);
     },
     
@@ -108,7 +121,7 @@ const StorageManager = {
             totalTests: results.length,
             totalCorrect: results.reduce((sum, r) => sum + r.correct, 0),
             totalQuestions: results.reduce((sum, r) => sum + r.totalQuestions, 0),
-            bestScore: results[0]?.score || 0,
+            bestScore: Math.max(...results.map(r => r.score)),
             bestTime: results.reduce((min, r) => {
                 if (!min) return r.timeSpent;
                 return r.timeSpent < min ? r.timeSpent : min;
@@ -140,10 +153,59 @@ const StorageManager = {
         }
     },
     
+    // ================================
+    // Sistema de Preguntas Falladas
+    // ================================
+    
+    // Obtener preguntas falladas
+    getFailedQuestions() {
+        try {
+            const data = localStorage.getItem(this.KEYS.FAILED_QUESTIONS);
+            return data ? JSON.parse(data) : [];
+        } catch (e) {
+            return [];
+        }
+    },
+    
+    // Guardar preguntas falladas (IDs únicos)
+    saveFailedQuestions(questionIds) {
+        try {
+            const current = this.getFailedQuestions();
+            const merged = [...new Set([...current, ...questionIds])];
+            localStorage.setItem(this.KEYS.FAILED_QUESTIONS, JSON.stringify(merged));
+        } catch (e) {
+            console.error('Error saving failed questions:', e);
+        }
+    },
+    
+    // Eliminar preguntas acertadas de las falladas
+    removeFromFailed(questionIds) {
+        try {
+            const current = this.getFailedQuestions();
+            const filtered = current.filter(id => !questionIds.includes(id));
+            localStorage.setItem(this.KEYS.FAILED_QUESTIONS, JSON.stringify(filtered));
+        } catch (e) {
+            console.error('Error removing from failed:', e);
+        }
+    },
+    
+    // Actualizar falladas después de un test de repaso
+    updateFailedAfterReview(correctIds, incorrectIds) {
+        // Eliminar las acertadas
+        this.removeFromFailed(correctIds);
+        // Mantener las falladas (ya están)
+    },
+    
+    // Limpiar todas las falladas
+    clearFailedQuestions() {
+        localStorage.removeItem(this.KEYS.FAILED_QUESTIONS);
+    },
+    
     // Borrar todos los datos
     clearAll() {
         localStorage.removeItem(this.KEYS.RESULTS);
         localStorage.removeItem(this.KEYS.STATS);
+        localStorage.removeItem(this.KEYS.FAILED_QUESTIONS);
     }
 };
 
@@ -185,26 +247,45 @@ const QuizManager = {
         return pool.slice(0, Math.min(count, pool.length));
     },
     
+    // Obtener preguntas falladas
+    getFailedQuestions() {
+        const failedIds = StorageManager.getFailedQuestions();
+        return APP_STATE.questions.filter(q => failedIds.includes(q.id));
+    },
+    
     // Iniciar un test
-    startTest(mode, moduleId = null) {
+    startTest(mode, moduleId = null, isReviewMode = false, reviewAllFailed = false) {
         const config = APP_STATE.modeConfig[mode];
         let questions;
         let timeLimit;
         
-        if (mode === 'module' && moduleId) {
+        if (isReviewMode) {
+            // Modo repaso: preguntas falladas
+            questions = this.getFailedQuestions();
+            // Mezclar las preguntas falladas
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+            // Tiempo: 1 min por pregunta, mínimo 5 min
+            timeLimit = Math.max(5 * 60, questions.length * 60);
+        } else if (mode === 'module' && moduleId) {
             // Modo módulo: todas las preguntas del módulo
             questions = this.getRandomQuestions(Infinity, moduleId);
             timeLimit = config.time;
-            APP_STATE.currentTest.moduleId = moduleId;
         } else {
             // Otros modos: número fijo de preguntas aleatorias
             questions = this.getRandomQuestions(config.questions);
             timeLimit = config.time;
         }
         
+        if (questions.length === 0) {
+            return false;
+        }
+        
         // Configurar el test
         APP_STATE.currentTest = {
-            mode,
+            mode: isReviewMode ? 'review' : mode,
             moduleId: moduleId,
             questions,
             answers: {},
@@ -214,10 +295,12 @@ const QuizManager = {
             timeLimit,
             feedbackEnabled: document.getElementById('feedback-toggle').checked,
             score: 0,
-            finished: false
+            finished: false,
+            isReviewMode,
+            reviewAllFailed
         };
         
-        return questions.length > 0;
+        return true;
     },
     
     // Obtener pregunta actual
@@ -269,15 +352,20 @@ const QuizManager = {
         let correct = 0;
         let incorrect = 0;
         let unanswered = 0;
+        const correctIds = [];
+        const incorrectIds = [];
         
         test.questions.forEach(q => {
             const userAnswer = test.answers[q.id];
             if (!userAnswer) {
                 unanswered++;
+                incorrectIds.push(q.id); // Sin responder cuenta como fallada
             } else if (userAnswer === q.respuesta_correcta) {
                 correct++;
+                correctIds.push(q.id);
             } else {
                 incorrect++;
+                incorrectIds.push(q.id);
             }
         });
         
@@ -292,6 +380,15 @@ const QuizManager = {
         
         const timeSpent = Math.floor((test.endTime - test.startTime) / 1000);
         
+        // Gestionar preguntas falladas
+        if (test.isReviewMode) {
+            // En modo repaso: eliminar acertadas, mantener falladas
+            StorageManager.updateFailedAfterReview(correctIds, incorrectIds);
+        } else {
+            // En modo normal: añadir las nuevas falladas
+            StorageManager.saveFailedQuestions(incorrectIds);
+        }
+        
         return {
             mode: test.mode,
             moduleId: test.moduleId,
@@ -303,7 +400,10 @@ const QuizManager = {
             score: Math.round(score * 100) / 100,
             timeSpent,
             timeLimit: test.timeLimit,
-            feedbackEnabled: test.feedbackEnabled
+            feedbackEnabled: test.feedbackEnabled,
+            isReviewMode: test.isReviewMode,
+            correctIds,
+            incorrectIds
         };
     },
     
@@ -344,7 +444,7 @@ const UIManager = {
         
         // Mejor nota de los top 10
         const bestScore = topResults.length > 0 
-            ? topResults[0].score.toFixed(2) 
+            ? Math.max(...topResults.map(r => r.score)).toFixed(2) 
             : '--';
         document.getElementById('best-score').textContent = bestScore;
         
@@ -362,6 +462,60 @@ const UIManager = {
             document.getElementById('accuracy').textContent = accuracy + '%';
         } else {
             document.getElementById('accuracy').textContent = '--';
+        }
+        
+        // Actualizar podiums por modo
+        this.updateModePodiums();
+        
+        // Actualizar contador de preguntas falladas
+        this.updateFailedCount();
+    },
+    
+    // Actualizar podiums por modo
+    updateModePodiums() {
+        const modes = ['mini', 'normal', 'examen', 'ultra'];
+        
+        modes.forEach(mode => {
+            const top3 = StorageManager.getTopResultsByMode(mode, 3);
+            const container = document.getElementById(`podium-${mode}`);
+            
+            if (!container) return;
+            
+            if (top3.length === 0) {
+                container.innerHTML = '<span class="podium-empty">Sin datos</span>';
+                return;
+            }
+            
+            container.innerHTML = top3.map((r, i) => {
+                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉';
+                return `
+                    <div class="podium-item">
+                        <span class="podium-medal">${medal}</span>
+                        <span class="podium-score">${r.score.toFixed(2)}</span>
+                        <span class="podium-time">${this.formatTime(r.timeSpent)}</span>
+                    </div>
+                `;
+            }).join('');
+        });
+    },
+    
+    // Actualizar contador de falladas
+    updateFailedCount() {
+        const failed = StorageManager.getFailedQuestions();
+        const countEl = document.getElementById('failed-count');
+        const reviewBtn = document.getElementById('review-failed-btn');
+        
+        if (countEl) {
+            countEl.textContent = failed.length;
+        }
+        
+        if (reviewBtn) {
+            reviewBtn.disabled = failed.length === 0;
+            if (failed.length === 0) {
+                reviewBtn.title = 'No hay preguntas falladas para repasar';
+            } else {
+                reviewBtn.title = `Repasar ${failed.length} pregunta(s) fallada(s)`;
+            }
         }
     },
     
@@ -521,8 +675,10 @@ const UIManager = {
         
         const results = QuizManager.calculateResults();
         
-        // Guardar resultado
-        StorageManager.saveResult(results);
+        // Guardar resultado (excepto si es repaso)
+        if (!results.isReviewMode) {
+            StorageManager.saveResult(results);
+        }
         
         // Mostrar pantalla de resultados
         this.showResults(results);
@@ -534,7 +690,10 @@ const UIManager = {
         const icon = document.getElementById('results-icon');
         const title = document.getElementById('results-title');
         
-        if (results.score >= 9) {
+        if (results.isReviewMode) {
+            icon.textContent = '📚';
+            title.textContent = 'Repaso completado';
+        } else if (results.score >= 9) {
             icon.textContent = '🏆';
             title.textContent = '¡Excelente!';
         } else if (results.score >= 7) {
@@ -575,10 +734,25 @@ const UIManager = {
         const topResults = StorageManager.getTopResults(10);
         if (topResults.length > 0) {
             document.getElementById('compare-best-score').textContent = 
-                topResults[0].score.toFixed(2);
+                Math.max(...topResults.map(r => r.score)).toFixed(2);
             const bestTime = Math.min(...topResults.map(r => r.timeSpent));
             document.getElementById('compare-best-time').textContent = 
                 this.formatTime(bestTime);
+        }
+        
+        // Info de falladas restantes
+        const failedInfo = document.getElementById('failed-info');
+        const failedRemaining = StorageManager.getFailedQuestions().length;
+        if (failedInfo) {
+            failedInfo.textContent = `Preguntas falladas pendientes: ${failedRemaining}`;
+            failedInfo.classList.toggle('hidden', failedRemaining === 0);
+        }
+        
+        // Mostrar/ocultar botón de repasar falladas del test actual
+        const reviewFailedCurrentBtn = document.getElementById('review-failed-current-btn');
+        if (reviewFailedCurrentBtn) {
+            const hasFailedInTest = results.incorrectIds && results.incorrectIds.length > 0;
+            reviewFailedCurrentBtn.classList.toggle('hidden', !hasFailedInTest);
         }
         
         this.showScreen('results');
@@ -657,7 +831,7 @@ const UIManager = {
                 
                 const modeText = r.moduleId 
                     ? APP_STATE.modules[r.moduleId]?.substring(0, 20) + '...'
-                    : r.mode.charAt(0).toUpperCase() + r.mode.slice(1);
+                    : APP_STATE.modeConfig[r.mode]?.label || r.mode;
                 
                 return `
                     <div class="top-test-item">
@@ -738,6 +912,24 @@ function initEventListeners() {
         }
     });
     
+    // Botón de repasar falladas
+    const reviewFailedBtn = document.getElementById('review-failed-btn');
+    if (reviewFailedBtn) {
+        reviewFailedBtn.addEventListener('click', () => {
+            const failed = StorageManager.getFailedQuestions();
+            if (failed.length === 0) {
+                alert('¡No tienes preguntas falladas! 🎉');
+                return;
+            }
+            
+            if (QuizManager.startTest('review', null, true, true)) {
+                UIManager.showScreen('quiz');
+                UIManager.renderQuestion();
+                UIManager.startTimer();
+            }
+        });
+    }
+    
     // Navegación del quiz
     document.getElementById('prev-btn').addEventListener('click', () => {
         if (QuizManager.goToQuestion(APP_STATE.currentTest.currentIndex - 1)) {
@@ -787,10 +979,21 @@ function initEventListeners() {
     
     document.getElementById('retry-btn').addEventListener('click', () => {
         const test = APP_STATE.currentTest;
-        if (QuizManager.startTest(test.mode, test.moduleId)) {
-            UIManager.showScreen('quiz');
-            UIManager.renderQuestion();
-            UIManager.startTimer();
+        
+        if (test.isReviewMode) {
+            // Si estaba en modo repaso, repetir con TODAS las falladas originales
+            if (QuizManager.startTest('review', null, true, true)) {
+                UIManager.showScreen('quiz');
+                UIManager.renderQuestion();
+                UIManager.startTimer();
+            }
+        } else {
+            // Modo normal: repetir el mismo tipo de test
+            if (QuizManager.startTest(test.mode, test.moduleId)) {
+                UIManager.showScreen('quiz');
+                UIManager.renderQuestion();
+                UIManager.startTimer();
+            }
         }
     });
     
@@ -817,7 +1020,7 @@ function initEventListeners() {
     document.getElementById('clear-stats-btn').addEventListener('click', () => {
         UIManager.showConfirm(
             '¿Borrar todos los datos?',
-            'Se eliminarán todos los resultados y estadísticas guardados. Esta acción no se puede deshacer.',
+            'Se eliminarán todos los resultados, estadísticas y preguntas falladas. Esta acción no se puede deshacer.',
             () => {
                 StorageManager.clearAll();
                 UIManager.closeModal('stats-modal');
@@ -853,6 +1056,7 @@ async function init() {
     console.log('VIU Quiz App initialized');
     console.log(`Loaded ${APP_STATE.questions.length} questions`);
     console.log(`Modules: ${Object.keys(APP_STATE.modules).length}`);
+    console.log(`Failed questions: ${StorageManager.getFailedQuestions().length}`);
 }
 
 // Iniciar cuando el DOM esté listo
