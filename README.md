@@ -48,7 +48,7 @@ git clone https://github.com/tu-usuario/viu-quiz.git
 
 ## 🌐 Demo
 
-Desplegado en Vercel: [viu-quiz.vercel.app](https://viu-quiz.vercel.app)
+Desplegado en Vercel: [viu-quiz-web.vercel.app](https://viu-quiz-web.vercel.app)
 
 ## 📄 Licencia
 
