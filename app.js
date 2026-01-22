@@ -320,7 +320,11 @@ const QuizManager = {
             APP_STATE.currentSubject = subject;
             StorageManager.saveLastSubject(subjectId);
             
-            const response = await fetch(subject.file);
+            // Forzar carga fresca del JSON para evitar versiones cacheadas
+            // - Añadimos un parámetro timestamp para evitar caches intermedios
+            // - Usamos fetch con `cache: 'no-store'` para pedir siempre al origen
+            const url = subject.file + '?t=' + Date.now();
+            const response = await fetch(url, { cache: 'no-store' });
             const data = await response.json();
             APP_STATE.questions = data.preguntas;
             APP_STATE.modules = data.bloques;
