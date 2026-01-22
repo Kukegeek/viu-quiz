@@ -306,32 +306,67 @@ const QuizManager = {
     // Cargar datos del archivo JSON de la asignatura
     async loadData(subjectId = null) {
         try {
-            // Si no se especifica, usar la asignatura actual o la última usada
+            // Determinar asignatura a cargar
             if (!subjectId) {
                 subjectId = APP_STATE.currentSubject?.id || StorageManager.getLastSubject() || '45giin';
             }
-            
+
             const subject = SUBJECTS[subjectId];
             if (!subject) {
                 console.error('Subject not found:', subjectId);
                 return false;
             }
-            
+
             APP_STATE.currentSubject = subject;
             StorageManager.saveLastSubject(subjectId);
-            
-            // Forzar carga fresca del JSON para evitar versiones cacheadas
-            // - Añadimos un parámetro timestamp para evitar caches intermedios
-            // - Usamos fetch con `cache: 'no-store'` para pedir siempre al origen
-            const url = subject.file + '?t=' + Date.now();
-            const response = await fetch(url, { cache: 'no-store' });
-            const data = await response.json();
+
+            // Claves para cache local
+            const dataKey = `viu_quiz_data_${subject.id}`;
+            const etagKey = `viu_quiz_etag_${subject.id}`;
+
+            const cachedText = localStorage.getItem(dataKey);
+            const cached = cachedText ? JSON.parse(cachedText) : null;
+            const savedEtag = localStorage.getItem(etagKey);
+
+            const headers = savedEtag ? { 'If-None-Match': savedEtag } : {};
+
+            // Petición condicionada para aprovechar ETag y evitar descargar si no cambia
+            const response = await fetch(subject.file, { cache: 'no-store', headers });
+
+            let data;
+            if (response.status === 304) {
+                // Sin cambios en el servidor: usar cache local si existe
+                if (cached && cached.preguntas) {
+                    data = cached;
+                } else {
+                    // Petición de respaldo si no hay cache
+                    const r2 = await fetch(subject.file, { cache: 'no-store' });
+                    data = await r2.json();
+                    const newEtag = r2.headers.get('ETag');
+                    if (newEtag) localStorage.setItem(etagKey, newEtag);
+                    try { localStorage.setItem(dataKey, JSON.stringify(data)); } catch (e) { /* ignore */ }
+                }
+            } else if (response.ok) {
+                data = await response.json();
+                const newEtag = response.headers.get('ETag');
+                if (newEtag) localStorage.setItem(etagKey, newEtag);
+                try { localStorage.setItem(dataKey, JSON.stringify(data)); } catch (e) { /* ignore */ }
+            } else {
+                // Error al obtener: usar cache si existe
+                if (cached && cached.preguntas) {
+                    data = cached;
+                    console.warn('Using cached quiz data due to fetch error:', response.status);
+                } else {
+                    throw new Error('Failed to fetch quiz data: ' + response.status);
+                }
+            }
+
             APP_STATE.questions = data.preguntas;
             APP_STATE.modules = data.bloques;
-            
+
             // Actualizar configuración de modo ultra según la asignatura
             this.updateModeConfig();
-            
+
             return true;
         } catch (error) {
             console.error('Error loading data:', error);
