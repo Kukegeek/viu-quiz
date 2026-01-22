@@ -22,7 +22,7 @@ Los modos se declaran en `APP_STATE.modeConfig` y el frontend muestra informaci�
 
 - `mini` — Mini Test (por defecto 10 preguntas, ajustable si hay menos preguntas)
 - `normal` — Normal (por defecto 20 preguntas)
-- `pro` — Pro (antes llamado "examen", por defecto 40 preguntas)
+- `pro` — Pro (por defecto 40 preguntas)
 - `ultra` — Ultra (incluye todas las preguntas o el `ultraLimit` por asignatura)
 - `module` — Módulo (todas las preguntas de un bloque/módulo)
 - `review` — Repaso de preguntas falladas
@@ -47,7 +47,12 @@ Ejemplo mínimo (simplificado):
 ```json
 {
 	"preguntas": [
-		{"id": 1, "id_bloque": 1, "pregunta": "¿...", "opciones": {"A": "x", "B": "y"}, "respuesta_correcta": "A"}
+		{"id": 1, 
+        "id_bloque": 1, 
+        "pregunta": "¿...",
+          "opciones": {"A": "x", 
+                       "B": "y"}, 
+                      "respuesta_correcta": "A"}
 	],
 	"bloques": {"1": "Introducción"}
 }
