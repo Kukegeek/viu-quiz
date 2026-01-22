@@ -1873,7 +1873,7 @@
         "A": "Sí, siempre se puede corregir mediante una transformación de la gramática",
         "B": "No, no se puede corregir para ningún lenguaje",
         "C": "Sí, se puede corregir para algunos lenguajes, pero no para todos",
-        "D": "No, pero se puede ignorar en la mayoría de los casos"
+        "D": "No, pero se puede ignorar en ela mayoría de los casos"
       },
       "respuesta_correcta": "B"
     },
