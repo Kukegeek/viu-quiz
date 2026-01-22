@@ -11,7 +11,7 @@ const SUBJECTS = {
     '13giin': {
         id: '13giin',
         name: '13GIIN - Autómatas',
-        file: 'data/13giin.json',
+        file: 'data/13bgiin.json',
         icon: '🤖',
         ultraLimit: 60  // Límite especial para ultra en esta asignatura
     },

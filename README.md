@@ -5,7 +5,7 @@ Aplicación web ligera para practicar tests por asignatura. Esta versión soport
 ## 📚 Asignaturas soportadas (configuradas en `app.js` → `SUBJECTS`)
 
 - `13giin` — 13GIIN - Autómatas (icono: 🤖)
-	- Archivo de datos: `data/13giin.json`
+	- Archivo de datos: `data/13bgiin.json`
 	- Nota: Modo `ultra` está limitado a 60 preguntas en esta asignatura (por `ultraLimit`).
 - `21giin` — 21GIIN - Proyectos de Programación (icono: 💻)
 	- Archivo de datos: `data/21giin.json`
@@ -58,7 +58,7 @@ Ejemplo mínimo (simplificado):
 }
 ```
 
-Si cambias o añades preguntas en `data/13giin.json` (por ejemplo, nuevo bloque 11 y 26 preguntas), la aplicación cargará automáticamente el nuevo contenido al recargar la página y las estadísticas/repasos se gestionarán por asignatura.
+Si cambias o añades preguntas en `data/13bgiin.json` (por ejemplo, nuevo bloque 11 y 26 preguntas), la aplicación cargará automáticamente el nuevo contenido al recargar la página y las estadísticas/repasos se gestionarán por asignatura.
 
 ## 💾 Persistencia y claves de `localStorage`
 
@@ -104,12 +104,12 @@ Puedes publicar en GitHub Pages o cualquier servicio estático. Tras subir (`git
 
 ## 📝 Añadir preguntas o bloques
 
-1. Edita el archivo correspondiente en `data/` (por ejemplo `data/13giin.json`) y añade tu bloque en `bloques` y las preguntas en `preguntas`.
+1. Edita el archivo correspondiente en `data/` (por ejemplo `data/13bgiin.json`) y añade tu bloque en `bloques` y las preguntas en `preguntas`.
 2. Asegúrate de que cada `id` de pregunta es único.
 3. Haz commit y push al repo:
 ```bash
-git add data/13giin.json
-git commit -m "feat(data): add bloque 11 con 26 preguntas a 13giin"
+git add data/13bgiin.json
+git commit -m "feat(data): add bloque 11 con 26 preguntas a 13bgiin"
 git push
 ```
 4. Recarga la aplicación en el navegador; las nuevas preguntas se cargarán automáticamente.

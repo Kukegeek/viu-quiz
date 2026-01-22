@@ -1,6 +1,6 @@
 # Informe de preguntas editadas
 
-Este informe lista las preguntas donde detecté y corregí la respuesta en `data/13giin.json`.
+Este informe lista las preguntas donde detecté y corregí la respuesta en `data/13bgiin.json`.
 
 - **Bloques examinados:** 1–10
 - **Total de preguntas examinadas:** 231
