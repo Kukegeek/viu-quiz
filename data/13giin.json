@@ -59,7 +59,7 @@
         "C": "Utilizar gramáticas formales",
         "D": "Establecer enlaces atómicos"
       },
-      "respuesta_correcta": "B"
+      "respuesta_correcta": "A"
     },
     {
       "id": 5,
@@ -107,7 +107,7 @@
         "C": "Eventos que tienen lugar en un instante específico en el tiempo",
         "D": "Estados iniciales"
       },
-      "respuesta_correcta": "B"
+      "respuesta_correcta": "C"
     },
     {
       "id": 9,
@@ -551,7 +551,7 @@
         "C": "Expresiones ambiguas",
         "D": "Expresiones regulares"
       },
-      "respuesta_correcta": "A"
+      "respuesta_correcta": "C"
     },
     {
       "id": 47,
@@ -599,7 +599,7 @@
         "C": "Marco más manejable",
         "D": "Eficiencia en el diseño"
       },
-      "respuesta_correcta": "D"
+      "respuesta_correcta": "C"
     },
     {
       "id": 51,
@@ -1047,7 +1047,7 @@
         "C": "Infinitud",
         "D": "Decidibilidad"
       },
-      "respuesta_correcta": "B"
+      "respuesta_correcta": "D"
     },
     {
       "id": 89,
@@ -1155,7 +1155,7 @@
         "C": "Es un AFD que acepta la intersección de dos lenguajes regulares",
         "D": "Es un AFD que acepta la unión de dos lenguajes regulares"
       },
-      "respuesta_correcta": "D"
+      "respuesta_correcta": "C"
     },
     {
       "id": 98,
@@ -1215,7 +1215,7 @@
         "C": "Algoritmo de minimización de Hopcroft",
         "D": "Reducción de la cantidad de transiciones en el AFD"
       },
-      "respuesta_correcta": "B"
+      "respuesta_correcta": "C"
     },
     {
       "id": 103,
@@ -2163,7 +2163,7 @@
         "C": "Que cualquier variable A solo puede derivar en terminales",
         "D": "Que cualquier variable A no puede derivar en la cadena vacía"
       },
-      "respuesta_correcta": "A"
+      "respuesta_correcta": "B"
     },
     {
       "id": 182,
