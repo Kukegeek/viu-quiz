@@ -7,8 +7,8 @@ Aplicación web ligera para practicar tests por asignatura. Esta versión soport
 - `13giin` — 13GIIN - Autómatas (icono: 🤖)
 	- Archivo de datos: `data/13bgiin.json`
 	- Nota: Modo `ultra` está limitado a 60 preguntas en esta asignatura (por `ultraLimit`).
-- `21giin` — 21GIIN - Proyectos de Programación (icono: 💻)
-	- Archivo de datos: `data/21giin.json`
+	- `21giin` — 21GIIN - Proyectos de Programación (icono: 💻)
+		- Archivo de datos: `data/21bgiin.json`
 	- Nota: `ultra` usa todas las preguntas disponibles.
 - `45giin` — 45GIIN - Información WEB (icono: 🌐)
 	- Archivo de datos: `data/45giin.json`

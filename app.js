@@ -18,7 +18,7 @@ const SUBJECTS = {
     '21giin': {
         id: '21giin',
         name: '21GIIN - Proyectos de Programación',
-        file: 'data/21giin.json',
+        file: 'data/21bgiin.json',
         icon: '💻',
         ultraLimit: null  // Sin límite, todas las preguntas
     },

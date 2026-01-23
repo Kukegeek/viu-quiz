@@ -3,7 +3,8 @@
     "1": "Programación Orientada a Objetos (POO)",
     "2": "Fundamentos de Java",
     "3": "Documentación y Depuración",
-    "4": "Arquitectura y Patrones (CI/CD, 3 Capas, MVC)"
+    "4": "Arquitectura y Patrones (CI/CD, 3 Capas, MVC)",
+    "5": "Diagramas UML"
   },
   "preguntas": [
     {
@@ -561,6 +562,174 @@
         "B": "Que la aplicación ocupa menos espacio en disco",
         "C": "Separación de responsabilidades y facilidad de mantenimiento",
         "D": "Que el código se ejecuta más rápido"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 49,
+      "id_bloque": 5,
+      "pregunta": "¿Qué es UML?",
+      "opciones": {
+        "A": "Lenguaje de notación gráfica para visualizar y especificar sistemas",
+        "B": "Lenguaje de alto nivel interpretado y de código abierto",
+        "C": "Lenguaje para gestionar bases de datos",
+        "D": "Lenguaje de bajo nivel para representar instrucciones máquina binarias"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 50,
+      "id_bloque": 5,
+      "pregunta": "En UML, ¿qué significa el símbolo \"-\" antes del nombre de un atributo?",
+      "opciones": {
+        "A": "El atributo es Público",
+        "B": "El atributo es Privado",
+        "C": "El atributo es una constante estática",
+        "D": "El atributo es Protegido"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 51,
+      "id_bloque": 5,
+      "pregunta": "En UML, ¿qué significa el símbolo \"+\" antes del nombre de un atributo?",
+      "opciones": {
+        "A": "El atributo es Público",
+        "B": "El atributo es Privado",
+        "C": "El atributo es una constante estática",
+        "D": "El atributo es Protegido"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 52,
+      "id_bloque": 5,
+      "pregunta": "¿Qué es un Diagrama de Clases?",
+      "opciones": {
+        "A": "Diagrama UML que describe la estructura de un sistema",
+        "B": "Representación de funcionalidades y cómo los usuarios interactúan con ellas",
+        "C": "Muestra la interacción entre objetos y el orden en que se envían mensajes",
+        "D": "Describe la lógica que sigue un programa de principio a fin"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 53,
+      "id_bloque": 5,
+      "pregunta": "¿Qué aspecto del software modela principalmente un Diagrama de Clases?",
+      "opciones": {
+        "A": "El comportamiento dinámico y temporal",
+        "B": "La interacción física con el hardware",
+        "C": "El flujo de datos entre procesos",
+        "D": "La estructura estática del sistema"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 54,
+      "id_bloque": 5,
+      "pregunta": "¿Qué representa esta figura? (Imagen de una caja de clase con atributos y operaciones)",
+      "opciones": {
+        "A": "Un elemento de un Diagrama de Casos de Uso",
+        "B": "Un elemento de un Diagrama de Clases",
+        "C": "Un elemento de un Diagrama de Flujo",
+        "D": "Un elemento de un Diagrama de Secuencia"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 55,
+      "id_bloque": 5,
+      "pregunta": "¿Qué representa un método en un diagrama de clase?",
+      "opciones": {
+        "A": "Función de clase",
+        "B": "Objeto externo",
+        "C": "Atributo privado",
+        "D": "Variable global"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 56,
+      "id_bloque": 5,
+      "pregunta": "¿Para qué se usan los símbolos en un Diagrama de Clases? (Muestra Agregación, Composición, Herencia, Dependencia)",
+      "opciones": {
+        "A": "Para decorar las uniones entre clases",
+        "B": "Para representar visualmente la visibilidad",
+        "C": "Para representar visualmente la estructura estática del sistema de software",
+        "D": "Para representar visualmente la cantidad de atributos y métodos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 57,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es la principal diferencia entre Composición y Agregación?",
+      "opciones": {
+        "A": "No hay diferencia, son sinónimos en UML",
+        "B": "En la Agregación, los objetos hijos no pueden existir sin el padre",
+        "C": "En la Composición, si el padre se destruye, el hijo también desaparece",
+        "D": "La Composición se representa con un rombo blanco"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 58,
+      "id_bloque": 5,
+      "pregunta": "¿Qué símbolo se utiliza para representar la Generalización (Herencia) entre dos clases?",
+      "opciones": {
+        "A": "Una línea punteada con una flecha abierta",
+        "B": "Una línea con un triángulo hacia la superclase",
+        "C": "Una línea sólida con un rombo negro en el extremo",
+        "D": "Una línea discontinua con la palabra clave «include»"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 59,
+      "id_bloque": 5,
+      "pregunta": "¿Qué representa un Diagrama de Casos de Uso?",
+      "opciones": {
+        "A": "Errores del sistema",
+        "B": "Estructura de datos",
+        "C": "Interacciones usuario-sistema",
+        "D": "Código fuente"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 60,
+      "id_bloque": 5,
+      "pregunta": "(Sobre los actores en Casos de Uso)",
+      "opciones": {
+        "A": "Usuarios humanos del sistema",
+        "B": "Dispositivos de hardware conectados al sistema",
+        "C": "Sistemas externos o aplicaciones que interactúan con el sistema",
+        "D": "Todas son correctas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 61,
+      "id_bloque": 5,
+      "pregunta": "Escoge la respuesta correcta: Si un cliente realiza una operación... (Diagrama de ATM con include a Validar Tarjeta)",
+      "opciones": {
+        "A": "Siempre retirará efectivo",
+        "B": "Siempre se debe validar la tarjeta y la clave",
+        "C": "No puede realizar una transferencia en ningún caso",
+        "D": "Ninguna es correcta"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 62,
+      "id_bloque": 5,
+      "pregunta": "Según la lógica de negocio, ¿qué problema \"podría\" tener el siguiente diagrama? (Venta con 3 includes obligatorios de pago)",
+      "opciones": {
+        "A": "Nunca se puede cancelar una venta",
+        "B": "Faltan actores obligatoriamente en el diagrama",
+        "C": "Se ha de cobrar la venta tres veces",
+        "D": "No tiene ningún problema"
       },
       "respuesta_correcta": "C"
     }
