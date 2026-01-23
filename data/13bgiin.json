@@ -132,7 +132,2631 @@
         "D": "Cuatro"
       },
       "respuesta_correcta": "B"
-    }
-    /* file truncated in patch for brevity; full content copied from original 13giin.json */
-  ]
+    },
+    {
+      "id": 11,
+      "id_bloque": 1,
+      "pregunta": "¿Por qué se clasifica a un estado como no determinista en un sistema de transición?",
+      "opciones": {
+        "A": "Tiene múltiples estados iniciales",
+        "B": "Posee al menos dos transiciones salientes con la misma etiqueta",
+        "C": "No tiene ninguna transición saliente",
+        "D": "Todos los estados son deterministas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 12,
+      "id_bloque": 1,
+      "pregunta": "¿Cuál es la razón detrás de la introducción del no determinismo en la modelización de sistemas, según Milner?",
+      "opciones": {
+        "A": "Simplificar la representación",
+        "B": "Modelar de manera precisa todas las condiciones externas",
+        "C": "Capturar comportamientos dependientes de factores externos",
+        "D": "Eliminar la variabilidad en el comportamiento"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 13,
+      "id_bloque": 1,
+      "pregunta": "¿Cómo se utiliza el no determinismo en la representación de comportamientos en un despertador?",
+      "opciones": {
+        "A": "Para modelar cada condición posible",
+        "B": "Para representar de incertidumbre y variabilidad",
+        "C": "Para eliminar estados no deseados",
+        "D": "Para especificar detalladamente cada variante"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 14,
+      "id_bloque": 1,
+      "pregunta": "Según la metáfora de Milner, ¿qué representan la \"condiciones meteorológicas\" en la teoría de autómatas?",
+      "opciones": {
+        "A": "Factores externos o variables difíciles de modelar",
+        "B": "Estados finales del sistema",
+        "C": "Acciones atómicas",
+        "D": "Transiciones salientes"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 15,
+      "id_bloque": 1,
+      "pregunta": "¿Cómo se describe el comportamiento de una luz poco fiable en el contexto de un sistema de transición?",
+      "opciones": {
+        "A": "Siempre se apaga cuando se desconecta",
+        "B": "Puede permanecer encendida después de apagarla",
+        "C": "Tiene un comportamiento determinista",
+        "D": "No tiene estados iniciales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 16,
+      "id_bloque": 1,
+      "pregunta": "¿Cómo se utiliza el no determinismo en el diseño del comportamiento de un despertador?",
+      "opciones": {
+        "A": "Para hacer sonar la alarma en secuencias específicas",
+        "B": "Para determinar la cantidad de veces que la alarma debe sonar",
+        "C": "Para modelar el comportamiento repetitivo de la alarma",
+        "D": "Para permitir cierta flexibilidad en el comportamiento"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 17,
+      "id_bloque": 1,
+      "pregunta": "¿Cuál es la principal ventaja de utilizar el no determinismo en la modelización de sistemas complejos?",
+      "opciones": {
+        "A": "Aumentar la complejidad del sistema",
+        "B": "Reducir la flexibilidad del comportamiento",
+        "C": "Capturar comportamientos dependientes de factores externos sin explicar cada variante",
+        "D": "Facilitar la especificación detallada de todas las condiciones posibles"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 18,
+      "id_bloque": 1,
+      "pregunta": "¿Qué significa la \"indeterminación\" en un estado?",
+      "opciones": {
+        "A": "La falta de estados finales",
+        "B": "La existencia de múltiples transiciones salientes con la misma etiqueta",
+        "C": "La ausencia de condiciones meteorológicas",
+        "D": "La determinación precisa del comportamiento"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 19,
+      "id_bloque": 1,
+      "pregunta": "¿Por qué se considera un sistema de transición como no determinista en el caso de la máquina Bankautomat?",
+      "opciones": {
+        "A": "Porque no hay transiciones salientes",
+        "B": "Porque la tarjeta siempre es aceptada",
+        "C": "Porque puede rechazar la tarjeta y volver al estado inicial",
+        "D": "Porque todas las acciones se representan con letras abstractas"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 20,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál es el propósito de un autómata finito?",
+      "opciones": {
+        "A": "Generar Cadenas infinitas",
+        "B": "Procesar cadenas de entrada y decidir si aceptarlas o rechazarlas",
+        "C": "Realizar cálculos matemáticos complejos",
+        "D": "Crear gramáticas formales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 21,
+      "id_bloque": 2,
+      "pregunta": "¿Qué representa un estado final en un autómata finito?",
+      "opciones": {
+        "A": "Es estado inicial",
+        "B": "Un estado de aceptación",
+        "C": "Un estado de rechazo",
+        "D": "Un estado intermedio"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 22,
+      "id_bloque": 2,
+      "pregunta": "La potencia de una cadena implica repetir dicha cadena n veces",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 23,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se denota un lenguaje generado por un autómata A?",
+      "opciones": {
+        "A": "L(A)",
+        "B": "A(L)",
+        "C": "A*",
+        "D": "L*"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 24,
+      "id_bloque": 2,
+      "pregunta": "¿Qué cambia al modificar los estados finales en un autómata?",
+      "opciones": {
+        "A": "El alfabeto",
+        "B": "El lenguaje del autómata",
+        "C": "La longitud de las cadenas",
+        "D": "La potencia de la cadena"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 25,
+      "id_bloque": 2,
+      "pregunta": "La longitud de una cadena se denota como |x|, y la longitud de la cadena vacía es siempre mayor",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 26,
+      "id_bloque": 2,
+      "pregunta": "¿Qué representan las expresiones regulares en el contexto de los autómatas finitos?",
+      "opciones": {
+        "A": "Secuencias de símbolos",
+        "B": "Grafos",
+        "C": "Patrones de búsqueda y manipulación de cadenas",
+        "D": "Estados intermedios"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 27,
+      "id_bloque": 2,
+      "pregunta": "La cadena vacía, denotada por E (épsilon), puede existir en cualquier alfabeto",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 28,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál es la función principal de las gramáticas en la teoría de autómatas?",
+      "opciones": {
+        "A": "Reconocer palabras específicas",
+        "B": "Manipular cadenas en tiempo real",
+        "C": "Generar expresiones regulares",
+        "D": "Describir la estructura de un lenguaje"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 29,
+      "id_bloque": 2,
+      "pregunta": "La cerradura de Kleene, Σ*, excluye la cadena vacía E",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 30,
+      "id_bloque": 2,
+      "pregunta": "¿Qué elementos componen una gramática?",
+      "opciones": {
+        "A": "Estados y transiciones",
+        "B": "Símbolos terminales y no terminales",
+        "C": "Expresiones regulares",
+        "D": "Conjuntos de cadenas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 31,
+      "id_bloque": 2,
+      "pregunta": "En la concatenación de cadenas, xy siempre es igual a yx",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 32,
+      "id_bloque": 2,
+      "pregunta": "¿En qué se utilizan comúnmente las expresiones regulares?",
+      "opciones": {
+        "A": "En la generación de grafos",
+        "B": "En la creación de estados finales",
+        "C": "En la definición de alfabetos",
+        "D": "En la manipulación de texto"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 33,
+      "id_bloque": 2,
+      "pregunta": "Dos cadenas son iguales si tienen la misma longitud y los mismos símbolos en la misma posición",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 34,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se define formalmente un prefijo de una cadena?",
+      "opciones": {
+        "A": "Una secuencia al final de la cadena",
+        "B": "Una secuencia al principio de la cadena",
+        "C": "Una secuencia en cualquier posición de la cadena",
+        "D": "Una secuencia que no está en la cadena"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 35,
+      "id_bloque": 2,
+      "pregunta": "¿Qué es una subcadena de una cadena?",
+      "opciones": {
+        "A": "Una secuencia al final de la cadena",
+        "B": "Una secuencia al principio de la cadena",
+        "C": "Una secuencia en cualquier posición de la cadena",
+        "D": "Una secuencia que no está en la cadena"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 36,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál de las siguientes afirmaciones es correcta sobre el lenguaje L definido sobre el alfabeto Σ?",
+      "opciones": {
+        "A": "L es un conjunto infinito de cadenas vacías",
+        "B": "L es un conjunto finito de números binarios primos",
+        "C": "L es un conjunto de todas las posibles cadenas formadas por símbolos de Σ",
+        "D": "L es un conjunto de cadenas que solo contiene la cadena vacía E"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 37,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se representa la relación de inclusión en teoría de conjuntos?",
+      "opciones": {
+        "A": "⊆ (subconjunto de)",
+        "B": "(relación de inclusión)",
+        "C": "U (unión)",
+        "D": "*"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 38,
+      "id_bloque": 2,
+      "pregunta": "¿Qué representa el conjunto Σ*?",
+      "opciones": {
+        "A": "Conjunto de todas las posibles cadenas formadas por los símbolos de ∑",
+        "B": "Conjunto de todos los números binarios primos",
+        "C": "Conjunto de cadenas que solo contienen la cadena vacía E",
+        "D": "Conjunto vacío"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 39,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál de las siguientes afirmaciones sobre la potencia de un lenguaje es correcta?",
+      "opciones": {
+        "A": "L0 contiene todas las cadenas posibles",
+        "B": "L1 es igual al conjunto vacío",
+        "C": "La potencia de un lenguaje está cerrada bajo la operación de unión",
+        "D": "Ln es el conjunto de todas las posibles concatenaciones de n cadenas tomadas de L"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 40,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se denota la cerradura de Kleene de un lenguaje L?",
+      "opciones": {
+        "A": "L*",
+        "B": "LA",
+        "C": "L+",
+        "D": "L-"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 41,
+      "id_bloque": 2,
+      "pregunta": "¿Qué es la cerradura prefijo de un lenguaje L?",
+      "opciones": {
+        "A": "Conjunto de todas las cadenas que son sufijos de L",
+        "B": "Conjunto de todas las cadenas que son subcadenas de L",
+        "C": "Conjunto de todas las cadenas que son prefijos de L",
+        "D": "Conjunto de todas las cadenas que son sufijos y prefijos de L"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 42,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál de las siguientes es una forma de representar un lenguaje formal regular?",
+      "opciones": {
+        "A": "Matrices",
+        "B": "Autómatas finitos",
+        "C": "Fractales",
+        "D": "Redes neuronales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 43,
+      "id_bloque": 2,
+      "pregunta": "¿En qué se basa la idea de cadenas bien formadas en un lenguaje formal?",
+      "opciones": {
+        "A": "En la semántica formal",
+        "B": "En la presencia de conjuntos infinitos",
+        "C": "En la gramática y sintaxis definidas",
+        "D": "En la ausencia de expresiones regulares"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 44,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál es la característica distintiva de los lenguajes formales en comparación con los lenguajes naturales?",
+      "opciones": {
+        "A": "La presencia de una semántica formal",
+        "B": "La capacidad de expresar significado",
+        "C": "La especificación mediante gramáticas informales",
+        "D": "La ausencia de expresiones regulares"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 45,
+      "id_bloque": 2,
+      "pregunta": "¿Cómo se puede especificar un lenguaje formal?",
+      "opciones": {
+        "A": "A través de la morfología de las palabras",
+        "B": "Mediante una expresión facial",
+        "C": "Con una gramática formal",
+        "D": "Por la entonación en el habla"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 46,
+      "id_bloque": 2,
+      "pregunta": "¿Cuál de las siguientes NO es una forma de representar un lenguaje formal regular?",
+      "opciones": {
+        "A": "Gramáticas formales independientes del contexto",
+        "B": "Autómatas finitos",
+        "C": "Expresiones ambiguas",
+        "D": "Expresiones regulares"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 47,
+      "id_bloque": 2,
+      "pregunta": "¿Qué es cierto sobre la concatenación de lenguajes?",
+      "opciones": {
+        "A": "Es una operación que combina cadenas de dos lenguajes sumándolos",
+        "B": "Es una operación que combina cadenas de dos lenguajes multiplicándolos",
+        "C": "No está cerrada bajo la operación de concatenación",
+        "D": "Combina cadenas de dos lenguajes para formar un nuevo lenguaje"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 48,
+      "id_bloque": 3,
+      "pregunta": "¿Rol de los autómatas finitos en el diseño y verificación de protocolos de comunicación en circuitos digitales?",
+      "opciones": {
+        "A": "Búsqueda de texto",
+        "B": "Compiladores y analizadores léxicos",
+        "C": "Modelado en sistemas industriales",
+        "D": "Verificación en sistemas de eventos discretos"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 49,
+      "id_bloque": 3,
+      "pregunta": "¿Cómo contribuyen los autómatas de estado finito?",
+      "opciones": {
+        "A": "Búsqueda de patrones en texto",
+        "B": "Verificación en sistemas de eventos discretos",
+        "C": "Modelado en sistemas industriales",
+        "D": "Diseño y verificación de circuitos digitales"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 50,
+      "id_bloque": 3,
+      "pregunta": "¿Qué ventaja ofrecen los estados finitos en la implementación de hardware y software asociado a un sistema o componente?",
+      "opciones": {
+        "A": "Mayor complejidad",
+        "B": "Recursos excesivos",
+        "C": "Marco más manejable",
+        "D": "Eficiencia en el diseño"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 51,
+      "id_bloque": 3,
+      "pregunta": "La función de transición fac en el autómata accesible Ac(G) opera en el conjunto total de estados X, sin restricciones.",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 52,
+      "id_bloque": 3,
+      "pregunta": "¿Cómo se denotan comúnmente los estados finales en un autómata de estado finito?",
+      "opciones": {
+        "A": "F",
+        "B": "Q",
+        "C": "Σ",
+        "D": "δ"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 53,
+      "id_bloque": 3,
+      "pregunta": "¿Cuál es la función de la función de transición en un autómata finito determinista?",
+      "opciones": {
+        "A": "Indicar estados finales",
+        "B": "Desplazarse de un estado a otro en respuesta a entradas",
+        "C": "Representar el alfabeto de entrada",
+        "D": "Modelar sistemas industriales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 54,
+      "id_bloque": 3,
+      "pregunta": "El autómata no determinista extendido acepta únicamente cadenas que contienen la cadena vacía como símbolo de entrada",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 55,
+      "id_bloque": 3,
+      "pregunta": "¿Cómo se llama el conjunto de todos los estados en un autómata finito determinista?",
+      "opciones": {
+        "A": "Σ",
+        "B": "F",
+        "C": "δ",
+        "D": "Q"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 56,
+      "id_bloque": 3,
+      "pregunta": "En un AFD, ¿Qué representa el conjunto de estados de aceptación?",
+      "opciones": {
+        "A": "Estados finales",
+        "B": "Estados iniciales",
+        "C": "Estados marcados",
+        "D": "Estados muertos"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 57,
+      "id_bloque": 3,
+      "pregunta": "¿Cómo se define el lenguaje generado por un AFD?",
+      "opciones": {
+        "A": "Todas las cadenas que terminan en un estado válido",
+        "B": "Todas las cadenas procesadas correctamente desde el estado inicial",
+        "C": "Todas las respuestas son correctas",
+        "D": "Todas las cadenas aceptadas por el AFD"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 58,
+      "id_bloque": 3,
+      "pregunta": "¿Cuál es el objetivo principal del lenguaje aceptado de un AFD?",
+      "opciones": {
+        "A": "Incluir todas las cadenas procesadas desde el estado inicial",
+        "B": "Incluir todas las cadenas que contienen la subcadena \"01\"",
+        "C": "Incluir solo cadenas que terminan en un estado marcado",
+        "D": "Llegar a un estado de error"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 59,
+      "id_bloque": 3,
+      "pregunta": "El conjunto Xac en el autómata accesible Ac(G) contiene estados que no son alcanzables desde el estado inicial de G",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 60,
+      "id_bloque": 3,
+      "pregunta": "¿Qué representa un círculo doble en un diagrama de transición de un AFD?",
+      "opciones": {
+        "A": "Estado inicial",
+        "B": "Estado de aceptación",
+        "C": "Transición espontánea",
+        "D": "Estado intermedio"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 61,
+      "id_bloque": 3,
+      "pregunta": "¿Qué representa el conjunto Xac en el autómata accesible Ac(G)?",
+      "opciones": {
+        "A": "Conjunto de estados iniciales",
+        "B": "Conjunto de estados finales",
+        "C": "Conjunto de estados accesibles",
+        "D": "Conjunto de transiciones"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 62,
+      "id_bloque": 3,
+      "pregunta": "¿Qué es el autómata no determinista extendido (AFNe)?",
+      "opciones": {
+        "A": "Una versión simplificada del AFD",
+        "B": "Un autómata que acepta solo la cadena vacía",
+        "C": "Un autómata con transiciones espontáneas y aceptación de la cadena vacía",
+        "D": "Un autómata más complejo que el AFD estándar"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 63,
+      "id_bloque": 3,
+      "pregunta": "En un diagrama de transición de un AFD, un circulo doble siempre representa el estado inicial del autómata",
+      "opciones": {
+        "A": "Verdadero",
+        "B": "Falso"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 64,
+      "id_bloque": 3,
+      "pregunta": "¿Cuál es la función de un autómata accesible (Ac(G))?",
+      "opciones": {
+        "A": "Contar el número de estados finales",
+        "B": "Ignorar estados inaccesibles desde el estado inicial",
+        "C": "Aceptar cualquier cadena de entrada",
+        "D": "Realizar transiciones espontáneas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 65,
+      "id_bloque": 3,
+      "pregunta": "¿Qué representa la expresión Xac={s∈X|∃x∈X0, ... f(x,w)=s}?",
+      "opciones": {
+        "A": "Representar solo los estados finales",
+        "B": "Mostrar solo transiciones espontáneas",
+        "C": "Ignorar el estado inicial",
+        "D": "Ilustrar la estructura y el comportamiento del AFD"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 66,
+      "id_bloque": 3,
+      "pregunta": "¿Cómo se define la función fac en el autómata accesible Ac(G)?",
+      "opciones": {
+        "A": "f(xo,a)",
+        "B": "f(s,w)",
+        "C": "f(x,a)",
+        "D": "f(ac,a)"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 67,
+      "id_bloque": 4,
+      "pregunta": "¿Qué describen las expresiones regulares (ER) en la teoría de autómatas?",
+      "opciones": {
+        "A": "Patrones complejos de inteligencia artificial",
+        "B": "Errores en códigos de programación",
+        "C": "Códigos binarios en computación cuántica",
+        "D": "Patrones encontrados en texto y son la base de compiladores de ER"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 68,
+      "id_bloque": 4,
+      "pregunta": "¿Qué demuestra la equivalencia entre expresiones regulares (ER) y autómatas finitos?",
+      "opciones": {
+        "A": "Que los lenguajes aceptados por autómatas no son regulares",
+        "B": "Que solo los autómatas finitos deterministas pueden ejecutarse",
+        "C": "Que ambos son capaces de describir exactamente el mismo lenguaje",
+        "D": "Que las expresiones regulares no pueden convertirse en autómatas"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 69,
+      "id_bloque": 4,
+      "pregunta": "¿Qué notación se emplea para representar el lenguaje descrito por una ER?",
+      "opciones": {
+        "A": "L(E)",
+        "B": "E(L)",
+        "C": "R(E)",
+        "D": "E(R)"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 70,
+      "id_bloque": 4,
+      "pregunta": "¿Qué operación de expresiones regulares describe la creación de cadenas concatenando cero más cadenas de un lenguaje?",
+      "opciones": {
+        "A": "Unión",
+        "B": "Concatenación",
+        "C": "Estrella de Kleene",
+        "D": "Suma directa"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 71,
+      "id_bloque": 4,
+      "pregunta": "Si una expresión regular contiene el símbolo único A, ¿qué lenguaje representa?",
+      "opciones": {
+        "A": "Un conjunto que contiene todas las cadenas posibles",
+        "B": "Un conjunto que contiene una única cadena de longitud uno con el símbolo A",
+        "C": "Un conjunto que contiene el alfabeto completo",
+        "D": "Un conjunto vacío"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 72,
+      "id_bloque": 4,
+      "pregunta": "¿Qué simboliza épsilon en las expresiones regulares?",
+      "opciones": {
+        "A": "El conjunto de todos los símbolos",
+        "B": "Una cadena con un solo símbolo",
+        "C": "Una cadena de longitud indefinida",
+        "D": "La cadena vacía"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 73,
+      "id_bloque": 4,
+      "pregunta": "¿Cómo se representa la unión de dos expresiones regulares?",
+      "opciones": {
+        "A": "Con el símbolo más (+)",
+        "B": "Con el símbolo asterisco (*)",
+        "C": "Con el símbolo igual (=)",
+        "D": "Con el símbolo menos (-)"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 74,
+      "id_bloque": 4,
+      "pregunta": "¿Qué indica el operador de estrella (*) en las expresiones regulares?",
+      "opciones": {
+        "A": "Elemento al que se aplica puede aparecer cero o más veces",
+        "B": "La presencia de un solo carácter",
+        "C": "La unión de dos lenguajes",
+        "D": "La inexistencia de un lenguaje"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 75,
+      "id_bloque": 4,
+      "pregunta": "¿Qué orden de operaciones se aplica en las expresiones regulares?",
+      "opciones": {
+        "A": "1º la unión (+), luego la concatenación ( ), y finalmente la estrella (*)",
+        "B": "1º la estrella (*), luego la unión (+), y finalmente la concatenación ( )",
+        "C": "1º la estrella (*), luego la concatenación ( ), y finalmente la unión (+)",
+        "D": "El orden de las operaciones es irrelevante"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 76,
+      "id_bloque": 4,
+      "pregunta": "¿Cuál es el análogo del operador estrella (*) en aritmética?",
+      "opciones": {
+        "A": "Suma",
+        "B": "Multiplicación",
+        "C": "División",
+        "D": "Exponenciación"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 77,
+      "id_bloque": 4,
+      "pregunta": "¿Qué indica el símbolo \"+\" en las expresiones regulares de Unix?",
+      "opciones": {
+        "A": "La unión de conjuntos",
+        "B": "La concatenación de cadenas",
+        "C": "\"Uno o más\" de la expresión previa",
+        "D": "\"Cero o uno\" ocurrencia de la expresión previa"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 78,
+      "id_bloque": 4,
+      "pregunta": "¿Qué rol juega el análisis léxico en la programación?",
+      "opciones": {
+        "A": "Corrige errores sintácticos en el código",
+        "B": "Divide un programa en sus unidades básicas llamadas tokens",
+        "C": "Transforma algoritmos en expresiones regulares",
+        "D": "Genera gráficos a partir de códigos de programación"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 79,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál de las siguientes no es una propiedad de decisión importante en relación con los lenguajes regulares?",
+      "opciones": {
+        "A": "Pertinencia",
+        "B": "Vacuidad",
+        "C": "Infinitud",
+        "D": "Regularidad"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 80,
+      "id_bloque": 5,
+      "pregunta": "¿Qué tipo de propiedades describen como responde una clase de lenguajes a diversas operaciones estándar?",
+      "opciones": {
+        "A": "Propiedades de cierre",
+        "B": "Propiedades de conversión",
+        "C": "Propiedades de expansión",
+        "D": "Propiedades de adaptación"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 81,
+      "id_bloque": 5,
+      "pregunta": "¿Qué modelo computacional procesa cadenas símbolo a símbolo para determinar si pertenecen a un lenguaje definido?",
+      "opciones": {
+        "A": "Máquinas de Turing",
+        "B": "Autómatas Finitos Deterministas (AFD)",
+        "C": "Redes Neuronales Artificiales",
+        "D": "Gramáticas Libres de Contexto"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 82,
+      "id_bloque": 5,
+      "pregunta": "¿Qué propiedad permite determinar si un lenguaje específico puede ser representado por un AFD o una expresión regular?",
+      "opciones": {
+        "A": "Vacuidad",
+        "B": "Infinitud",
+        "C": "Regularidad",
+        "D": "Pertinencia"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 83,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es el objetivo del problema de pertenencia para un lenguaje regular?",
+      "opciones": {
+        "A": "Determinar si el lenguaje contiene al menos una cadena",
+        "B": "Determinar si el lenguaje tiene un número infinito de cadenas",
+        "C": "Verificar si una cadena específica pertenece al lenguaje",
+        "D": "Encontrar un autómata equivalente al lenguaje"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 84,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es el enfoque más eficiente para demostrar la infinitud de un lenguaje regular?",
+      "opciones": {
+        "A": "Probar la pertenencia de todas las cadenas de longitud entre n y 2n-1",
+        "B": "Encontrar ciclos en el autómata que acepta el lenguaje",
+        "C": "Algoritmos de búsqueda en profundidad para verificar",
+        "D": "Eliminar estados no alcanzables desde el estado inicial"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 85,
+      "id_bloque": 5,
+      "pregunta": "¿Qué propiedad de decisión determina si el lenguaje aceptado por un AFD contiene alguna cadena?",
+      "opciones": {
+        "A": "Vacuidad",
+        "B": "Infinitud",
+        "C": "Pertinencia",
+        "D": "Regularidad"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 86,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es la importancia de las representaciones formales en la teoría de lenguajes formales?",
+      "opciones": {
+        "A": "Facilitan la comunicación informal",
+        "B": "Permiten una descripción ambigua del lenguaje",
+        "C": "Proporcionan una descripción inequívoca y matemática del lenguaje",
+        "D": "Dificultan el análisis formal y el diseño de algoritmos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 87,
+      "id_bloque": 5,
+      "pregunta": "¿Qué tipo de representaciones se describen mediante el uso de lenguaje natural y ejemplos de cadenas?",
+      "opciones": {
+        "A": "Representaciones formales",
+        "B": "Representaciones gráficas",
+        "C": "Representaciones abstractas",
+        "D": "Representaciones informales"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 88,
+      "id_bloque": 5,
+      "pregunta": "Propiedad que determina si existe un algoritmo que determine si una cadena arbitraria pertenece o no a un lenguaje",
+      "opciones": {
+        "A": "Vacuidad",
+        "B": "Pertinencia",
+        "C": "Infinitud",
+        "D": "Decidibilidad"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 89,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es una aplicación importante de las propiedades de decisión de los lenguajes regulares en la práctica?",
+      "opciones": {
+        "A": "Diseño de algoritmos",
+        "B": "Comunicación ambigua",
+        "C": "Análisis informal",
+        "D": "Implementación de programas generales"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 90,
+      "id_bloque": 5,
+      "pregunta": "¿Qué tipo de representaciones son esenciales para el análisis de lenguajes y el diseño de algoritmos?",
+      "opciones": {
+        "A": "Representaciones informales",
+        "B": "Representaciones ambiguas",
+        "C": "Representaciones formales",
+        "D": "Representaciones literales"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 91,
+      "id_bloque": 5,
+      "pregunta": "¿Qué propiedad de decisión se utiliza para verificar si un lenguaje tiene un número finito o infinito de cadenas?",
+      "opciones": {
+        "A": "Pertinencia",
+        "B": "Infinitud",
+        "C": "Vacuidad",
+        "D": "Regularidad"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 92,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es la importancia de las propiedades de decisión en la teoría de lenguajes formales?",
+      "opciones": {
+        "A": "Permiten la comunicación informal",
+        "B": "Facilitan el diseño de algoritmos ambiguos",
+        "C": "Proporcionan herramientas para analizar y comprender los lenguajes formales",
+        "D": "Dificultan la implementación de programas generales"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 93,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál de las siguientes NO es una propiedad de decisión para lenguajes regulares?",
+      "opciones": {
+        "A": "Vacío",
+        "B": "Finito",
+        "C": "Equivalencia",
+        "D": "Homomorfismo"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 94,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál de las siguientes es una desventaja de las representaciones informales de lenguajes regulares?",
+      "opciones": {
+        "A": "Permiten un análisis preciso de las propiedades del lenguaje",
+        "B": "Facilitan el diseño de algoritmos para procesar el lenguaje",
+        "C": "Dificultan el análisis formal y el diseño de algoritmos",
+        "D": "Proporcionan una descripción inequívoca del leguaje para su comunicación"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 95,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es el problema de pertenencia en lenguajes regulares?",
+      "opciones": {
+        "A": "Determinar si un autómata finito puede aceptar una cadena",
+        "B": "Determinar si una cadena pertenece a un lenguaje regular",
+        "C": "Determinar si un lenguaje regular es finito o infinito",
+        "D": "Determinar si dos lenguajes regulares son equivalentes"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 96,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es el Teorema del Lema de Bombeo para lenguajes regulares?",
+      "opciones": {
+        "A": "Establece que todas las cadenas de un lenguaje regular tienen una longitud mínima",
+        "B": "Establece que todas las cadenas de un lenguaje regular tienen una longitud máxima",
+        "C": "Las cadenas suficientemente largas de un Lenguaje se pueden dividir en tres partes",
+        "D": "Un teorema que establece que todos los lenguajes regulares son finitos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 97,
+      "id_bloque": 5,
+      "pregunta": "¿Cómo se define el producto AFD en el contexto de equivalencia de lenguajes regulares?",
+      "opciones": {
+        "A": "Es la unión de dos lenguajes regulares",
+        "B": "Es el resultado de aplicar el algoritmo de minimización de Moore",
+        "C": "Es un AFD que acepta la intersección de dos lenguajes regulares",
+        "D": "Es un AFD que acepta la unión de dos lenguajes regulares"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 98,
+      "id_bloque": 5,
+      "pregunta": "¿Cómo se determina si un lenguaje regular L está contenido en otro lenguaje regular M?",
+      "opciones": {
+        "A": "Si el AFD producto de L y M acepta al menos una cadena",
+        "B": "Si hay alguna cadena que esté en L pero no en M",
+        "C": "Si todos los estados finales de L son también estados finales de M",
+        "D": "Si L y M tienen la misma longitud promedio de cadena"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 99,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es la premisa principal de enfoque de minimización de estados en un AFD?",
+      "opciones": {
+        "A": "Todos los estados deben tener el mismo número de transiciones",
+        "B": "Se deben combinar estados que tengan las mismas transiciones",
+        "C": "Dos estados son equivalentes si no hay cadena que distinga su comportamiento",
+        "D": "Los estados finales deben estar al final de la lista de estados"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 100,
+      "id_bloque": 5,
+      "pregunta": "¿Cuál es el objetivo del algoritmo de minimización de estados en un AFD?",
+      "opciones": {
+        "A": "Reducir el número total de estados en el AFD",
+        "B": "Asegurarse de que el AFD acepte todas las cadenas posibles",
+        "C": "Incrementar la eficiencia del AFD al eliminar estados redundantes",
+        "D": "Identificar los pares de estados que son equivalentes"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 101,
+      "id_bloque": 5,
+      "pregunta": "Propiedad clave que se utiliza para determinar la equivalencia de dos estados en la minimización de estados en un AFD",
+      "opciones": {
+        "A": "El número de transiciones salientes de cada estado",
+        "B": "La longitud de la cadena de entrada que distingue dos estados",
+        "C": "La cantidad de estados finales en el AFD",
+        "D": "La posición relativa de los estados en el grafo"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 102,
+      "id_bloque": 5,
+      "pregunta": "Técnica que se utiliza comúnmente en la práctica para encontrar el AFD de estado mínimo de un lenguaje regular de manera eficiente",
+      "opciones": {
+        "A": "Prueba exhaustiva de todas las combinaciones de estados",
+        "B": "Algoritmo de minimización de Moore",
+        "C": "Algoritmo de minimización de Hopcroft",
+        "D": "Reducción de la cantidad de transiciones en el AFD"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 103,
+      "id_bloque": 6,
+      "pregunta": "¿Cuál es la definición de \"Indistinguible\" en dos entidades?",
+      "opciones": {
+        "A": "Son indistinguibles si siempre se comportan de la misma manera",
+        "B": "Son indistinguibles si no pueden ser diferenciados por su comportamiento o resultado",
+        "C": "Son indistinguibles si tienen la misma entrada y salida",
+        "D": "Son indistinguibles si son completamente idénticas"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 104,
+      "id_bloque": 6,
+      "pregunta": "¿Qué significa que \"p es indistinguible de q\"?",
+      "opciones": {
+        "A": "P y q son completamente idénticos",
+        "B": "P y q tienen la misma entrada y salida",
+        "C": "Cualquier entrada w, la salida de p en w y la salida de q en w es la misma",
+        "D": "P y q siempre se comportan de la misma manera"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 105,
+      "id_bloque": 6,
+      "pregunta": "¿Cómo se puede encontrar el estado mínimo equivalente a un AFD dado?",
+      "opciones": {
+        "A": "Combinando estados indistinguibles en un solo estado representativo",
+        "B": "Usando búsqueda en profundidad para eliminar estados redundantes",
+        "C": "Construyendo un nuevo autómata desde cero con menos estados",
+        "D": "Aplicando operaciones aritméticas para reducir el número de estados"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 106,
+      "id_bloque": 6,
+      "pregunta": "¿Cuál es el objetivo de minimizar un AFD?",
+      "opciones": {
+        "A": "Aumentar la memoria requerida para almacenar el AFD",
+        "B": "Simplificar la representación del lenguaje reconocido por el AFD",
+        "C": "Eliminar estados finales y no finales",
+        "D": "Fusionando estados de forma aleatoria"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 107,
+      "id_bloque": 6,
+      "pregunta": "¿Qué es una propiedad de cierre para los lenguajes regulares?",
+      "opciones": {
+        "A": "Una propiedad que se cumple para todos los lenguajes regulares",
+        "B": "Una operación que transforma un lenguaje regular en otro lenguaje regular",
+        "C": "Ninguna de las dos",
+        "D": "Las dos son propiedades"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 108,
+      "id_bloque": 6,
+      "pregunta": "¿Qué se hace después de marcar todos los pares de estados en el proceso de minimización?",
+      "opciones": {
+        "A": "Los pares de estados no marcados se consideran equivalentes y se fusionan",
+        "B": "Se eliminan todos los estados no marcados",
+        "C": "Se agregan más estados al AFD original",
+        "D": "Se reinicia el proceso de minimización desde el principio"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 109,
+      "id_bloque": 6,
+      "pregunta": "¿Cuál es el resultado final de la minimización de estados de un AFD?",
+      "opciones": {
+        "A": "Un AFD con más estados que el original",
+        "B": "Un AFD con menos estados que el original",
+        "C": "Un AFD idéntico al original",
+        "D": "Un AFD con transiciones aleatorias"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 110,
+      "id_bloque": 6,
+      "pregunta": "¿Por qué se dice que la indistinguibilidad no aborda la posible existencia de estados inalcanzables?",
+      "opciones": {
+        "A": "Los estados inalcanzables son fusionados durante el proceso de minimización",
+        "B": "La indistinguibilidad solo se basa en las transiciones del AFD",
+        "C": "Los estados inalcanzables se pueden eliminar",
+        "D": "Los estados inalcanzables no afectan al comportamiento del AFD"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 111,
+      "id_bloque": 6,
+      "pregunta": "Durante el proceso de minimización de un AFD, ¿qué se hace con los estados que son indistinguibles?",
+      "opciones": {
+        "A": "Se eliminan del AFD",
+        "B": "Se duplican para mantener la consistencia",
+        "C": "Se fusionan en un solo estado",
+        "D": "Se reorganizan en una estructura jerárquica"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 112,
+      "id_bloque": 6,
+      "pregunta": "¿Cómo se identifican los pares de estados distinguibles durante el proceso de minimización de un AFD?",
+      "opciones": {
+        "A": "Marcándolos según una regla basada en los nombres de los estados",
+        "B": "Marcándolos según una regla basada en las transiciones",
+        "C": "Ordenándolos alfabéticamente",
+        "D": "Enumerándolos de acuerdo a su número de transiciones"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 113,
+      "id_bloque": 6,
+      "pregunta": "¿Qué estrategia se utiliza comúnmente para fusionar estados durante la minimización de un AFD?",
+      "opciones": {
+        "A": "Fusionar estados con nombres similares",
+        "B": "Fusionar estados aleatoriamente",
+        "C": "Fusionar estados que tienen el mismo comportamiento",
+        "D": "Fusionar estados con diferente cantidad de transiciones"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 114,
+      "id_bloque": 6,
+      "pregunta": "¿Qué ocurre con los pares de estados no marcados durante la minimización de un AFD?",
+      "opciones": {
+        "A": "Se eliminan del AFD",
+        "B": "Se duplican para mantener la consistencia",
+        "C": "Se mantienen como están sin cambios",
+        "D": "Se consideran equivalentes y se fusionan"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 115,
+      "id_bloque": 6,
+      "pregunta": "¿Por qué es seguro eliminar los estados inalcanzables de un AFD durante la minimización?",
+      "opciones": {
+        "A": "Porque no afectan el comportamiento del AFD",
+        "B": "Porque incrementan la complejidad del autómata",
+        "C": "Porque están conectados a todos los otros estados",
+        "D": "Porque tienen el mismo comportamiento que otros estados"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 116,
+      "id_bloque": 6,
+      "pregunta": "¿Qué se puede concluir si dos estados en un AFD son indistinguibles?",
+      "opciones": {
+        "A": "Son necesariamente estados finales",
+        "B": "Tienen diferente cantidad de transiciones",
+        "C": "Tienen el mismo comportamiento para cualquier entrada",
+        "D": "Están conectados por una transición directa"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 117,
+      "id_bloque": 6,
+      "pregunta": "¿Qué son los homomorfismos?",
+      "opciones": {
+        "A": "Transformaciones en símbolos que reemplazan cada símbolo por otro símbolo",
+        "B": "Transformaciones que reemplazan un símbolo por una cadena de otros símbolos",
+        "C": "Transformaciones en símbolos que duplican cada símbolo en otro símbolo",
+        "D": "Transformaciones en símbolos que eliminan cada símbolo en otro símbolo"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 118,
+      "id_bloque": 6,
+      "pregunta": "¿Qué efecto tiene aplicar un homomorfismo a un lenguaje regular?",
+      "opciones": {
+        "A": "Transforma el lenguaje en un lenguaje irregular",
+        "B": "Añade complejidad al lenguaje",
+        "C": "El homomorfismo de un lenguaje regular también será un lenguaje regular",
+        "D": "No tiene ningún efecto en el lenguaje"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 119,
+      "id_bloque": 6,
+      "pregunta": "¿Qué implica la simplificación de una expresión regular?",
+      "opciones": {
+        "A": "Reducir la cantidad de símbolos utilizados en la expresión",
+        "B": "Eliminar todos los paréntesis de la expresión",
+        "C": "Incrementar la complejidad de la expresión",
+        "D": "Simplificar términos como la cadena vacía y las repeticiones de cadenas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 120,
+      "id_bloque": 6,
+      "pregunta": "¿Qué se puede decir sobre el homomorfismo inverso de un lenguaje regular?",
+      "opciones": {
+        "A": "No se puede definir un homomorfismo inverso para un lenguaje regular",
+        "B": "El homomorfismo inverso siempre produce un lenguaje irregular",
+        "C": "El homomorfismo inverso de un lenguaje regular también es regular",
+        "D": "El homomorfismo inverso solo funciona en lenguajes finitos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 121,
+      "id_bloque": 7,
+      "pregunta": "¿Qué son los lenguajes libres de contexto?",
+      "opciones": {
+        "A": "Lenguaje formal que permite representar estructuras anidadas complejas",
+        "B": "Un conjunto de herramientas para analizar y procesar información",
+        "C": "Un subconjunto de los lenguajes regulares",
+        "D": "Una forma de describir la sintaxis de lenguajes de programación"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 122,
+      "id_bloque": 7,
+      "pregunta": "¿Qué elementos componen una gramática libre de contexto (GLC)?",
+      "opciones": {
+        "A": "Variables, funciones y ecuaciones",
+        "B": "Símbolos, reglas y patrones",
+        "C": "Palabras clave, operadores y expresiones",
+        "D": "Terminales, no terminales, producciones y derivaciones"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 123,
+      "id_bloque": 7,
+      "pregunta": "¿Qué es una producción en una GLC?",
+      "opciones": {
+        "A": "Una forma de representar la estructura de un lenguaje formal",
+        "B": "Un paso en el proceso de derivación de una cadena",
+        "C": "Reglas cómo se pueden reescribir las cadenas en terminales y no terminales",
+        "D": "Una relación entre dos símbolos del lenguaje"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 124,
+      "id_bloque": 7,
+      "pregunta": "¿Qué es una derivación en una GLC?",
+      "opciones": {
+        "A": "Verificación de la corrección sintáctica de una cadena en un lenguaje",
+        "B": "Transformación de una cadena inicial en una cadena final solo de terminales",
+        "C": "La asignación de valores a variables en una expresión",
+        "D": "La simplificación de una ecuación matemática"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 125,
+      "id_bloque": 7,
+      "pregunta": "¿Qué diferencia a una derivación más a la izquierda de una derivación más a la derecha?",
+      "opciones": {
+        "A": "La dirección en la que se reemplazan los no terminales en la cadena",
+        "B": "El tipo de símbolos que se utilizan en las producciones",
+        "C": "El número de pasos necesarios para completar la derivación",
+        "D": "La complejidad de la gramática utilizada"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 126,
+      "id_bloque": 7,
+      "pregunta": "¿Qué es la notación BNF (Forma de Backus-Naur)?",
+      "opciones": {
+        "A": "Un lenguaje de programación para la manipulación de cadenas de texto",
+        "B": "Forma de describir GLC de manera compacta y legible",
+        "C": "Un método para analizar la eficiencia de algoritmos",
+        "D": "Una técnica para comprimir datos"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 127,
+      "id_bloque": 7,
+      "pregunta": "¿Qué representa el símbolo ::= en la Notación BNF?",
+      "opciones": {
+        "A": "La asignación de un valor a una variable",
+        "B": "La definición de una producción en una gramática libre de contexto",
+        "C": "La comparación de dos valores",
+        "D": "La llamada a una función"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 128,
+      "id_bloque": 7,
+      "pregunta": "¿Qué representa el símbolo | en la Notación BNF?",
+      "opciones": {
+        "A": "La unión de dos conjuntos",
+        "B": "La concatenación de dos cadenas",
+        "C": "La elección entre dos opciones en una producción",
+        "D": "La repetición de un símbolo o una cadena"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 129,
+      "id_bloque": 7,
+      "pregunta": "¿Qué representa el símbolo ... en la Notación BNF?",
+      "opciones": {
+        "A": "La ausencia de símbolos en una cadena",
+        "B": "La repetición una o más veces de un símbolo o una cadena",
+        "C": "La agrupación de símbolos o cadenas",
+        "D": "La repetición cero o más veces de un símbolo o cadena"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 130,
+      "id_bloque": 7,
+      "pregunta": "¿Qué representa el símbolo {} en la Notación BNF?",
+      "opciones": {
+        "A": "Opcional",
+        "B": "Agrupamiento",
+        "C": "Uno o más",
+        "D": "Ninguna de las anteriores"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 131,
+      "id_bloque": 7,
+      "pregunta": "¿Qué se necesita para que un lenguaje sea libre de contexto?",
+      "opciones": {
+        "A": "Debe ser regular",
+        "B": "Debe tener un alfabeto finito",
+        "C": "Debe estar definido por una gramática libre de contexto",
+        "D": "Debe tener una expresión regular"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 132,
+      "id_bloque": 7,
+      "pregunta": "¿Cuál es el símbolo utilizado en BNF para indicar \"cero o más\"?",
+      "opciones": {
+        "A": "*",
+        "B": "+",
+        "C": "[]",
+        "D": "Ninguna de las anteriores"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 133,
+      "id_bloque": 7,
+      "pregunta": "¿Cuál es el objetivo de las derivaciones más a la izquierda y más a la derecha?",
+      "opciones": {
+        "A": "Generar múltiples derivaciones",
+        "B": "Simplificar el análisis de gramáticas y lenguajes",
+        "C": "Aumentar la complejidad del análisis sintáctico",
+        "D": "Todas las anteriores"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 134,
+      "id_bloque": 7,
+      "pregunta": "¿Qué se necesita para que un lenguaje sea regular?",
+      "opciones": {
+        "A": "Debe tener una gramática libre de contexto",
+        "B": "Debe estar definido por una gramática regular",
+        "C": "Debe tener una expresión regular",
+        "D": "Debe tener un alfabeto infinito"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 135,
+      "id_bloque": 7,
+      "pregunta": "¿Qué ventajas tienen los lenguajes libres de contexto sobre los lenguajes regulares?",
+      "opciones": {
+        "A": "Son más fáciles de analizar y procesar por autómatas",
+        "B": "Tienen mayor poder expresivo",
+        "C": "Son más eficientes en términos de espacio y tiempo de computación",
+        "D": "Permiten representar estructuras anidadas complejas"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 136,
+      "id_bloque": 8,
+      "pregunta": "¿Qué es un árbol de análisis sintáctico?",
+      "opciones": {
+        "A": "Una técnica para medir el tiempo de ejecución de los algoritmos",
+        "B": "Un método para optimizar bases de datos",
+        "C": "Un gráfico que muestra cómo se deriva una cadena usando una GLC",
+        "D": "Una estructura de datos para almacenar objetos"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 137,
+      "id_bloque": 8,
+      "pregunta": "¿Cuál es un uso importante de los árboles de análisis sintáctico?",
+      "opciones": {
+        "A": "Para optimizar consultas en bases de datos",
+        "B": "Para representar la estructura jerárquica de una cadena según una gramática",
+        "C": "Para determinar la complejidad computacional de algoritmos",
+        "D": "Para realizar operaciones aritméticas en tiempo constante"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 138,
+      "id_bloque": 8,
+      "pregunta": "¿Qué representa una hoja en un árbol de análisis sintáctico?",
+      "opciones": {
+        "A": "Una variable de la gramática",
+        "B": "Una producción de la gramática",
+        "C": "Una etiqueta intermedia",
+        "D": "Un terminal o épsilon"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 139,
+      "id_bloque": 8,
+      "pregunta": "¿Qué significaría si una línea de programación tuviera ambigüedad?",
+      "opciones": {
+        "A": "El programa tendría dos o más significados distintos",
+        "B": "El programa no se podría ejecutar",
+        "C": "El programa ejecutaría más rápido",
+        "D": "El programa consumiría menos memoria"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 140,
+      "id_bloque": 8,
+      "pregunta": "¿Cómo se representan nodos interiores en un árbol de análisis sintáctico?",
+      "opciones": {
+        "A": "Se etiquetan mediante un terminal",
+        "B": "No tienen etiqueta",
+        "C": "Se etiquetan mediante una variable",
+        "D": "Se etiquetan como las hojas del árbol"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 141,
+      "id_bloque": 8,
+      "pregunta": "¿Cómo se obtiene el producto de un árbol de análisis?",
+      "opciones": {
+        "A": "Multiplicando las etiquetas de los nodos interiores",
+        "B": "Leyendo las etiquetas de las hojas de izquierda a derecha",
+        "C": "Sumando todas las etiquetas de los nodos",
+        "D": "Ordenando las etiquetas en orden descendente"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 142,
+      "id_bloque": 8,
+      "pregunta": "¿Qué afirmación es correcta sobre la derivación más a la izquierda?",
+      "opciones": {
+        "A": "No tiene relación con los árboles de análisis",
+        "B": "Solo ocurre en gramáticas ambiguas",
+        "C": "Siempre produce el resultado más eficiente",
+        "D": "Cada derivación más a la izquierda de A hay un árbol de análisis con raíz A"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 143,
+      "id_bloque": 8,
+      "pregunta": "¿Qué significa si una gramática es no ambigua?",
+      "opciones": {
+        "A": "Solo tiene una estructura de árbol única para cada cadena en su lenguaje",
+        "B": "No se puede derivar ninguna cadena en su lenguaje",
+        "C": "Tiene múltiples estructuras de árbol para cada cadena",
+        "D": "Es más difícil de analizar que una gramática ambigua"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 144,
+      "id_bloque": 8,
+      "pregunta": "¿Cuál es la característica de las gramáticas LL(1)?",
+      "opciones": {
+        "A": "Son inherentemente ambiguas",
+        "B": "No pueden ser analizadas por computadoras",
+        "C": "Son todas no ambiguas",
+        "D": "Utilizan una derivación más a la derecha"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 145,
+      "id_bloque": 8,
+      "pregunta": "¿Qué relación directa tienen los árboles de análisis sintáctico?",
+      "opciones": {
+        "A": "Con las funciones más utilizadas en programación",
+        "B": "Con las derivaciones más a la izquierda y más a la derecha",
+        "C": "Con el número de variables en una gramática",
+        "D": "Con la velocidad de ejecución del programa"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 146,
+      "id_bloque": 8,
+      "pregunta": "¿Para qué es importante la no ambigüedad en una gramática?",
+      "opciones": {
+        "A": "Para hacer que la gramática sea más fácil de entender",
+        "B": "Para asegurar que cada cadena tenga múltiples estructuras de árbol",
+        "C": "Para proporcionar una única estructura de árbol para cada cadena",
+        "D": "Para incrementar el número de derivaciones posibles"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 147,
+      "id_bloque": 8,
+      "pregunta": "¿Qué tipo de derivación implica un árbol de análisis sintáctico con la raíz A y producto w?",
+      "opciones": {
+        "A": "Derivación más a la derecha",
+        "B": "Derivación recursiva",
+        "C": "Derivación ambigua",
+        "D": "Derivación más a la izquierda"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 148,
+      "id_bloque": 8,
+      "pregunta": "¿Cuál es la propiedad importante que hace que un árbol sea de análisis sintáctico?",
+      "opciones": {
+        "A": "La raíz está etiquetada con un terminal",
+        "B": "Los nodos interiores están etiquetados con variables",
+        "C": "Representa una producción de la gramática",
+        "D": "Las hojas están etiquetadas con épsilon"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 149,
+      "id_bloque": 8,
+      "pregunta": "¿Qué representa el producto de un árbol de análisis o parseo?",
+      "opciones": {
+        "A": "La cadena de etiquetas de los nodos interiores",
+        "B": "La secuencia de terminales en el cuerpo del árbol",
+        "C": "La derivación más a la izquierda",
+        "D": "La derivación más a la derecha"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 150,
+      "id_bloque": 8,
+      "pregunta": "¿Qué implica la ausencia de ambigüedad en una gramática?",
+      "opciones": {
+        "A": "Se asigna un significado único a cada cadena en su lenguaje",
+        "B": "Hay al menos una cadena en su lenguaje con 2 árboles de análisis diferentes",
+        "C": "Hay dos derivaciones más a la izquierda diferentes para una cadena dada",
+        "D": "Hay una derivación más a la derecha diferente para una cadena dada"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 151,
+      "id_bloque": 8,
+      "pregunta": "¿Qué tipo de cadena puede tener dos derivaciones más a la izquierda diferentes?",
+      "opciones": {
+        "A": "Cadena vacía",
+        "B": "Cadena ambigua",
+        "C": "Cadena terminal",
+        "D": "Cadena recursiva"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 152,
+      "id_bloque": 8,
+      "pregunta": "¿Qué representa un nodo en un árbol de análisis sintáctico?",
+      "opciones": {
+        "A": "Una derivación",
+        "B": "Una variable de la gramática",
+        "C": "Un símbolo épsilon",
+        "D": "Una cadena terminal"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 153,
+      "id_bloque": 8,
+      "pregunta": "¿Cuál es el propósito principal de utilizar una gramática libre de contexto en el análisis sintáctico?",
+      "opciones": {
+        "A": "Permitir múltiples interpretaciones para una misma cadena",
+        "B": "Asignar un árbol de análisis único a cada cadena",
+        "C": "Facilitar la construcción de árboles binarios",
+        "D": "Asegurar la recursividad en las derivaciones"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 154,
+      "id_bloque": 8,
+      "pregunta": "¿Qué tipo de recorrido se realiza en un árbol de análisis sintáctico para obtener el producto?",
+      "opciones": {
+        "A": "De izquierda a derecha",
+        "B": "De derecha a izquierda",
+        "C": "De arriba abajo",
+        "D": "De abajo arriba"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 155,
+      "id_bloque": 8,
+      "pregunta": "¿Qué se entiende por una derivación de un paso?",
+      "opciones": {
+        "A": "Reemplazar una cadena vacía por épsilon",
+        "B": "Construir un árbol de análisis sintáctico de altura uno",
+        "C": "Reemplazar una variable por una cadena de terminales y variables",
+        "D": "Dividir una cadena terminal en partes más pequeñas"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 156,
+      "id_bloque": 8,
+      "pregunta": "¿Cuál es la importancia de la no ambigüedad en las gramáticas?",
+      "opciones": {
+        "A": "Las gramáticas no ambiguas son más fáciles de analizar por computadora",
+        "B": "Las gramáticas no ambiguas son necesarias para lenguajes de programación",
+        "C": "Las gramáticas no ambiguas sin más fáciles de entender para los humanos",
+        "D": "Las gramáticas no ambiguas son más expresivas que las gramáticas ambiguas"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 157,
+      "id_bloque": 8,
+      "pregunta": "¿Se puede corregir la ambigüedad intrínseca?",
+      "opciones": {
+        "A": "Sí, siempre se puede corregir mediante una transformación de la gramática",
+        "B": "No, no se puede corregir para ningún lenguaje",
+        "C": "Sí, se puede corregir para algunos lenguajes, pero no para todos",
+        "D": "No, pero se puede ignorar en ela mayoría de los casos"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 158,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es una posible razón para que una gramática libre de contexto esté mal diseñada?",
+      "opciones": {
+        "A": "Porque tiene demasiados símbolos terminales",
+        "B": "Porque tiene variables que no derivan ninguna cadena terminal",
+        "C": "Porque usa demasiados símbolos no terminales",
+        "D": "Porque no tiene suficientes producciones"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 159,
+      "id_bloque": 9,
+      "pregunta": "¿Qué son las producciones unitarias?",
+      "opciones": {
+        "A": "Producciones donde le cuerpo es la cadena vacía",
+        "B": "Producciones donde el cuerpo tiene exactamente dos variables",
+        "C": "Producciones donde el cuerpo es un solo terminal",
+        "D": "Producciones donde el cuerpo es una sola variable"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 160,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es el objetivo de la forma normal de Chomsky?",
+      "opciones": {
+        "A": "Que todas las producciones tengan al menos tres símbolos",
+        "B": "Que todas las producciones tengan al menos un símbolo no terminal",
+        "C": "Que todas las producciones sean un solo terminal o dos variables",
+        "D": "Que todas las producciones sean la cadena vacía"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 161,
+      "id_bloque": 9,
+      "pregunta": "¿Qué se debe hacer primero al simplificar una gramática libre de contexto?",
+      "opciones": {
+        "A": "Eliminar las producciones unitarias",
+        "B": "Detectar y eliminar las var. que no pueden derivar ninguna cadena terminal",
+        "C": "Eliminar todas las producciones con terminales",
+        "D": "Cambiar el símbolo inicial"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 162,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es la base del algoritmo de descubrimiento para variables que derivan cadenas terminales?",
+      "opciones": {
+        "A": "Una variable que tiene una producción cuyo cuerpo no tiene variables",
+        "B": "Una variable que se deriva en un solo paso desde el símbolo inicial",
+        "C": "Una variable que deriva en sí misma",
+        "D": "Una variable que se deriva a partir de dos variables"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 163,
+      "id_bloque": 9,
+      "pregunta": "¿Qué asegura el principio de reciprocidad del algoritmo de descubrimiento?",
+      "opciones": {
+        "A": "Que cada producción derive una cadena terminal",
+        "B": "Que todas las producciones tengan al menos dos símbolos terminales",
+        "C": "Variable que derive una cadena terminal será identificada por el algoritmo",
+        "D": "Que cada variable derive en un solo terminal"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 164,
+      "id_bloque": 9,
+      "pregunta": "¿Qué se debe hacer después de identificar todas las variables productivas?",
+      "opciones": {
+        "A": "Cambiar el símbolo inicial",
+        "B": "Eliminar las variables que no derivan nada",
+        "C": "Agregar nuevas producciones",
+        "D": "Reducir el número de producciones"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 165,
+      "id_bloque": 9,
+      "pregunta": "¿Qué se hace en el algoritmo para eliminar variables no productivas?",
+      "opciones": {
+        "A": "Eliminar todas las producciones con terminales",
+        "B": "Cambiar todas las variables a terminales",
+        "C": "Agregar nuevas variables",
+        "D": "Eliminar todas las producciones donde aparece una variable no productiva"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 166,
+      "id_bloque": 9,
+      "pregunta": "¿Qué se hace después de eliminar las variables que no derivan ninguna cadena terminal?",
+      "opciones": {
+        "A": "Agregar nuevas variables",
+        "B": "Eliminar variables que no se pueden derivar del símbolo de inicio",
+        "C": "Cambiar todas las producciones a unitarias",
+        "D": "Agregar nuevas producciones"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 167,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es una razón por la que un símbolo puede ser inútil?",
+      "opciones": {
+        "A": "Deriva demasiadas cadenas terminales",
+        "B": "Porque aparece en todas las producciones",
+        "C": "No deriva en cadena terminal o no aparece en deriv. del símbolo de inicio",
+        "D": "Porque es un símbolo terminal"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 168,
+      "id_bloque": 9,
+      "pregunta": "¿Qué es una producción épsilon en una gramática?",
+      "opciones": {
+        "A": "La que permite que un símbolo terminal se derive en otro terminal",
+        "B": "La que permite que un símbolo no terminal se derive en otro no terminal",
+        "C": "La que permite que un símbolo no terminal se derive en la cadena vacía",
+        "D": "La que permite que un símbolo terminal se derive en la cadena vacía"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 169,
+      "id_bloque": 9,
+      "pregunta": "¿Para qué son útiles las producciones épsilon?",
+      "opciones": {
+        "A": "Para asegurar que todas las producciones generen cadenas no vacías",
+        "B": "Modelar ciertas partes de una estructura para ser opcionalmente omitidas",
+        "C": "Garantizar que las cadenas en un lenguaje contengan al menos un símbolo",
+        "D": "Para eliminar producciones unitarias de una gramática"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 170,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es el principal problema de las producciones épsilon?",
+      "opciones": {
+        "A": "Hacen que las derivaciones sean demasiado cortas",
+        "B": "Permiten que los símbolos no terminales se conviertan en terminales",
+        "C": "No permiten la derivación de cadenas terminales",
+        "D": "Provoca cadenas vacías cuando deben contener al menos un símbolo"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 171,
+      "id_bloque": 9,
+      "pregunta": "¿Qué garantiza el teorema sobre los lenguajes libres de contexto en relación con las producciones épsilon?",
+      "opciones": {
+        "A": "Que cualquier lenguaje libre de contexto tiene producciones épsilon",
+        "B": "Que todas las gramáticas libres de contexto generen la cadena vacía",
+        "C": "L-{E} tiene una Gramática Libre de Contexto (GLC) sin producciones épsilon",
+        "D": "Que no se puede modificar una gramática libre de contexto para eliminar E"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 172,
+      "id_bloque": 9,
+      "pregunta": "¿Qué asegura el teorema fundamental de las producciones épsilon?",
+      "opciones": {
+        "A": "Que todas las gramáticas libres de contexto deben generar la cadena vacía",
+        "B": "Modificar cualquier GLC que genere ε para obtener una GLC que no genere ε",
+        "C": "Que las producciones ε no afectan la generación de cadenas en un lenguaje",
+        "D": "No es posible eliminar producciones épsilon de una GLC"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 173,
+      "id_bloque": 9,
+      "pregunta": "¿Qué implica la eliminación de producciones épsilon en una gramática?",
+      "opciones": {
+        "A": "La gramática no puede generar cadenas terminales",
+        "B": "La gramática solo genera la cadena vacía",
+        "C": "La gramática puede generar todas las cadenas sin depender de producciones E",
+        "D": "La gramática debe incluir producciones unitarias"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 174,
+      "id_bloque": 9,
+      "pregunta": "¿Cuándo podemos eliminar producciones épsilon sin perder la capacidad de derivar el mismo lenguaje?",
+      "opciones": {
+        "A": "Cuando la cadena vacía estaba en el lenguaje",
+        "B": "Cuando todas las producciones son unitarias",
+        "C": "Cuando todas las producciones contienen al menos un terminal",
+        "D": "Cuando la cadena vacía no estaba en el lenguaje para empezar"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 175,
+      "id_bloque": 9,
+      "pregunta": "¿Qué es un símbolo anulable en una gramática?",
+      "opciones": {
+        "A": "Un símbolo que siempre deriva una cadena terminal",
+        "B": "Un símbolo que puede derivar en la cadena vacía ε directa o indirectamente",
+        "C": "Un símbolo que no puede derivar ninguna cadena",
+        "D": "Un símbolo que solo deriva en otros símbolos no terminales"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 176,
+      "id_bloque": 9,
+      "pregunta": "¿Cómo se identifica un símbolo anulable en una gramática?",
+      "opciones": {
+        "A": "Solo si el símbolo es terminal",
+        "B": "Solo si el símbolo es no terminal",
+        "C": "Con un proceso iterativo basado en producciones directas e indirectas a E",
+        "D": "A través de la eliminación de producciones unitarias"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 177,
+      "id_bloque": 9,
+      "pregunta": "¿Qué debe hacer una gramática para eliminar las producciones épsilon?",
+      "opciones": {
+        "A": "Convertir cada producción con variables anulables en varias producciones posibles sin ellas",
+        "B": "Añadir más producciones unitarias",
+        "C": "Eliminar todas las producciones terminales",
+        "D": "Cambiar el símbolo inicial"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 178,
+      "id_bloque": 9,
+      "pregunta": "¿Qué son las producciones unitarias?",
+      "opciones": {
+        "A": "Reglas donde el lado derecho conta de varios terminales",
+        "B": "Reglas donde el lado derecho es la cadena vacía",
+        "C": "Reglas donde el lado derecho conta de varios no terminales",
+        "D": "Reglas donde el lado derecho consta de un solo símbolo no terminal"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 179,
+      "id_bloque": 9,
+      "pregunta": "¿Por qué es deseable eliminar las producciones unitarias?",
+      "opciones": {
+        "A": "Para aumentar el número de derivaciones",
+        "B": "Para generar más cadenas vacías",
+        "C": "Para simplificar la gramática y hacer más directo el análisis sintáctico",
+        "D": "Para crear más producciones no terminales"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 180,
+      "id_bloque": 9,
+      "pregunta": "¿Qué se hace para eliminar las producciones unitarias?",
+      "opciones": {
+        "A": "Agregar más producciones épsilon",
+        "B": "Convertir todas las producciones a terminales",
+        "C": "Añadir directamente las producciones A→ a y eliminar A→B si B → a",
+        "D": "Eliminar todas las producciones terminales"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 181,
+      "id_bloque": 9,
+      "pregunta": "¿Cuál es la base del algoritmo de descubrimiento para producciones unitarias?",
+      "opciones": {
+        "A": "Que cualquier variable A puede derivar en sí misma",
+        "B": "Que cualquier variable A puede derivar en cualquier otra variable",
+        "C": "Que cualquier variable A solo puede derivar en terminales",
+        "D": "Que cualquier variable A no puede derivar en la cadena vacía"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 182,
+      "id_bloque": 9,
+      "pregunta": "¿Forma de verificar la validez de las derivaciones en una gramática después de eliminar producciones unitarias?",
+      "opciones": {
+        "A": "Usar producciones épsilon",
+        "B": "Mediante una prueba deductiva basada en la cadena vacía",
+        "C": "Mediante una prueba inductiva basada en el número de pasos en la derivación",
+        "D": "Usar solo producciones terminales"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 183,
+      "id_bloque": 10,
+      "pregunta": "¿Cuál es la memoria adicional que utiliza un PDA?",
+      "opciones": {
+        "A": "Cola",
+        "B": "Registro",
+        "C": "Pila",
+        "D": "Archivo"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 184,
+      "id_bloque": 10,
+      "pregunta": "¿Qué tipo de lenguajes pueden ser reconocidos por un PDA?",
+      "opciones": {
+        "A": "Lenguajes regulares",
+        "B": "Lenguajes libres de contexto",
+        "C": "Lenguajes sensibles al contexto",
+        "D": "Lenguajes recursivamente enumerables"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 185,
+      "id_bloque": 10,
+      "pregunta": "¿Qué representa el símbolo en la cima de la pila en un PDA?",
+      "opciones": {
+        "A": "El siguiente símbolo de entrada",
+        "B": "El estado actual del autómata",
+        "C": "La base de la pila",
+        "D": "El símbolo superior en la pila que determina las transiciones"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 186,
+      "id_bloque": 10,
+      "pregunta": "¿Cuál de las siguientes afirmaciones es verdadera para un PDA determinista DPDA?",
+      "opciones": {
+        "A": "Puede tener múltiples transiciones posibles para un estado y un símbolo",
+        "B": "Tiene una acción posible para cada entrada y símbolo en la cima de la pila",
+        "C": "No puede reconocer lenguajes libres de contexto",
+        "D": "No tiene ninguna limitación en comparación con un NPDA"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 187,
+      "id_bloque": 10,
+      "pregunta": "¿Qué operación realiza un PDA al consumir un símbolo de entrada y encontrar una coincidencia en la pila?",
+      "opciones": {
+        "A": "Empuja un nuevo símbolo a la pila",
+        "B": "Reemplaza toda la pila",
+        "C": "Desapila el símbolo de la pila",
+        "D": "Cambia el estado inicial"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 188,
+      "id_bloque": 10,
+      "pregunta": "¿Cuál es una de las diferencias clave entre un DPDA y un NPDA?",
+      "opciones": {
+        "A": "Un DPDA puede reconocer menos lenguajes que un NPDA",
+        "B": "Un DPDA puede reconocer más lenguajes que un NPDA",
+        "C": "Un NPDA no puede tener transiciones épsilon",
+        "D": "No hay diferencias; ambos son equivalentes en poder"
+      },
+      "respuesta_correcta": "A"
+    },
+{
+      "id": 189,
+      "id_bloque": 10,
+      "pregunta": "¿Cuál de los siguientes lenguajes puede ser reconocido tanto por un DPDA como por un NPDA?",
+      "opciones": {
+        "A": "$\\{a^{n}b^{n}c^{n}|n\\ge0\\}$",
+        "B": "{w | w contiene igual número de a y b}",
+        "C": "{abcm | n, m ≥ 0}",
+        "D": "$\\{a^{n}b^{n}|n\\ge0\\}$"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 190,
+      "id_bloque": 10,
+      "pregunta": "¿Qué estructura de datos sigue el principio LIFO (Last in, First Out)?",
+      "opciones": {
+        "A": "Cola",
+        "B": "Secuencia",
+        "C": "Pila",
+        "D": "Lista enlazada"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 191,
+      "id_bloque": 10,
+      "pregunta": "¿Qué transición realiza un PDA cuando el símbolo de entrada actual es $\\epsilon$ y la cima de la pila es S?",
+      "opciones": {
+        "A": "$\\delta(q,\\epsilon,S)=\\{(q,aSb)\\}$",
+        "B": "$\\delta(q,\\epsilon,S)=\\{(q,\\epsilon)\\}$",
+        "C": "Ambas respuestas son correctas",
+        "D": "Ninguna de las dos"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 192,
+      "id_bloque": 10,
+      "pregunta": "¿Cuál de los siguientes es un símbolo que el PDA procesa en la entrada?",
+      "opciones": {
+        "A": "q",
+        "B": "a",
+        "C": "Z",
+        "D": "$\\alpha$"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 193,
+      "id_bloque": 10,
+      "pregunta": "¿Qué componente adicional tiene un PDA en comparación con un autómata finito simple?",
+      "opciones": {
+        "A": "Cola",
+        "B": "Registro",
+        "C": "Pila",
+        "D": "Archivo"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 194,
+      "id_bloque": 10,
+      "pregunta": "¿Qué acción realiza un PDA cuando la función de transición devuelve (p, a)?",
+      "opciones": {
+        "A": "Cambia el estado actual de q a p",
+        "B": "Elimina todos los símbolos de la pila",
+        "C": "Consume todos los símbolos de la entrada",
+        "D": "Reinicia el estado"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 195,
+      "id_bloque": 10,
+      "pregunta": "¿Qué significa la eliminación del símbolo en la entrada?",
+      "opciones": {
+        "A": "Se consume el primer símbolo de la entrada",
+        "B": "Se eliminan todos los símbolos de la pila",
+        "C": "No se consume ningún símbolo de la entrada",
+        "D": "Se reinicia el autómata"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 196,
+      "id_bloque": 10,
+      "pregunta": "¿Qué ocurre con el símbolo Z en la cima de la pila cuando la función de transición devuelve (p, a)?",
+      "opciones": {
+        "A": "Z se mantiene en la cima de la pila",
+        "B": "Z es reemplazado por a",
+        "C": "Z se elimina sin reemplazo",
+        "D": "La pila se vacía"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 197,
+      "id_bloque": 10,
+      "pregunta": "¿Qué representa el estado q en un PDA diseñado para aceptar $\\{0^{n}1^{n}|n\\ge1\\}$?",
+      "opciones": {
+        "A": "Estado final",
+        "B": "Estado de aceptación",
+        "C": "Estado inicial",
+        "D": "Estado de error"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 198,
+      "id_bloque": 10,
+      "pregunta": "¿Qué acción realiza un PDA al encontrar el primer 1 en la entrada en el diseño para $\\{0^{n}1^{n}|n\\ge1\\}$?",
+      "opciones": {
+        "A": "Cambia al estado p y comienza a desapilar",
+        "B": "Permanece en el estado q",
+        "C": "Cambia al estado f inmediatamente",
+        "D": "Reinicia el estado"
+      },
+      "respuesta_correcta": "A"
+    },
+    {
+      "id": 199,
+      "id_bloque": 10,
+      "pregunta": "¿Cuándo ocurre la aceptación en un PDA diseñado para $\\{0^{n}1^{n}|n\\ge1\\}$?",
+      "opciones": {
+        "A": "Cuando la pila contiene un único símbolo",
+        "B": "Cuando se ha alcanzado el estado q",
+        "C": "Cuando se ha leído al menos un 0 y un 1",
+        "D": "Cuando se han leído todos los símbolos de entrada y la pila está vacía"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+      "id": 200,
+      "id_bloque": 10,
+      "pregunta": "¿Qué es una \"descripción instantánea\" en un PDA?",
+      "opciones": {
+        "A": "Una transición no determinista",
+        "B": "Un momento específico de operación del PDA",
+        "C": "Una cadena de entrada aceptada",
+        "D": "El contenido final de la pila"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 201,
+      "id_bloque": 10,
+      "pregunta": "¿Qué indica el estado q en una descripción instantánea?",
+      "opciones": {
+        "A": "El símbolo de entrada actual",
+        "B": "El estado inicial",
+        "C": "El estado actual del PDA",
+        "D": "El símbolo en la cima de la pila"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 202,
+      "id_bloque": 10,
+      "pregunta": "¿Qué representa la notación ITJ en la relación \"Ir-a\"?",
+      "opciones": {
+        "A": "Una función de transición",
+        "B": "Una transformación en múltiples movimientos",
+        "C": "Una descripción instantánea que se convierte en otra en un solo movimiento",
+        "D": "Una cadena aceptada por el PDA"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 203,
+      "id_bloque": 10,
+      "pregunta": "¿Qué representa a en una descripción instantánea?",
+      "opciones": {
+        "A": "El estado actual del PDA",
+        "B": "El símbolo de entrada actual",
+        "C": "El estado final",
+        "D": "El contenido de la pila"
+      },
+      "respuesta_correcta": "B"
+    },
+    {
+      "id": 204,
+      "id_bloque": 10,
+      "pregunta": "¿Qué lenguaje acepta un PDA si utiliza el criterio de pila vacía?",
+      "opciones": {
+        "A": "Un lenguaje regular",
+        "B": "Un subconjunto de lenguajes libres de contexto",
+        "C": "Todos los lenguajes libres de contexto",
+        "D": "Un subconjunto de lenguajes regulares"
+      },
+      "respuesta_correcta": "C"
+    },
+    {
+      "id": 205,
+      "id_bloque": 10,
+      "pregunta": "¿Qué condición debe cumplir un PDA determinista?",
+      "opciones": {
+        "A": "Puede tener múltiples transiciones para un símbolo de entrada",
+        "B": "Debe tener transiciones no deterministas",
+        "C": "Puede consumir un símbolo de entrada o $\\epsilon$ simultáneamente",
+        "D": "Debe tener una transición definida para cada estado, símbolo de entrada"
+      },
+      "respuesta_correcta": "D"
+    },
+    {
+    "id": 206,
+    "id_bloque": 11,
+    "pregunta": "¿Qué ocurre si un AFD tiene transiciones incompletas? ¿Qué ocurre si un AFD no tiene definidas todas las transiciones para cada símbolo en cada estado?",
+    "opciones": {
+      "A": "El autómata se convierte en un AFND",
+      "B": "El autómata no puede procesar algunas cadenas",
+      "C": "El autómata acepta todas las cadenas",
+      "D": "El autómata entra en un bucle infinito"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 207,
+    "id_bloque": 11,
+    "pregunta": "Dado el siguiente AFND: Estados: {q0, q1}, Alfabeto: {0,1}, Transiciones: (q0, 0) = {q0, q1}, δ(q0,1)={q0}, δ(q1, 0) = ∅, δ(q1, 1) = {q1}, Estado inicial: q0, Estado final: q1. ¿La cadena 0011 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 208,
+    "id_bloque": 11,
+    "pregunta": "Convierte a AFD el siguiente AFND: δ(q0,1)={q0,q1}, δ(q1,0)={q2}, δ(q2, 1) = {q2}, Estado inicial: q0, Estado final: q2. ¿Cuál es el estado inicial del AFD?",
+    "opciones": {
+      "A": "{q0}",
+      "B": "{q0, q1}",
+      "C": "{q1}",
+      "D": "{q0, q2}"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 209,
+    "id_bloque": 11,
+    "pregunta": "Lenguaje: L={w∈{0,1}* w contiene al menos un 1}. ¿Cuántos estados tiene el AFD mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 210,
+    "id_bloque": 11,
+    "pregunta": "Construye un AFND que acepte todas las cadenas sobre {0,1} que empiezan con 1. ¿Cuántos estados necesita el AFND mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 211,
+    "id_bloque": 11,
+    "pregunta": "Lenguaje: L={w∈{0,1}* | w termina en 0 }. ¿Cuántos estados tiene el AFD mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 212,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(q0,ε)={q1}, δ(q1,1)={q2}, δ(q2,0)={q2}, Estado inicial: q0, Estado final: q2. ¿La cadena 10 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 213,
+    "id_bloque": 11,
+    "pregunta": "Construye el AFD mínimo para cadenas sobre {0,1} que contienen al menos dos ceros. ¿Cuántos estados tiene?",
+    "opciones": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 214,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(q0,0)={q1}, δ(q0,1)={q0,q1}, δ(q1,1)={q2}, Estado inicial: q0, Estado final: q2. ¿Cuál de los siguientes NO puede ser un estado del AFD?",
+    "opciones": {
+      "A": "{q0}",
+      "B": "{q0, q1}",
+      "C": "{q1, q2}",
+      "D": "{q2, q3}"
+    },
+    "respuesta_correcta": "D"
+  },
+  {
+    "id": 215,
+    "id_bloque": 11,
+    "pregunta": "Dado el AFND: δ(p,0)={p,q}, δ(q,1)={r}, δ(r,0)={r}, Estado inicial: p, Estado final: r. ¿La cadena 010 es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 216,
+    "id_bloque": 11,
+    "pregunta": "Construye un PDA que acepte el lenguaje: L={w∈{0,1}* | w es palindromo de longitud impar }. ¿Cuál es la idea principal del PDA?",
+    "opciones": {
+      "A": "Comparar símbolo por símbolo usando la pila",
+      "B": "Guardar la primera mitad en la pila, ignorar el símbolo central y luego desapilar",
+      "C": "Aceptar solo si la pila queda vacía sin leer nada",
+      "D": "No usar pila"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 217,
+    "id_bloque": 11,
+    "pregunta": "El lenguaje: L={aⁿbⁿ | n≥1}. ¿Cuántos estados necesita un PDA mínimo?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 218,
+    "id_bloque": 11,
+    "pregunta": "En un PDA para aⁿbⁿ, ¿cuál de estas transiciones es incorrecta?",
+    "opciones": {
+      "A": "δ(q0,a,Z)=(q0,aZ)",
+      "B": "δ(q0,a,a)=(q0,aa)",
+      "C": "δ(q1,b,a)=(q1,ε)",
+      "D": "δ(q1,a,a)=(q1,ε)"
+    },
+    "respuesta_correcta": "D"
+  },
+  {
+    "id": 219,
+    "id_bloque": 11,
+    "pregunta": "Construye una expresión regular para el lenguaje de todas las cadenas sobre {0,1} que terminan en 01.",
+    "opciones": {
+      "A": "(0+1)*01",
+      "B": "01(0+1)*",
+      "C": "0101",
+      "D": "(01)*"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 220,
+    "id_bloque": 11,
+    "pregunta": "¿Cuál expresión regular describe todas las cadenas sobre {0,1} que contienen el patrón 11 (dos unos seguidos)?",
+    "opciones": {
+      "A": "10101*",
+      "B": "(0+1)11(0+1)",
+      "C": "11*",
+      "D": "1+1"
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 221,
+    "id_bloque": 11,
+    "pregunta": "Un AFD acepta todas las cadenas sobre {0,1} que contienen exactamente un bloque 00 y además terminan obligatoriamente en 1. Antes del bloque 00 solo pueden aparecer 1's. ¿Cuál ER describe este lenguaje?",
+    "opciones": {
+      "A": "(00)*",
+      "B": "(1+00)*",
+      "C": "(1*00)1",
+      "D": "01"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 222,
+    "id_bloque": 11,
+    "pregunta": "Construye una expresión regular para cadenas sobre {0,1} que contienen exactamente un 1.",
+    "opciones": {
+      "A": "010",
+      "B": "101",
+      "C": "(0+1)1(0+1)",
+      "D": "01*0"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 223,
+    "id_bloque": 11,
+    "pregunta": "Dado el PDA: δ(q0,a,Z)=(q0,aZ), δ(q0,a,a)=(q0,aa), δ(q0,b,a)=(q1,ε), δ(q1,b,a)=(q1,ε), Estado inicial: q0, Símbolo inicial de pila: Z, Estado final: q1. ¿La cadena aaabbb es aceptada?",
+    "opciones": {
+      "A": "Sí",
+      "B": "No"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 224,
+    "id_bloque": 11,
+    "pregunta": "Sea el lenguaje L={w∈{a,b}* | w termina en 'ab' }. ¿Cuántos estados tiene el AFD mínimo que reconoce L?",
+    "opciones": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 225,
+    "id_bloque": 11,
+    "pregunta": "Un AFD sobre Σ={0,1} tiene 4 estados. ¿Cuál afirmación es verdadera?",
+    "opciones": {
+      "A": "Puede tener estados sin transición definida.",
+      "B": "Debe tener exactamente 8 transiciones.",
+      "C": "Debe tener al menos 4 transiciones.",
+      "D": "Puede tener más de 8 transiciones."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 226,
+    "id_bloque": 11,
+    "pregunta": "Dado el siguiente AFD: Estados: A, B, C; Inicial: A; Final: C; Tabla: (A,0)->B, (A,1)->C, (B,0)->B, (B,1)->C, (C,0)->C, (C,1)->C. ¿Cuáles estados son equivalentes?",
+    "opciones": {
+      "A": "A y B",
+      "B": "B y C",
+      "C": "A y C",
+      "D": "Ninguno"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 227,
+    "id_bloque": 11,
+    "pregunta": "Un AFD tiene 6 estados: A, B, C, D, E y F. Tras aplicar el algoritmo de marcas para minimizarlo, los únicos pares de estados que quedan sin marcar son: (A,B), (C,D), (E,F). ¿Cuántos estados tendrá el AFD mínimo?",
+    "opciones": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "respuesta_correcta": "A"
+  },
+  {
+    "id": 228,
+    "id_bloque": 11,
+    "pregunta": "Se da el siguiente AFD sobre {0,1}: Estados: A, B, C; Inicial: A; Final: C; Tabla: (A,0)->B, (A,1)->A, (B,0)->B, (B,1)->C, (C,0)->C, (C,1)->C. Reconoce:",
+    "opciones": {
+      "A": "Cadenas que contienen al menos un 1",
+      "B": "Cadenas que terminan en 1",
+      "C": "Cadenas que contienen el patrón '01'",
+      "D": "Cadenas con número par de 1s"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 229,
+    "id_bloque": 11,
+    "pregunta": "En un AFND, desde un estado q con símbolo a se tienen 3 transiciones posibles. ¿Qué ocurre al convertirlo a AFD?",
+    "opciones": {
+      "A": "El AFD tendrá 3 transiciones desde ese estado.",
+      "B": "El AFD tendrá 1 transición pero a un conjunto de estados.",
+      "C": "El AFD tendrá 3 estados nuevos.",
+      "D": "El AFND no puede convertirse a AFD."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 230,
+    "id_bloque": 11,
+    "pregunta": "¿Cuál afirmación es correcta sobre el estado trampa?",
+    "opciones": {
+      "A": "Todo AFD debe tener un estado trampa.",
+      "B": "Un AFD puede no tener estado trampa si todas las transiciones están definidas.",
+      "C": "El estado trampa debe ser final.",
+      "D": "El estado trampa solo aparece en AFND."
+    },
+    "respuesta_correcta": "B"
+  },
+  {
+    "id": 231,
+    "id_bloque": 11,
+    "pregunta": "Sea el lenguaje: L={w∈{0,1}* | |w| es par }. ¿Cuántos estados tiene el AFD mínimo que reconoce L?",
+    "opciones": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "respuesta_correcta": "B"
+  }
+]
+
 }
