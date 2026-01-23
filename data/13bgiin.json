@@ -1311,7 +1311,7 @@
         "C": "Los estados inalcanzables se pueden eliminar",
         "D": "Los estados inalcanzables no afectan al comportamiento del AFD"
       },
-      "respuesta_correcta": "B"
+      "respuesta_correcta": "D"
     },
     {
       "id": 111,
